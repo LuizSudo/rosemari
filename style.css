@@ -1,0 +1,2612 @@
+/* ==UserStyle==
+@name           RoseMari Universal
+@namespace      github.com/LuizSudo/rose-universal
+@version        1.0.0
+@description    Tema rosa elegante e universal. Tema feito para um amigo meu
+@author         Luiz Henrique Amaral Soares
+==/UserStyle== */
+
+@-moz-document regexp("https?://.*") {
+
+  :root {
+    /* ============================================
+       PALETA DE CORES
+       ============================================ */
+    /* Fundo pele super suave */
+    /* Rosa escuro vibrante para destaques */
+    /* Rosa intermediário para hovers e menus */
+    /* Branco levemente aquecido */
+
+    --rose-pill: rgba(244, 111, 161, 0.12);
+    --rose-pill-hover: rgba(244, 111, 161, 0.25);
+    --rose-pill-selected: var(--rose-bg-strong);
+
+    /* Bordas sutis e delicadas */
+
+    /* Textos para alto contraste e leitura diária */
+    --rose-text: #2A131A;                   
+    --rose-text-secondary: #5C3241;         
+    --rose-text-muted: #8A5A6D;             
+    --rose-text-on-accent: #FFFFFF; 
+
+    --rose-accent: rgb(235, 85, 140);
+    --rose-accent-hover: rgb(255, 120, 165);
+
+    /* Sombras leves e elegantes */
+    /* Arredondamento moderno */
+    /* Transições suaves */
+  }
+
+  html { color-scheme: light; }
+
+  html, body {
+    background-color: var(--rose-bg) !important;
+  }
+
+  /* Áreas estruturais base */
+  body, main, section, article, aside, nav, header, footer, dialog, form, fieldset,
+  [role="navigation"], [role="banner"], [role="complementary"] {
+    background-color: transparent;
+    color: var(--rose-text-secondary);
+    border-color: var(--rose-border);
+  }
+
+  /* Proteção para textos brancos em fundo claro */
+  [style*="color: #fff" i]:not([style*="background"]):not([class*="primary"]):not([class*="accent"]),
+  [style*="color: white" i]:not([style*="background"]):not([class*="primary"]):not([class*="accent"]),
+  [style*="color: rgb(255, 255, 255)" i]:not([style*="background"]):not([class*="primary"]):not([class*="accent"]) {
+    color: var(--rose-text) !important;
+  }
+
+  /* Cards e painéis flutuantes (Menus, Modais) */
+  [class*="card" i]:not(.ytp-videowall-still-info-content),
+  [class*="modal" i]:not([class*="icon" i]),
+  [class*="dialog" i]:not([class*="icon" i]),
+  [class*="popover" i],
+  [class*="dropdown-menu" i],
+  [role="dialog"] {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    box-shadow: 0 8px 24px var(--rose-shadow) !important;
+    border-radius: var(--rose-radius);
+    color: var(--rose-text) !important;
+  }
+  
+  [role="dialog"] *, [class*="dropdown-menu" i] *, [class*="card" i] * {
+      color: var(--rose-text) !important;
+  }
+  [class*="card" i] [class*="secondary" i],
+  [class*="card" i] [class*="muted" i],
+  [class*="card" i] small,
+  [role="dialog"] [class*="secondary" i],
+  [role="dialog"] [class*="muted" i],
+  [role="dialog"] small {
+      color: var(--rose-text-secondary) !important;
+  }
+
+  /* Botões gerais (compatível Firefox ESR 115+, sem :has()) */
+  button:not([class*="icon" i]):not([class*="Icon" i]):not([class*="ytp-"]):not(:empty),
+  [type="submit"]:not([class*="icon" i]):not([class*="Icon" i]),
+  [type="button"]:not([class*="icon" i]):not([class*="Icon" i]),
+  input[type="submit"],
+  [role="tab"] {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid transparent !important;
+    border-radius: 999px;
+    transition: background-color var(--rose-transition), transform 100ms ease;
+  }
+
+  button:not([class*="icon" i]):not([class*="Icon" i]):not([class*="ytp-"]):hover,
+  [type="submit"]:not([class*="icon" i]):not([class*="Icon" i]):hover,
+  [role="tab"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+    transform: scale(1.02);
+  }
+
+  [aria-selected="true"],
+  [class*="selected" i]:not(#movie_player *):not(yt-chip-cloud-chip-renderer),
+  [class*="active" i]:is(button, [role="tab"]),
+  button[class*="primary" i],
+  [class*="btn-primary" i] {
+    background-color: var(--rose-pill-selected) !important;
+    color: var(--rose-text-on-accent) !important;
+    font-weight: 600;
+  }
+
+  /* Inputs Globais (Campos de digitação) */
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not(.gLFyf):not(#APjFqb):not(.ytSearchboxComponentInput):not(.yt-searchbox-input),
+  textarea:not(.gLFyf):not(#APjFqb),
+  select {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px;
+    padding: 8px 16px;
+    transition: border-color var(--rose-transition), box-shadow var(--rose-transition);
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: var(--rose-text-muted) !important;
+    opacity: 0.7;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    outline: none !important;
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 3px var(--rose-pill) !important; /* Brilho rosa ao focar */
+  }
+
+  a { color: var(--rose-accent); text-decoration: none; transition: color var(--rose-transition); }
+  a:hover { color: var(--rose-accent-hover); text-decoration: underline; }
+
+  h1, h2, h3, h4, h5, h6 { color: var(--rose-text) !important; font-weight: bold; }
+  small, [class*="muted" i], [class*="secondary-text" i], [class*="caption" i] { color: var(--rose-text-muted) !important; }
+
+  /* Mídia 100% Preservada (Imagens e Vídeos intocados) */
+  img, video, iframe, canvas, svg,
+  [class*="thumbnail" i], [class*="avatar" i],
+  [class*="logo" i], [class*="brand" i] {
+    background-color: transparent !important;
+    filter: none !important;
+  }
+
+  /* Scrollbar (Barra de rolagem) personalizada */
+  ::-webkit-scrollbar { width: 12px; height: 12px; }
+  ::-webkit-scrollbar-track { background: var(--rose-bg) !important; }
+  ::-webkit-scrollbar-thumb {
+    background: var(--rose-bg-soft) !important;
+    border-radius: 12px;
+    border: 3px solid var(--rose-bg); /* Barra flutuante e fina */
+  }
+  ::-webkit-scrollbar-thumb:hover { background: var(--rose-bg-strong) !important; }
+
+  ::selection {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-white) !important;
+  }
+}
+
+/* ============================================
+   GOOGLE (Busca)
+   ============================================ */
+@-moz-document domain("google.com") {
+  /* Fundos gerais */
+  html, body, #main, #cnt, #rcnt, #center_col, #search, #rso,
+  .MjjYud, .g, .yuRUbf, .hlcw0c, .N54PNb, #searchform, 
+  #top_nav, #hdtb-msb, .crJ18e, footer, #footcnt, .fbar, 
+  [role="contentinfo"], .o3j99, .TFQHme, .UUJdrf,
+  .L3eUgb, .sfbg, .mnr-c, .s8bAkb, .appbar,
+  #hdtb, .hdtb-mitem, .zItAnd, .T47uwc {
+    background-color: var(--rose-bg) !important;
+    background-image: none !important;
+  }
+
+  footer *, #footcnt *, .fbar * { color: var(--rose-text-muted) !important; }
+
+  /* --- Barra de pesquisa (Homepage + Resultados) --- */
+  .RNNXgb {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    box-shadow: 0 2px 8px var(--rose-shadow) !important;
+  }
+
+  /* Container externo não precisa de borda/sombra própria */
+  .A8SBwf {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Campo de digitação (textarea/input) — Mantém as margens e bordas nativas para alinhar o cursor perfeitamente no centro */
+  textarea.gLFyf, input.gLFyf, .gLFyf {
+    color: var(--rose-text) !important;
+    background-color: transparent !important;
+  }
+
+  /* Estado hover/focus da barra */
+  .RNNXgb:hover, .sbfc .RNNXgb, .emcav .RNNXgb {
+    background-color: var(--rose-white) !important;
+    border-color: var(--rose-bg-soft) !important;
+    box-shadow: 0 2px 12px var(--rose-shadow) !important;
+  }
+
+  /* Ícones e containers internos da barra */
+  .dRYYxd, .SDkEP, .FcQxmf, .WwJHVc, .MGe1Ac {
+    background-color: transparent !important;
+    background: transparent !important;
+  }
+
+  /* Dropdown de sugestões do Google */
+  .aajZCb, .UUbT9, .erkvQe, .sbdd_a, .sbdd_b {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-top: none !important;
+    border-radius: 0 0 24px 24px !important;
+    box-shadow: 0 4px 12px var(--rose-shadow) !important;
+  }
+
+  .sbct:hover, .sbl1 .sbct, .aajZCb li:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* Botão Modo IA */
+  .plR5qb .bvUkz {
+    background: var(--rose-pill) !important;
+  }
+  .plR5qb .PD3zdc, .plR5qb .lTxWLe {
+    color: var(--rose-text) !important;
+  }
+
+  /* --- Botões "Pesquisa Google" / "Estou com sorte" --- */
+  .FPdoLc input[type="submit"], .RNmpXc input[type="submit"],
+  input.gNO89b, input.RNmpXc, .lJ9FBc input,
+  .FPdoLc center input {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+    padding: 10px 24px !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+    transition: background-color var(--rose-transition) !important;
+  }
+
+  .FPdoLc input[type="submit"]:hover, .RNmpXc input[type="submit"]:hover,
+  input.gNO89b:hover, .lJ9FBc input:hover {
+    background-color: var(--rose-pill-hover) !important;
+    transform: scale(1.02);
+  }
+
+  /* --- Chips de navegação (Tudo, Imagens, Vídeos, Notícias...) --- */
+  #hdtb-msb, #hdtb, .crJ18e, .jfN4p,
+  div.YmvwI, .MUFPAc, .T47uwc, .zItAnd {
+    background-color: var(--rose-bg) !important;
+    border-color: var(--rose-border) !important;
+  }
+
+  /* Chips individuais */
+  .hdtb-mitem a, .hdtb-mitem div,
+  .MUFPAc a, .T47uwc a, .zItAnd a,
+  div.YmvwI a {
+    color: var(--rose-text) !important;
+    background-color: transparent !important;
+    border-radius: 999px !important;
+    transition: background-color var(--rose-transition) !important;
+  }
+
+  .hdtb-mitem a:hover, .MUFPAc a:hover,
+  .T47uwc a:hover, .zItAnd a:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* Chip selecionado/ativo */
+  .hdtb-mitem.hdtb-msel,
+  .hdtb-mitem.hdtb-msel a,
+  .hdtb-mitem.hdtb-msel div,
+  .MUFPAc [aria-selected="true"],
+  .T47uwc [aria-current],
+  .zItAnd [aria-selected="true"],
+  div.YmvwI [aria-selected="true"] {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border-radius: 999px !important;
+    font-weight: 600 !important;
+  }
+
+  /* Textos de resultados */
+  h3, .LC20lb { color: var(--rose-accent) !important; }
+  .VwiC3b, .MUxGbd { color: var(--rose-text-secondary) !important; }
+  cite, .iUh30 { color: var(--rose-text-muted) !important; }
+
+  /* Links de resultados */
+  a h3, a .LC20lb { color: var(--rose-accent) !important; }
+  a:hover h3, a:hover .LC20lb { color: var(--rose-accent-hover) !important; }
+}
+
+/* ============================================
+   YOUTUBE - DESIGN FINALIZADO E SEM BUGS
+   ============================================ */
+@-moz-document domain("youtube.com") {
+  html, html[dark], html[system-icons] {
+    --yt-spec-base-background: var(--rose-bg) !important;
+    --yt-spec-raised-background: var(--rose-bg) !important;
+    --yt-spec-menu-background: var(--rose-white) !important;
+    --yt-spec-general-background-a: var(--rose-bg) !important;
+    --yt-spec-general-background-b: var(--rose-bg) !important;
+    --yt-spec-general-background-c: var(--rose-bg) !important;
+    --yt-spec-badge-chip-background: var(--rose-pill) !important;
+    --yt-spec-text-primary: var(--rose-text) !important;
+    --yt-spec-text-secondary: var(--rose-text-secondary) !important;
+    --yt-spec-text-disabled: var(--rose-text-muted) !important;
+    --yt-spec-10-percent-layer: var(--rose-pill) !important;
+    --yt-spec-wordmark-text: var(--rose-text) !important;
+    --yt-spec-icon-active-other: var(--rose-text) !important;
+    --yt-spec-icon-inactive: var(--rose-text-muted) !important;
+    --yt-spec-brand-button-background: var(--rose-bg-strong) !important;
+    --yt-spec-call-to-action: var(--rose-accent) !important;
+    --yt-spec-suggested-action: var(--rose-pill) !important;
+    --yt-spec-touch-response: var(--rose-pill-hover) !important;
+  }
+
+  html, body, ytd-app, #content.ytd-app, #page-manager,
+  ytd-browse, ytd-browse#browse, #primary, #secondary,
+  #contents.ytd-rich-grid-renderer, ytd-two-column-browse-results-renderer,
+  tp-yt-app-drawer, #guide, #guide-content, #guide-inner-content,
+  ytd-mini-guide-renderer, ytd-masthead, #masthead-container,
+  #container.ytd-masthead, ytd-watch-flexy, #below, #below.ytd-watch-flexy,
+  #primary-inner, #secondary-inner, #meta, #meta-contents, #description, 
+  #description-inline-expander, ytd-watch-metadata, #actions, #menu-container, 
+  #top-row, #owner, ytd-comments, #comments, #sections,
+  ytd-item-section-renderer, ytd-engagement-panel-section-list-renderer,
+  #related, ytd-watch-next-secondary-results-renderer,
+  ytd-video-owner-renderer, tp-yt-paper-dialog {
+    background-color: var(--rose-bg) !important;
+    background-image: none !important;
+  }
+
+  /* 1. REMOVE O BLUR/FUNDO CINZA AO CLICAR NA PESQUISA */
+  #scrim.ytd-app, 
+  div#background.ytd-searchbox,
+  #cinematics-container, #cinematics, canvas#cinematics,
+  .ytp-ambient-mode-overlay, ytd-watch-flexy [id*="cinematics" i] {
+    display: none !important;
+  }
+
+  /* 2. PROTEÇÃO ABSOLUTA DO PLAYER (Mantém os controles do vídeo originais) */
+  #movie_player, .html5-video-player, ytd-player, #player-container-inner {
+    background-color: #000 !important;
+  }
+  .ytp-gradient-top, .ytp-gradient-bottom, .ytp-chrome-top, .ytp-chrome-bottom {
+    background-color: transparent !important;
+  }
+
+  ytd-watch-metadata *:not(.ytp-caption-segment):not(.captions-text),
+  #meta-contents *, #description *, #comments *, ytd-comment-renderer *,
+  #below *:not(#movie_player):not(#movie_player *), #related *, 
+  ytd-compact-video-renderer *, ytd-video-owner-renderer *, #video-title {
+    color: var(--rose-text) !important;
+  }
+  
+  .ytp-caption-segment, .captions-text, .ytp-caption-window-container,
+  .ytp-chrome-controls, .ytp-time-display, .ytp-menuitem {
+    color: #ffffff !important;
+    background-color: inherit !important;
+  }
+
+  /* 3. BARRA DE PESQUISA PERFEITA */
+  ytd-searchbox {
+    display: flex !important;
+  }
+  
+  ytd-searchbox #container.ytd-searchbox,
+  ytd-searchbox[has-focus] #container.ytd-searchbox {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 40px 0 0 40px !important;
+    color: var(--rose-text) !important;
+    padding-left: 15px !important;
+    box-shadow: inset 0 2px 4px var(--rose-shadow) !important;
+  }
+  
+  ytd-searchbox input#search,
+  ytd-searchbox[has-focus] input#search {
+    background-color: transparent !important;
+    color: var(--rose-text) !important;
+  }
+  
+  ytd-searchbox #search-icon-legacy {
+    background-color: var(--rose-bg-strong) !important;
+    border: 1px solid var(--rose-bg-strong) !important;
+    border-left: none !important;
+    border-radius: 0 40px 40px 0 !important;
+    width: 65px !important;
+    cursor: pointer !important;
+    transition: background-color var(--rose-transition);
+  }
+  
+  ytd-searchbox #search-icon-legacy yt-icon {
+    color: var(--rose-text-on-accent) !important;
+  }
+  
+  ytd-searchbox #search-icon-legacy:hover {
+    background-color: var(--rose-bg-soft) !important;
+    border-color: var(--rose-bg-soft) !important;
+  }
+
+  /* 4. CAIXA DE SUGESTÕES DE PESQUISA DO YOUTUBE (Dropdown) */
+  .sbsb_a, .sbdd_b {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 0 0 var(--rose-radius) var(--rose-radius) !important;
+    box-shadow: 0 8px 24px var(--rose-shadow) !important;
+    overflow: hidden !important;
+  }
+  .sbsb_c {
+    color: var(--rose-text) !important;
+    padding: 4px 10px !important;
+  }
+  .sbsb_c:hover, .sbsb_c.gsfs.sbsb_d {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* Botão de microfone flutuante */
+  #voice-search-button, ytd-voice-search-button {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-bg-strong) !important;
+    border: 1px solid var(--rose-border) !important;
+    margin-left: 12px !important;
+  }
+  #voice-search-button:hover, ytd-voice-search-button:hover {
+    background-color: var(--rose-pill) !important;
+  }
+
+  /* 5. CHIPS DA TELA INICIAL (Filtros redondinhos) */
+  yt-chip-cloud-chip-renderer {
+    border-radius: 999px !important; 
+    border: 1px solid var(--rose-border) !important;
+    transition: all var(--rose-transition) !important;
+  }
+  yt-chip-cloud-chip-renderer[selected] {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border-color: var(--rose-bg-strong) !important;
+  }
+  yt-chip-cloud-chip-renderer:not([selected]) {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+  }
+  yt-chip-cloud-chip-renderer:not([selected]):hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* Setas do carrossel de chips */
+  #left-arrow-button, #right-arrow-button {
+    background-color: var(--rose-bg) !important;
+  }
+  #left-arrow-button::after, #right-arrow-button::after {
+    background: none !important; 
+  }
+
+  /* 6. MENU LATERAL EXPANDIDO (Guide) */
+  #guide, #guide-content, #guide-inner-content, 
+  #guide-wrapper, #guide-spacer, #contentContainer,
+  ytd-guide-renderer, #sections, ytd-guide-section-renderer {
+    background-color: var(--rose-bg) !important;
+  }
+
+  ytd-guide-entry-renderer a {
+    color: var(--rose-text) !important;
+    background-color: transparent !important;
+    border-radius: 10px !important;
+    transition: background-color var(--rose-transition) !important;
+  }
+
+  tp-yt-paper-item {
+    color: var(--rose-text) !important;
+    background-color: transparent !important;
+  }
+
+  /* Item ativo da sidebar expandida — rosa suave, não pesado */
+  ytd-guide-entry-renderer[active] a,
+  ytd-guide-entry-renderer[active] tp-yt-paper-item {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  ytd-guide-entry-renderer:not([active]) a:hover {
+    background-color: var(--rose-pill) !important;
+  }
+
+  /* 7. MINI-GUIDE (Sidebar colapsada com ícones) */
+  ytd-mini-guide-renderer {
+    background-color: var(--rose-bg) !important;
+  }
+
+  ytd-mini-guide-entry-renderer {
+    background-color: transparent !important;
+    color: var(--rose-text) !important;
+  }
+
+  ytd-mini-guide-entry-renderer a {
+    background-color: transparent !important;
+    color: var(--rose-text-secondary) !important;
+    border-radius: 10px !important;
+    transition: background-color var(--rose-transition) !important;
+  }
+
+  /* Item ativo da mini-guide — rosa suave, NÃO forte */
+  ytd-mini-guide-entry-renderer[active] a,
+  ytd-mini-guide-entry-renderer[is-active] a,
+  ytd-mini-guide-entry-renderer[aria-selected="true"] a {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  ytd-mini-guide-entry-renderer:not([active]):not([is-active]) a:hover {
+    background-color: var(--rose-pill) !important;
+  }
+
+  /* Labels e ícones da sidebar e mini-guide */
+  ytd-mini-guide-entry-renderer .title,
+  ytd-mini-guide-entry-renderer .guide-icon,
+  ytd-guide-entry-renderer .title,
+  ytd-guide-entry-renderer .guide-icon {
+    color: var(--rose-text) !important;
+  }
+
+  /* Separadores da sidebar */
+  ytd-guide-section-renderer #guide-section-title {
+    color: var(--rose-text-muted) !important;
+  }
+
+  ytd-guide-section-renderer:not(:first-child) {
+    border-top: 1px solid var(--rose-border) !important;
+    padding-top: 12px !important;
+    margin-top: 12px !important;
+  }
+}
+
+/* ============================================
+   INSTAGRAM - TEMA ROSA ELEGANTE (2026)
+   ============================================ */
+@-moz-document domain("instagram.com") {
+  :root, html, body {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* Container principal */
+  .x9f619, .x78zum5, .xdt5ytf, .x1n2onr6, .x1ja2u2z,
+  [data-testid="main-container"], [data-testid="main-feed"] {
+    background-color: var(--rose-bg) !important;
+  }
+
+  /* Sidebar lateral de navegação */
+  .x1c74tu6, .x1v7wizp, .x1w55rbo, .xa3vuyk, .xuoj239, .xee5nap, .xh8yej3,
+  [data-testid="sidebar"], nav[role="navigation"] {
+    background-color: var(--rose-bg) !important;
+    border-right: 1px solid var(--rose-border) !important;
+  }
+
+  /* Header principal */
+  header, .x1uvtmcs, .x4k7w5x, .x1h91t0o, .x1beo9mf,
+  [data-testid="header"] {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+
+  /* Área principal de conteúdo */
+  .x1cy8zhl, .x9f619, .x78zum5, .xdt5ytf, .x1gvbg2u, .x1qughib,
+  [data-testid="content"], [data-testid="feed"] {
+    background-color: var(--rose-bg) !important;
+  }
+
+  /* Cards de posts */
+  article, .x1ga7v0g, .x16uus16, .xbiv7yw, .x1uhb9sk, .x1plvlek, .xryxfnj,
+  [data-testid="post"], [data-testid="feed-item"] {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 4px 12px var(--rose-shadow) !important;
+  }
+
+  /* Header dos posts */
+  .x1c4vz4f, .x2lah0s, .x1q0g3np, .xqjyukv, .x1qjc9v5, .x1oa3qoh,
+  [data-testid="post-header"] {
+    background-color: transparent !important;
+  }
+
+  /* Imagens e vídeos (preservar cores originais) */
+  img, video, canvas {
+    background-color: transparent !important;
+    filter: none !important;
+  }
+
+  /* SVGs e ícones - preservar cores originais */
+  svg {
+    background-color: transparent !important;
+    filter: none !important;
+  }
+
+  /* Links - manter cores originais para não quebrar navegação */
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+  a:hover {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  /* Botões específicos - apenas botões de ação, não links */
+  button[type="submit"], button[type="button"], button[class*="Button" i] {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+    transition: all var(--rose-transition) !important;
+  }
+  button[type="submit"]:hover, button[type="button"]:hover, button[class*="Button" i]:hover {
+    background-color: var(--rose-pill-hover) !important;
+    transform: scale(1.02);
+  }
+
+  /* Inputs e campos de texto */
+  input, textarea, [contenteditable="true"] {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  input:focus, textarea:focus, [contenteditable="true"]:focus {
+    outline: none !important;
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 3px var(--rose-pill) !important;
+  }
+
+  /* Títulos e textos - mais específicos */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--rose-text) !important;
+  }
+
+  /* Textos dentro de posts e cards */
+  article p, article span, .x1c4vz4f p, .x2lah0s p,
+  .x1c4vz4f span, .x2lah0s span, .x1ga7v0g p, .x1ga7v0g span {
+    color: var(--rose-text) !important;
+  }
+
+  /* Textos secundários e metadados */
+  [class*="time" i], [class*="timestamp" i], [class*="meta" i],
+  .x1c4vz4f span[class*="x1" i], .x2lah0s span[class*="x1" i] {
+    color: var(--rose-text-secondary) !important;
+  }
+
+  /* Ícones de navegação (apenas os da sidebar) */
+  .x1c74tu6 svg, .x1v7wizp svg, .x1w55rbo svg {
+    color: var(--rose-text) !important;
+  }
+
+  /* Modais e popups */
+  [role="dialog"], [role="menu"], [role="listbox"] {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 24px var(--rose-shadow) !important;
+  }
+
+  /* Stories */
+  .x1w55rbo, .xa3vuyk, .xuoj239 {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 12px !important;
+  }
+
+  /* Scrollbar personalizada */
+  ::-webkit-scrollbar {
+    width: 8px !important;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--rose-bg) !important;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--rose-bg-soft) !important;
+    border-radius: 4px !important;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--rose-bg-strong) !important;
+  }
+
+  /* Seleção de texto */
+  ::selection {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+  }
+
+  /* Notificações e badges */
+  [class*="notification" i], [class*="badge" i] {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+  }
+
+  /* Tabs e navegação */
+  [role="tab"], [role="tablist"] {
+    background-color: var(--rose-bg) !important;
+  }
+  [role="tab"][aria-selected="true"] {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* Separadores */
+  hr, [role="separator"] {
+    border-color: var(--rose-border) !important;
+  }
+}
+
+/* ============================================
+   OFFICE ONLINE (Word, Excel, OneNote)
+   ============================================ */
+@-moz-document domain("office.com"), domain("live.com"), domain("sharepoint.com"), domain("onenote.com") {
+  :root, html, body {
+    --neutralLighterAlt: var(--rose-bg) !important;
+    --neutralLighter: var(--rose-white) !important;
+    --neutralLight: var(--rose-bg) !important;
+    --neutralQuaternaryAlt: var(--rose-border) !important;
+    --neutralPrimary: var(--rose-text) !important;
+    --neutralSecondary: var(--rose-text-secondary) !important;
+    --neutralTertiary: var(--rose-text-muted) !important;
+    --themePrimary: var(--rose-accent) !important;
+    --themeSecondary: var(--rose-accent-hover) !important;
+    --themeDarkAlt: var(--rose-bg-strong) !important;
+    --themeDark: var(--rose-bg-strong) !important;
+    
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* Headers, backgrounds estruturais */
+  #WacFrame, .ContextualTabs, .ribbon, #s4-workspace, #s4-bodyContainer,
+  [role="menubar"], [data-testid="Header"] {
+    background-color: var(--rose-bg) !important;
+  }
+
+  /* Header principal superior (logo, pesquisa) */
+  #O365_NavHeader, [data-testid="NavBar"],
+  header[role="banner"] {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+
+  /* Ícones e links do header */
+  .o365cs-nav-bposLogo, .o365button,
+  [data-testid="header-logo"] {
+    color: var(--rose-text) !important;
+  }
+  
+  /* Área de edição (página branca para não atrapalhar a visão) */
+  .WACViewPanel, #WACViewPanel, .PageContent, .OutlineElement, #PageContentContainer,
+  [data-testid="editor-pane"] {
+    background-color: #FFFFFF !important;
+    box-shadow: 0 4px 12px var(--rose-shadow) !important;
+  }
+}
+
+/* ============================================
+   GOOGLE GEMINI
+   ============================================ */
+@-moz-document domain("gemini.google.com") {
+  /* ============================================
+     GEMINI - TEMA ROSA (DOM real 2026)
+     ============================================ */
+
+  /* Fundo global */
+  :root, html, body, .theme-host, .lm-component-theme, chat-app-orchestrator {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ========== LAYOUT ========== */
+  .sfc-layout-container, .sfc-main-content, .sfc-sidebar {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ========== HEADER / ONE BAR ========== */
+  .boqOnegoogleliteOgbOneGoogleBar,
+  [class^="gb_"], [class*=" gb_"] {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* Modo switch */
+  .mode-switch-button, .gds-mode-switch-button {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  .mode-switch-button:hover, .gds-mode-switch-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .gds-mode-switch-menu {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 24px var(--rose-shadow) !important;
+  }
+
+  /* ========== SIDEBAR ========== */
+  .project-sidenav-container, .gds-sidenav-list, .gds-embedded-menu {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+  .bot-row-container {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    transition: all var(--rose-transition) !important;
+  }
+  .bot-row-container:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .bot-title {
+    color: var(--rose-text) !important;
+  }
+  .history-button {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  .history-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .project-create-button {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border-radius: 999px !important;
+  }
+
+  /* ========== ÁREA DE INPUT ========== */
+  .initial-input-area, .initial-input-area-container,
+  .full-width-input, .new-input-ui {
+    background-color: var(--rose-bg) !important;
+  }
+  rich-textarea, .ql-editor {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 2px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 4px 12px var(--rose-shadow) !important;
+  }
+  rich-textarea:focus-within, .ql-editor:focus {
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 3px var(--rose-pill) !important;
+  }
+  .ql-blank::before {
+    color: var(--rose-text-muted) !important;
+  }
+
+  /* Ícones do input */
+  .send-icon, .speech-icon, .upload-icon, .button-icon, .button-icon-wrapper {
+    color: var(--rose-text) !important;
+    fill: var(--rose-text) !important;
+  }
+  .button-icon-wrapper {
+    border-radius: 999px !important;
+    transition: all var(--rose-transition) !important;
+  }
+  .button-icon-wrapper:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ========== MENSAGENS ========== */
+  response-element {
+    background-color: transparent !important;
+  }
+  .text-container {
+    color: var(--rose-text) !important;
+  }
+
+  /* Prompt do usuário - pill rosa claro */
+  .instruction-bg, .user-prompt-chip {
+    background-color: var(--rose-pill) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* Ações abaixo do prompt */
+  .instruction-actions-container {
+    background-color: transparent !important;
+  }
+  .on-hover-button {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+    transition: all var(--rose-transition) !important;
+  }
+  .on-hover-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ========== BOTÕES DE AÇÃO (copiar, etc) ========== */
+  .bard-copy-action-visited-styles {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ========== CODE / MATH / TABLES ========== */
+  .code-block, .math-block, .table-block-component {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ========== IMAGENS GERADAS ========== */
+  .generated-images-container, .image-gallery {
+    background-color: var(--rose-bg) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .single-large-image {
+    border-radius: var(--rose-radius) !important;
+  }
+  .carousel-dots {
+    color: var(--rose-text) !important;
+  }
+
+  /* ========== LOADING / STREAMING ========== */
+  .loading, .loader, .loader-cell, .loader-grid {
+    background-color: var(--rose-bg) !important;
+  }
+  .gem-shimmer-active {
+    background: linear-gradient(
+      90deg,
+      var(--rose-pill) 0%,
+      var(--rose-pill-hover) 50%,
+      var(--rose-pill) 100%
+    ) !important;
+  }
+  .done-generating {
+    opacity: 1 !important;
+  }
+
+  /* ========== DIALOGS / MODAIS ========== */
+  .gem-dialog-container, .gem-dialog-title-and-content-container,
+  .cdk-overlay-pane, .cdk-dialog-container {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 24px var(--rose-shadow) !important;
+    color: var(--rose-text) !important;
+  }
+  .gem-dialog-title {
+    color: var(--rose-text) !important;
+  }
+  .gem-dialog-content {
+    color: var(--rose-text-secondary) !important;
+  }
+  .gem-dialog-actions button {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  .gem-dialog-actions button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ========== MATERIAL OVERRIDES ========== */
+  .mat-mdc-dialog-surface, .mat-mdc-card {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .mat-mdc-menu-panel, .mat-mdc-menu-content {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .mat-mdc-menu-item {
+    color: var(--rose-text) !important;
+  }
+  .mat-mdc-menu-item:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .mat-mdc-icon-button {
+    color: var(--rose-text) !important;
+  }
+  .mat-mdc-snack-bar-container {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .mat-mdc-tooltip-surface {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border-radius: 8px !important;
+  }
+
+  /* ========== TYPOGRAPHY GDS ========== */
+  [class^="gds-body-"], [class^="gds-title-"],
+  [class^="gds-headline-"], [class^="gds-display-"] {
+    color: var(--rose-text) !important;
+  }
+  [class^="gds-label-"] {
+    color: var(--rose-text-secondary) !important;
+  }
+
+  /* ========== PICKER ========== */
+  .google-picker, .picker-api-container {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* ========== SCROLLBAR ========== */
+  ::-webkit-scrollbar {
+    width: 8px !important;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--rose-bg) !important;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--rose-bg-soft) !important;
+    border-radius: 4px !important;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--rose-bg-strong) !important;
+  }
+
+  /* ========== SELEÇÃO ========== */
+  ::selection {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+  }
+}
+
+/* ============================================
+   NOTEBOOKLM - TEMA ROSA (DOM real 2026)
+   ============================================ */
+@-moz-document domain("notebooklm.google.com") {
+  :root, html, body {
+    --md-sys-color-primary: var(--rose-bg-strong) !important;
+    --md-sys-color-on-primary: var(--rose-text-on-accent) !important;
+    --md-sys-color-primary-container: var(--rose-pill) !important;
+    --md-sys-color-on-primary-container: var(--rose-text) !important;
+    --md-sys-color-secondary: var(--rose-bg-soft) !important;
+    --md-sys-color-on-secondary: var(--rose-text) !important;
+    --md-sys-color-secondary-container: var(--rose-pill-hover) !important;
+    --md-sys-color-on-secondary-container: var(--rose-text) !important;
+    --md-sys-color-tertiary: var(--rose-accent) !important;
+    --md-sys-color-on-tertiary: var(--rose-text-on-accent) !important;
+    --md-sys-color-background: var(--rose-bg) !important;
+    --md-sys-color-on-background: var(--rose-text) !important;
+    --md-sys-color-surface: var(--rose-white) !important;
+    --md-sys-color-on-surface: var(--rose-text) !important;
+    --md-sys-color-surface-variant: var(--rose-pill) !important;
+    --md-sys-color-on-surface-variant: var(--rose-text) !important;
+    --md-sys-color-outline: var(--rose-border) !important;
+    --md-sys-color-outline-variant: var(--rose-border) !important;
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ========== FUNDO GLOBAL ========== */
+  body, main, .mat-sidenav-container, .mat-drawer-container,
+  .chat-panel, .my-projects-container {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ========== DASHBOARD (Home) ========== */
+  .my-projects-container project-button,
+  .project-button-box {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    transition: all var(--rose-transition) !important;
+  }
+  .project-button-box:hover {
+    background-color: var(--rose-pill-hover) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--rose-shadow) !important;
+  }
+  .project-button-title {
+    color: var(--rose-text) !important;
+  }
+  .project-button-description {
+    color: var(--rose-text-secondary) !important;
+  }
+  .projects-header, .notebook-count-label {
+    color: var(--rose-text) !important;
+  }
+  .notebook-search-input {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  .create-new-action-button,
+  button[aria-label="Create new notebook"],
+  button[aria-label*="Create new"] {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border-radius: 999px !important;
+    border: none !important;
+  }
+  .create-new-action-button:hover {
+    background-color: var(--rose-accent) !important;
+  }
+
+  /* ========== HEADER ========== */
+  header, .mat-toolbar {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ========== SOURCE SIDEBAR (Left) ========== */
+  .source-panel {
+    background-color: var(--rose-white) !important;
+    border-right: 1px solid var(--rose-border) !important;
+    color: var(--rose-text) !important;
+  }
+  .source-panel.panel-collapsed {
+    background-color: var(--rose-bg) !important;
+  }
+  .single-source-container {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    transition: all var(--rose-transition) !important;
+  }
+  .single-source-container:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  a[class*="sidebar-link_"] {
+    color: var(--rose-text) !important;
+  }
+  a[class*="sidebar-link_"]:hover {
+    color: var(--rose-accent) !important;
+  }
+  .cover-subtitle-source-count {
+    color: var(--rose-text-secondary) !important;
+  }
+  .add-source-button {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+    transition: all var(--rose-transition) !important;
+  }
+  .add-source-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ========== CHAT / DISCUSSION (Center) ========== */
+  .chat-panel {
+    background-color: var(--rose-bg) !important;
+  }
+
+  /* Respostas do assistente */
+  .to-user-container {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    color: var(--rose-text) !important;
+    padding: 16px !important;
+    margin-bottom: 16px !important;
+  }
+  .message-text-content {
+    color: var(--rose-text) !important;
+  }
+
+  /* Input de chat */
+  textarea.query-box-input, .query-input {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 2px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 4px 12px var(--rose-shadow) !important;
+  }
+  textarea.query-box-input:focus, .query-input:focus {
+    outline: none !important;
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 3px var(--rose-pill) !important;
+  }
+
+  /* Botão de envio do chat */
+  button.submit-button {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border: none !important;
+    border-radius: 999px !important;
+    transition: all var(--rose-transition) !important;
+  }
+  button.submit-button:hover {
+    background-color: var(--rose-accent) !important;
+    transform: scale(1.05);
+  }
+
+  /* ========== NOTE EDITOR (Quill) ========== */
+  .editor.ql-container, .ql-editor {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 2px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .ql-editor[contenteditable="true"]:focus {
+    outline: none !important;
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 3px var(--rose-pill) !important;
+  }
+  .ql-blank::before {
+    color: var(--rose-text-muted) !important;
+  }
+  rich-text-editor.note-editor, note-editor, form.note-form {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .note-content {
+    color: var(--rose-text) !important;
+  }
+
+  /* ========== NOTE TITLE ========== */
+  .note-title-container {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+  input[aria-label="note title editable"],
+  .note-header__editable-title,
+  input.note-header__editable-title {
+    background-color: transparent !important;
+    color: var(--rose-text) !important;
+    border: none !important;
+    font-weight: 600 !important;
+  }
+  input[aria-label="note title editable"]:focus,
+  .note-header__editable-title:focus {
+    outline: none !important;
+    border-bottom: 2px solid var(--rose-bg-strong) !important;
+  }
+  .note-header__notices {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  /* ========== DOCUMENT VIEWER (labs-tailwind) ========== */
+  labs-tailwind-doc-viewer,
+  labs-tailwind-structural-element-view-v2,
+  element-list-renderer {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    padding: 16px !important;
+  }
+
+  /* Headings dentro do viewer */
+  .heading1, .heading2, .heading3, .paragraph, .normal {
+    color: var(--rose-text) !important;
+  }
+
+  /* ========== STUDIO PANEL (Right) ========== */
+  .studio-panel {
+    background-color: var(--rose-white) !important;
+    border-left: 1px solid var(--rose-border) !important;
+    color: var(--rose-text) !important;
+  }
+  .artifact-library, .artifact-library-container {
+    background-color: transparent !important;
+  }
+  .artifact-library-header {
+    color: var(--rose-text) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+  artifact-library-item {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    transition: all var(--rose-transition) !important;
+  }
+  artifact-library-item:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* Botões de criar artefacto */
+  .create-artifact-button-container, basic-create-artifact-button {
+    background-color: var(--rose-pill) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    transition: all var(--rose-transition) !important;
+  }
+  .create-artifact-button-container:hover, basic-create-artifact-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .create-label-container, .option-icon {
+    color: var(--rose-text) !important;
+  }
+
+  /* Audio Overview */
+  .artifact-action-button {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  .artifact-action-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ========== ADD SOURCE DIALOG ========== */
+  [role="dialog"], mat-dialog-container, .mat-dialog-container {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 32px var(--rose-shadow) !important;
+  }
+  mat-dialog-actions, .mat-dialog-content {
+    color: var(--rose-text) !important;
+  }
+
+  /* Drop zone buttons (YouTube, Website, Text, Upload) */
+  button.drop-zone-icon-button {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    transition: all var(--rose-transition) !important;
+  }
+  button.drop-zone-icon-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* Inputs dentro do dialog */
+  textarea[placeholder="Paste any links"],
+  textarea[placeholder="Paste text here"],
+  textarea[aria-label="Enter URLs"],
+  textarea.text-area:not(.query-box-input) {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 2px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  textarea[placeholder="Paste any links"]:focus,
+  textarea[placeholder="Paste text here"]:focus {
+    outline: none !important;
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 3px var(--rose-pill) !important;
+  }
+
+  /* ========== INPUTS / TEXTAREA GENÉRICOS ========== */
+  input, textarea, .mat-input-element, mat-form-field {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 8px !important;
+  }
+  input:focus, textarea:focus, .mat-input-element:focus {
+    outline: none !important;
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 3px var(--rose-pill) !important;
+  }
+
+  /* ========== BOTÕES (apenas acções específicas, NÃO todos os botões) ========== */
+  .mat-raised-button:not([class*="icon"]),
+  .mat-stroked-button:not([class*="icon"]),
+  .mdc-button--raised:not([class*="icon"]),
+  button.submit-button,
+  button.drop-zone-icon-button,
+  .create-new-action-button {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+    transition: all var(--rose-transition) !important;
+  }
+  .mat-raised-button:hover:not([class*="icon"]),
+  .mat-stroked-button:hover:not([class*="icon"]),
+  button.submit-button:hover,
+  button.drop-zone-icon-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .mat-primary, .mat-raised-button.mat-primary,
+  button[color="primary"] {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+  }
+  .mat-primary:hover, .mat-raised-button.mat-primary:hover {
+    background-color: var(--rose-bg-soft) !important;
+  }
+
+  /* Icon buttons — manter transparentes, sem rosa forçado */
+  button.mat-mdc-icon-button, button.mdc-icon-button,
+  button.mat-icon-button, button[mat-icon-button],
+  [class*="icon-button"] {
+    background-color: transparent !important;
+    border: none !important;
+    color: var(--rose-text) !important;
+  }
+  button.mat-mdc-icon-button:hover, button.mdc-icon-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ========== LINKS (apenas <a>, NÃO botões Material) ========== */
+  a:not([class*="button"]):not([class*="btn"]) {
+    color: var(--rose-accent) !important;
+  }
+  a:not([class*="button"]):not([class*="btn"]):hover {
+    color: var(--rose-accent-hover) !important;
+    text-decoration: underline !important;
+  }
+
+  /* ========== TABS ========== */
+  .mat-tab-group, .mat-tab-header, .mat-tab-label,
+  .mat-mdc-tab-list, .mdc-tab {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+  .mat-tab-label.mat-tab-label-active,
+  .mdc-tab--active {
+    color: var(--rose-accent) !important;
+    border-bottom: 2px solid var(--rose-accent) !important;
+  }
+
+  /* ========== ÍCONES ========== */
+  .mat-icon, mat-icon, .google-symbols, .material-symbols-outlined {
+    color: var(--rose-text) !important;
+  }
+
+  /* ========== CARDS ========== */
+  .mat-card, .mat-card-content, .mat-card-title,
+  .mat-card-subtitle, .mat-card-actions {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* ========== CHIPS ========== */
+  .mat-chip, .mat-standard-chip, mat-chip, mat-mdc-chip {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+  }
+  .mat-chip.mat-chip-selected, mat-chip[selected] {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+  }
+
+  /* ========== LISTAS ========== */
+  .mat-list, .mat-list-item, .mat-nav-list {
+    background-color: transparent !important;
+    color: var(--rose-text) !important;
+  }
+  .mat-list-item:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ========== PROGRESS / SPINNER ========== */
+  .mat-progress-bar, .mat-spinner circle,
+  [role="progressbar"] {
+    stroke: var(--rose-bg-strong) !important;
+    color: var(--rose-bg-strong) !important;
+  }
+
+  /* ========== CITATIONS ========== */
+  button.citation-marker,
+  button.xap-inline-dialog.citation-marker {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 4px !important;
+  }
+  button.citation-marker:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .highlighted {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ========== OVERLAYS / BACKDROP ========== */
+  .cdk-overlay-pane, .cdk-overlay-container {
+    background-color: transparent !important;
+  }
+  .cdk-overlay-dark-backdrop, .cdk-overlay-backdrop {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+  }
+
+  /* ========== SCROLLBAR ========== */
+  ::-webkit-scrollbar {
+    width: 8px !important;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--rose-bg) !important;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--rose-bg-soft) !important;
+    border-radius: 4px !important;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--rose-bg-strong) !important;
+  }
+
+  /* ========== SELEÇÃO ========== */
+  ::selection {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+  }
+
+  /* ========== TOOLTIP ========== */
+  .mat-tooltip, .mat-mdc-tooltip-surface {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border-radius: 8px !important;
+  }
+
+  /* ========== DIVIDER ========== */
+  .mat-divider, hr {
+    border-color: var(--rose-border) !important;
+  }
+}
+
+/* ============================================
+   BING - TEMA ROSA ELEGANTE (2026)
+   ============================================ */
+@-moz-document domain("bing.com"), domain("www.bing.com") {
+  :root, html, body {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* Header principal */
+  #b_header, .b_header {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+
+  /* Logo e área de navegação */
+  .b_logoArea, .b_logo {
+    background-color: transparent !important;
+  }
+
+  /* Caixa de pesquisa - tema rosa elegante */
+  #sb_form, .b_searchbox, .b_searchboxForm {
+    background-color: var(--rose-white) !important;
+    border: 2px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+    box-shadow: 0 4px 12px var(--rose-shadow) !important;
+  }
+
+  /* Campo de input de pesquisa */
+  #sb_form_q {
+    background-color: transparent !important;
+    color: var(--rose-text) !important;
+    border: none !important;
+  }
+  #sb_form_q:focus {
+    outline: none !important;
+  }
+
+  /* Botão de pesquisa - rosa elegante (DOM real: .b_searchboxSubmit) */
+  .b_searchboxSubmit {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border: none !important;
+    border-radius: 0 999px 999px 0 !important;
+    transition: all var(--rose-transition) !important;
+  }
+  .b_searchboxSubmit:hover {
+    background-color: var(--rose-accent) !important;
+    transform: scale(1.05);
+  }
+
+  /* Área de filtros/navegação */
+  .b_scopebar, .b_scopebar ul {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+
+  /* Scope list items (Web, Imagens, Vídeos...) */
+  .b-scopeListItem, [class*="b-scopeListItem"] {
+    background-color: transparent !important;
+  }
+
+  /* Menu de overflow de filtros */
+  .b_sp_over_cont, .b_sp_over_menu {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 24px var(--rose-shadow) !important;
+  }
+  .b_sp_over_item {
+    background-color: transparent !important;
+    color: var(--rose-text) !important;
+  }
+  .b_sp_over_item:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* Links de filtro - manter cores originais */
+  .b_scopebar a, .b_scopebar li a, [class*="b-scopeListItem"] a {
+    color: inherit !important;
+    background-color: transparent !important;
+    border: none !important;
+  }
+  .b_scopebar a:hover, .b_scopebar li a:hover, [class*="b-scopeListItem"] a:hover {
+    color: inherit !important;
+    background-color: transparent !important;
+  }
+  .b_scopebar .b_active a, .b_scopebar li.b_active a, [class*="b-scopeListItem"][class*="b_active"] a {
+    color: inherit !important;
+    border-bottom: inherit !important;
+  }
+
+  /* Área principal de conteúdo */
+  #b_content, .b_content, main {
+    background-color: var(--rose-bg) !important;
+  }
+
+  /* Container de resultados */
+  #b_results, .b_results {
+    background-color: var(--rose-bg) !important;
+  }
+
+  /* Resultados de pesquisa - abordagem conservadora */
+  .b_algo, .b_result, .b_webResult {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    padding: 16px !important;
+    margin-bottom: 16px !important;
+  }
+
+  /* Snippet de resultado (descrição) */
+  .b_caption, .b_caption p {
+    color: var(--rose-text) !important;
+  }
+
+  /* Atribuição (links de fonte) */
+  .b_attribution, .b_attribution a {
+    color: var(--rose-text) !important;
+  }
+
+  /* Legendas de imagem */
+  .b_imgcap_caption, .b_imgcap_main, .b_imgcap_img {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* Deep links nos resultados */
+  .b_vtl_deeplinks {
+    background-color: transparent !important;
+  }
+
+  /* Links gerais - manter cores originais */
+  a, .b_algo a, .b_result a, .b_webResult a {
+    color: inherit !important;
+  }
+  a:hover, .b_algo a:hover, .b_result a:hover, .b_webResult a:hover {
+    color: inherit !important;
+  }
+
+  /* Paginação */
+  .b_pag, .sb_pagF, .sb_pagS, .sb_pagN {
+    background-color: var(--rose-bg) !important;
+  }
+  .b_pag a, .sb_pagF a, .sb_pagS a, .sb_pagN a {
+    color: var(--rose-text) !important;
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 8px !important;
+    transition: all var(--rose-transition) !important;
+  }
+  .b_pag a:hover, .sb_pagF a:hover, .sb_pagS a:hover, .sb_pagN a:hover {
+    background-color: var(--rose-pill-hover) !important;
+    border-color: var(--rose-accent) !important;
+  }
+  .b_pag .sb_pagS, .sb_pagF .sb_pagS, .sb_pagN .sb_pagS {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border-color: var(--rose-bg-strong) !important;
+  }
+
+  /* Sidebar lateral */
+  .b_sidebar, .b_ans, .b_sidebarright {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 2px 8px var(--rose-shadow) !important;
+  }
+
+  /* Cards de informação */
+  .b_entityTP, .b_factrow, .b_wikiRichCard {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* Imagens e vídeos */
+  .b_img, .b_video, .b_imageList {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* Botões (apenas acções principais, NÃO icon buttons de toolbars) */
+  .b_button, .cbtn, .b_searchboxSubmit,
+  input[type="submit"]:not([class*="icon"]) {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+    transition: all var(--rose-transition) !important;
+  }
+  .b_button:hover, .cbtn:hover, .b_searchboxSubmit:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* Inputs */
+  input, textarea {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 8px !important;
+  }
+  input:focus, textarea:focus {
+    outline: none !important;
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 3px var(--rose-pill) !important;
+  }
+
+  /* Ícones (apenas icons de interface, NÃO logos/imagens) */
+  .b_icon, .sb_icon, .b_searchboxForm svg {
+    color: var(--rose-text) !important;
+    fill: var(--rose-text) !important;
+  }
+
+  /* Gaveta de ferramentas de pesquisa */
+  .sb_tool_drawer, .qs_searchBox {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 24px var(--rose-shadow) !important;
+  }
+
+  /* Modais e popups */
+  .b_popup, .b_dropdown, .b_contextMenu {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 24px var(--rose-shadow) !important;
+  }
+
+  /* Tabs */
+  .b_tab, .b_tabGroup {
+    background-color: var(--rose-bg) !important;
+  }
+  .b_tab .b_active, .b_tabGroup .b_active {
+    border-bottom: 2px solid var(--rose-accent) !important;
+    color: var(--rose-accent) !important;
+  }
+
+  /* Scrollbar personalizada */
+  ::-webkit-scrollbar {
+    width: 8px !important;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--rose-bg) !important;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--rose-bg-soft) !important;
+    border-radius: 4px !important;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--rose-bg-strong) !important;
+  }
+
+  /* Seleção de texto */
+  ::selection {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+  }
+
+  /* Separadores */
+  hr, .b_separator {
+    border-color: var(--rose-border) !important;
+  }
+
+  /* Notificações */
+  .b_notification, .b_alert {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 4px 12px var(--rose-shadow) !important;
+  }
+
+  /* Rewards/Medalha */
+  .medal, .points-container {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border-radius: 999px !important;
+  }
+
+  /* Copilot/Chat */
+  .b_copilot, .b_copilot_search, .b_copilot_composer, .b_chat {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* Cards de notícias */
+  .b_newsCard, .b_newsItem {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    transition: all var(--rose-transition) !important;
+  }
+  .b_newsCard:hover, .b_newsItem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--rose-shadow) !important;
+  }
+
+  /* Shopping cards */
+  .b_shoppingCard, .b_productCard {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* Mapas */
+  .b_map, .b_mapContainer {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+}
+
+/* ============================================
+   GOOGLE ACADÊMICO (Google Scholar)
+   ============================================ */
+@-moz-document domain("scholar.google.com"), domain("scholar.google.com.br") {
+  body, #gs_top, #gs_hdr, #gs_bdy, #gs_bdy_ccl, #gs_res_ccl_mid,
+  [role="main"], [role="search"] {
+    background-color: var(--rose-bg) !important;
+  }
+
+  /* Caixa de pesquisa (mesmo estilo do Google normal) */
+  #gs_hdr_tsi, input[name="q"] {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+    box-shadow: 0 2px 8px var(--rose-shadow) !important;
+  }
+
+  /* Botão de lupa de pesquisa */
+  #gs_hdr_tsb, button[type="submit"] {
+    background-color: var(--rose-pill) !important;
+    border-radius: 0 999px 999px 0 !important;
+  }
+
+  /* Resultados da pesquisa (Cards brancos para leitura impecável) */
+  .gs_r, .gs_ri, [data-cid] {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    padding: 16px !important;
+    margin-bottom: 20px !important;
+    box-shadow: 0 2px 8px var(--rose-shadow) !important;
+  }
+
+  /* Sidebar de filtros */
+  #gs_bdy_sb, [role="complementary"] {
+    background-color: transparent !important;
+  }
+
+  /* Links rosas */
+  a, .gs_cta, .gs_fl {
+    color: var(--rose-accent) !important;
+  }
+  a:hover, .gs_cta:hover, .gs_fl:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+}
+
+/* ============================================
+   TWITTER/X - TEMA ROSA
+   ============================================ */
+@-moz-document domain("twitter.com"), domain("x.com") {
+  :root, html, body {
+    --color-primary: var(--rose-bg-strong) !important;
+    --color-primary-hover: var(--rose-bg-soft) !important;
+    --color-secondary: var(--rose-pill) !important;
+    --color-accent: var(--rose-accent) !important;
+    --color-bg: var(--rose-bg) !important;
+    --color-bg-secondary: var(--rose-white) !important;
+    --color-text: var(--rose-text) !important;
+    --color-text-secondary: var(--rose-text-secondary) !important;
+    --color-border: var(--rose-border) !important;
+    
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* Header e navegação */
+  header, [data-testid="TopNavBar"], [role="banner"],
+  .css-1dbjc4n.r-18u37iz.r-1h0bz524, .css-1dbjc4n.r-1qfoi16.r-1e8i3pg {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+
+  /* Sidebar lateral */
+  [data-testid="Sidebar"], [data-testid="primaryColumn"],
+  .css-1dbjc4n.r-1kihuf0.r-13awgt0.r-1wvbge3 {
+    background-color: var(--rose-bg) !important;
+  }
+
+  /* Tweets/Cards */
+  [data-testid="tweet"], article, [role="article"],
+  .css-1dbjc4n.r-1iusvr4.r-16y2uox.r-1777fci,
+  .css-1dbjc4n.r-1iusvr4.r-16y2uox.r-1pn2ns4 {
+    background-color: var(--rose-white) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+
+  /* Botões de acção (curtir, retweet, etc) */
+  [data-testid="like"], [data-testid="retweet"],
+  [data-testid="reply"], [data-testid="share"] {
+    color: var(--rose-text-secondary) !important;
+  }
+
+  [data-testid="like"]:hover, [data-testid="retweet"]:hover,
+  [data-testid="reply"]:hover, [data-testid="share"]:hover {
+    color: var(--rose-accent) !important;
+    background-color: var(--rose-pill) !important;
+    border-radius: 999px !important;
+  }
+
+  /* Links e hashtags */
+  a, [data-testid="tweet"] a, .css-901oao.css-16my406.r-poiln3.r-bcqeeo.r-qvutc0 {
+    color: var(--rose-accent) !important;
+  }
+  a:hover {
+    color: var(--rose-accent-hover) !important;
+    text-decoration: underline !important;
+  }
+
+  /* Caixa de composição de tweet */
+  [data-testid="tweetTextarea"], [role="textbox"],
+  .css-901oao.r-18u37iz.r-1qd0xha.r-a023e6.r-rjixqe.r-bcqeeo {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* Botão principal de tweetar */
+  [data-testid="tweetButtonInline"], [data-testid="tweetButton"] {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border-radius: 999px !important;
+  }
+  [data-testid="tweetButtonInline"]:hover, [data-testid="tweetButton"]:hover {
+    background-color: var(--rose-bg-soft) !important;
+  }
+
+  /* Ícones (apenas ícones de navegação, não paths de imagens) */
+  svg:not([aria-hidden="false"]) {
+    color: var(--rose-text) !important;
+  }
+
+  /* Modais e dropdowns */
+  [role="dialog"], [data-testid="Dropdown"], [data-testid="layers"] {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    box-shadow: 0 8px 24px var(--rose-shadow) !important;
+  }
+
+  /* Trending section */
+  [data-testid="trend"], [aria-label="Timeline: Trending"] {
+    background-color: var(--rose-white) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+}
+
+/* ============================================
+   REDDIT - TEMA ROSA
+   ============================================ */
+@-moz-document domain("reddit.com") {
+  :root, html, body {
+    --color-primary: var(--rose-bg-strong) !important;
+    --color-secondary: var(--rose-pill) !important;
+    --color-accent: var(--rose-accent) !important;
+    --color-bg: var(--rose-bg) !important;
+    --color-bg-secondary: var(--rose-white) !important;
+    --color-text: var(--rose-text) !important;
+    --color-text-secondary: var(--rose-text-secondary) !important;
+    --color-border: var(--rose-border) !important;
+    
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* Header */
+  header, [role="banner"], .reddit-header,
+  [data-testid="reddit-header"] {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+
+  /* Sidebar */
+  [role="complementary"],
+  [data-testid="subreddit-sidebar"] {
+    background-color: var(--rose-white) !important;
+    border-left: 1px solid var(--rose-border) !important;
+  }
+
+  /* Posts/Cards */
+  [data-testid="post-container"], .Post, article,
+  shreddit-post, [data-testid="post"] {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Links e títulos */
+  a {
+    color: var(--rose-accent) !important;
+  }
+  a:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+
+  /* Botões de acção */
+  [data-testid="reddit-button"], [data-testid="create-post"],
+  button[aria-label*="comment" i], button[aria-label*="save" i],
+  button[aria-label*="share" i] {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  [data-testid="reddit-button"]:hover, [data-testid="create-post"]:hover,
+  button[aria-label*="comment" i]:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* Botão de upvote */
+  [data-testid="upvote"], .upvote {
+    color: var(--rose-accent) !important;
+  }
+
+  /* Caixa de comentário */
+  textarea, input[type="text"] {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* Ícones */
+  svg:not([aria-hidden="false"]) {
+    color: var(--rose-text) !important;
+  }
+}
+
+/* ============================================
+   LINKEDIN - TEMA ROSA PROFISSIONAL
+   ============================================ */
+@-moz-document domain("linkedin.com") {
+  :root, html, body {
+    --color-primary: var(--rose-bg-strong) !important;
+    --color-secondary: var(--rose-pill) !important;
+    --color-accent: var(--rose-accent) !important;
+    --color-bg: var(--rose-bg) !important;
+    --color-bg-secondary: var(--rose-white) !important;
+    --color-text: var(--rose-text) !important;
+    --color-text-secondary: var(--rose-text-secondary) !important;
+    --color-border: var(--rose-border) !important;
+    
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* Header */
+  header, .global-nav, .nav__button, .navigation-bar {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+
+  /* Cards de posts */
+  .feed-shared-update-v2,
+  .feed-shared-article, .feed-shared-text,
+  [data-id*="urn:li:activity"] {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* Sidebar de perfil */
+  .pv-profile-details, .pv-text-details__left-panel,
+  .pv-top-card, .pv-profile-section,
+  [data-view-name="profile"] {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* Links */
+  a, .link-without-visited-state {
+    color: var(--rose-accent) !important;
+  }
+  a:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+  /* Botões base — NÃO forçar cor de link em todos */
+  .artdeco-button:not(.artdeco-button--primary):not(.artdeco-button--secondary) {
+    color: var(--rose-text) !important;
+  }
+
+  .artdeco-button--primary {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border-radius: 999px !important;
+  }
+  .artdeco-button--primary:hover {
+    background-color: var(--rose-bg-soft) !important;
+  }
+
+  /* Inputs */
+  input, textarea, .artdeco-text-input {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* Ícones */
+  li-icon, .linkedin-icon {
+    color: var(--rose-text) !important;
+  }
+}
+
+/* ============================================
+   GITHUB - TEMA ROSA PARA DESENVOLVEDORES
+   ============================================ */
+@-moz-document domain("github.com") {
+  :root, html, body {
+    --color-primary: var(--rose-bg-strong) !important;
+    --color-secondary: var(--rose-pill) !important;
+    --color-accent: var(--rose-accent) !important;
+    --color-bg: var(--rose-bg) !important;
+    --color-bg-secondary: var(--rose-white) !important;
+    --color-text: var(--rose-text) !important;
+    --color-text-secondary: var(--rose-text-secondary) !important;
+    --color-border: var(--rose-border) !important;
+    
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* Header */
+  header, [data-testid="header"], .Header, .AppHeader {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+
+  /* Repositórios e cards */
+  .repo-list, .public, .Box, .Box-row,
+  .js-repo-list, .pinned-item-list-item,
+  [data-testid="repo-list-item"] {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* Código (preservar syntax highlighting mas com fundo rosa claro) */
+  .highlight, pre, code, .blob-code, .blob-code-inner,
+  [data-testid="code-block"] {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* Links */
+  a, .Link, .link-gray, .link-gray-dark {
+    color: var(--rose-accent) !important;
+  }
+  a:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+
+  /* Botões */
+  .btn, .Button, [data-testid="button"],
+  input[type="submit"] {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 6px !important;
+  }
+  .btn:hover, .Button:hover, [data-testid="button"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  /* Icon buttons — manter naturais */
+  button.octicon, button[class*="icon"] {
+    background-color: transparent !important;
+    border: none !important;
+  }
+
+  .btn-primary, .Button--primary {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+  }
+  .btn-primary:hover, .Button--primary:hover {
+    background-color: var(--rose-bg-soft) !important;
+  }
+
+  /* Inputs */
+  input, textarea, .form-control {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 6px !important;
+  }
+
+  /* Issues e Pull Requests */
+  .IssueLabel, .label, [data-testid="issue-label"] {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+  }
+
+  /* Ícones */
+  .octicon, .octicon * {
+    color: var(--rose-text) !important;
+    fill: var(--rose-text) !important;
+  }
+}
+
+/* ============================================
+   WHATSAPP WEB - TEMA ROSA PARA CHAT (Atualizado 2026)
+   ============================================ */
+@-moz-document domain("web.whatsapp.com") {
+  .light, :root, html.light, body.light {
+    --outgoing-background: var(--rose-pill-hover) !important;
+    --incoming-background: var(--rose-pill) !important;
+  }
+
+  /* NÃO forçar fundo no body/html — wallpaper precisa transparecer */
+  html, body {
+    background: transparent !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ── Sidebar (chat list) ── */
+  [data-testid="chat-list"], [data-testid="chatlist-header"] {
+    background: var(--rose-bg) !important;
+    border-right: 1px solid var(--rose-border) !important;
+  }
+
+  /* Lista de conversas */
+  [data-testid^="list-item"], [role="row"] {
+    background: var(--rose-white) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+  [data-testid^="list-item"]:hover {
+    background: var(--rose-pill-hover) !important;
+  }
+  [data-testid="cell-frame-container"] {
+    background: transparent !important;
+  }
+  [data-testid="cell-frame-title"],
+  [data-testid="cell-frame-title"] span {
+    color: var(--rose-text) !important;
+  }
+  [data-testid="cell-frame-primary-detail"],
+  [data-testid="cell-frame-secondary"],
+  [data-testid="last-msg-status"],
+  [data-testid="last-msg-status"] span {
+    color: var(--rose-text-secondary) !important;
+  }
+
+  /* ── Painel de boas-vindas ── */
+  [data-testid="intro-panel"] {
+    background: var(--rose-white) !important;
+  }
+
+  /* ── CONVERSATION PANEL ── WALLPAPER VISÍVEL */
+  #app, .app-wrapper-web,
+  [data-testid="conversation-panel"],
+  [data-testid="conversation-panel-messages"],
+  [data-testid="wa-web-main-screen"] {
+    background: transparent !important;
+  }
+
+  /* Header do chat */
+  [data-testid="conversation-panel-header"] {
+    background: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+
+  /* ── BALÕES DE MENSAGEM (ambos rosas) ── */
+  /* Remove qualquer fundo nativo das linhas da conversa */
+  .focusable-list-item,
+  .focusable-list-item > div {
+    background: transparent !important;
+  }
+  /* Incoming: tail-in presente dentro de msg-container */
+  [data-testid="msg-container"]:has([data-testid="tail-in"]) {
+    background: var(--rose-pill) !important;
+    border-radius: 8px !important;
+  }
+  /* Outgoing: tail-out presente dentro de msg-container */
+  [data-testid="msg-container"]:has([data-testid="tail-out"]) {
+    background: var(--rose-pill-hover) !important;
+    border-radius: 8px !important;
+  }
+  /* Cor do texto dentro dos balões */
+  [data-testid="msg-container"],
+  [data-testid="msg-container"] * {
+    color: var(--rose-text) !important;
+  }
+
+  /* Input de mensagem */
+  [data-testid="conversation-panel-footer"],
+  [data-testid="input-panel"] {
+    background: var(--rose-white) !important;
+    border-top: 1px solid var(--rose-border) !important;
+  }
+  [contenteditable="true"], [data-testid="input"] {
+    background: transparent !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* Links */
+  a {
+    color: var(--rose-accent) !important;
+  }
+  a:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+
+  /* Ícones */
+  [data-testid="icon"], [data-icon] {
+    color: var(--rose-text) !important;
+    fill: var(--rose-text) !important;
+  }
+
+  /* ── Botões ── */
+  button[data-testid="compose-btn"],
+  button[data-testid="search-btn"] {
+    background: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border-radius: 999px !important;
+  }
+  button[data-testid="compose-btn"]:hover,
+  button[data-testid="search-btn"]:hover {
+    background: var(--rose-pill-hover) !important;
+  }
+  button[data-testid="icon"], button[data-icon],
+  button[aria-label*="emoji" i], button[aria-label*="attach" i],
+  button[aria-label*="voice" i], button[aria-label*="audio" i] {
+    background: transparent !important;
+    border: none !important;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 8px !important; }
+  ::-webkit-scrollbar-track { background: transparent !important; }
+  ::-webkit-scrollbar-thumb {
+    background: var(--rose-bg-soft) !important;
+    border-radius: 4px !important;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--rose-bg-strong) !important;
+  }
+}
+
+/* ============================================
+   GMAIL - TEMA ROSA PARA EMAIL
+   ============================================ */
+@-moz-document domain("mail.google.com") {
+  :root, html, body {
+    --gm-bg: var(--rose-bg) !important;
+    --gm-bg-secondary: var(--rose-white) !important;
+    --gm-primary: var(--rose-bg-strong) !important;
+    --gm-accent: var(--rose-accent) !important;
+    --gm-text: var(--rose-text) !important;
+    --gm-text-secondary: var(--rose-text-secondary) !important;
+    --gm-border: var(--rose-border) !important;
+    
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* Header */
+  header, .gb_2d, .gb_Kd, .gb_We, .gb_2d.gb_We,
+  .gb_Od, .gb_Nd, .gb_Md,
+  [role="banner"], nav[role="navigation"] {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+
+  /* Sidebar */
+  .aqk, .aqn, .aqh, .aBs, .aBp, .aBr,
+  .nH, .nH .no, .nH .nn,
+  [role="navigation"][aria-label*="mail" i], div[role="navigation"] nav {
+    background-color: var(--rose-bg) !important;
+    border-right: 1px solid var(--rose-border) !important;
+  }
+
+  /* Lista de emails */
+  .zA, .y6, .zE, .yW, .zE, .zA.x7,
+  .Cp, .bo, .aoI, .aZs,
+  tr[data-thread-id], tr[data-legacy-thread-id],
+  [role="gridcell"] div[role="link"] {
+    background-color: var(--rose-white) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+
+  /* Email selecionado */
+  .zA.x7, .zA.y6, .zA:hover,
+  tr[data-thread-id].x7 {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* Conteúdo do email */
+  .ii, .a3s, .aQJ, .aKS, .aKj,
+  .adn, .ads, .adt,
+  [data-legacy-message-id],
+  div[role="list"] > div[data-message-id] {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* Links */
+  a, .gD, .aw5, .go, .gL,
+  span[email] a {
+    color: var(--rose-accent) !important;
+  }
+  a:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+
+  /* Botões */
+  button, .T-I, .T-I-atl, .ar7, .aoO,
+  div[role="button"][gh], [role="toolbar"] [role="button"] {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  button:hover, .T-I:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  .T-I-atl, .T-I-ax7, .ar7,
+  [role="button"][aria-label*="compose" i] {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+  }
+  .T-I-atl:hover, .T-I-ax7:hover {
+    background-color: var(--rose-bg-soft) !important;
+  }
+
+  /* Inputs */
+  input, textarea, .aoT, .Am, .Al,
+  [role="textbox"][g_editable],
+  input[role="combobox"] {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+
+  /* Labels/Tags */
+  .yW, .y6, .y7, .y8,
+  span[data-thread-id] {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border-radius: 999px !important;
+  }
+
+  /* Ícones */
+  .gb_1 svg, .gb_2 svg, [role="button"] svg,
+  [role="toolbar"] svg {
+    color: var(--rose-text) !important;
+    fill: var(--rose-text) !important;
+  }
+}
+
+/* ============================================
+   CHATGPT - TEMA ROSA (Tailwind CSS Modules)
+   ============================================ */
+@-moz-document domain("chatgpt.com") {
+  :root, html, body {
+    /* Tailwind/ChatGPT design tokens */
+    --main-surface-primary: var(--rose-bg) !important;
+    --main-surface-secondary: var(--rose-white) !important;
+    --main-surface-tertiary: var(--rose-pill) !important;
+    --text-primary: var(--rose-text) !important;
+    --text-secondary: var(--rose-text-secondary) !important;
+    --text-tertiary: var(--rose-text-muted) !important;
+    --border-primary: var(--rose-border) !important;
+    --border-secondary: var(--rose-border) !important;
+    --link-color: var(--rose-accent) !important;
+    --link-hover-color: var(--rose-accent-hover) !important;
+    --accent-primary: var(--rose-bg-strong) !important;
+    --accent-secondary: var(--rose-bg-soft) !important;
+    --pill-color: var(--rose-pill) !important;
+    --pill-color-hover: var(--rose-pill-hover) !important;
+    --message-bg-user: var(--rose-pill) !important;
+    --message-bg-assistant: var(--rose-white) !important;
+    --input-bg: var(--rose-white) !important;
+    --sidebar-bg: var(--rose-bg) !important;
+    --sidebar-surface: var(--rose-white) !important;
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* Sidebar de conversas */
+  nav, [class*="sidebar"], [class*="sidebar"] * {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* Header */
+  header, [class*="header"], [role="banner"] {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+
+  /* Mensagens do assistente */
+  [class*="assistant"], [class*="message"] {
+    color: var(--rose-text) !important;
+  }
+
+  /* Input area */
+  textarea, [contenteditable="true"], [role="textbox"] {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  textarea:focus, [contenteditable="true"]:focus {
+    outline: none !important;
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 3px var(--rose-pill) !important;
+  }
+
+  /* Botões — apenas botões de acção/primários, NÃO navegação lateral */
+  button:not([class*="ytp-"]):not(:empty):not(nav *):not([class*="sidebar"] *):not([class*="nav"]) {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+    transition: all var(--rose-transition) !important;
+  }
+  button:not([class*="ytp-"]):hover:not(:empty):not(nav *):not([class*="sidebar"] *):not([class*="nav"]) {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* Links */
+  a {
+    color: var(--rose-accent) !important;
+  }
+  a:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+
+  /* Modais e dialogs */
+  [role="dialog"], [class*="modal"] {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 24px var(--rose-shadow) !important;
+  }
+
+  /* Código */
+  pre, code, [class*="code"] {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+}
