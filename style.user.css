@@ -2,7 +2,7 @@
 @name           RoseMari
 @namespace      github.com/LuizSudo/rosemari
 @version        1.0.0
-@description    Tema rosa elegante e universal. Tema feito para um amigo meu
+@description    Tema rosa elegante e universal. Tema feito para uma amiga meu
 @author         Luiz Henrique Amaral Soares
 ==/UserStyle== */
 
@@ -66,13 +66,15 @@
     color: var(--rose-text) !important;
   }
 
-  /* Cards e painéis flutuantes (Menus, Modais) */
+  /* Cards e painéis flutuantes (Menus, Modais)
+     IMPORTANT: Exclude CDK overlay wrappers (.cdk-overlay-popover, bare <dialog>)
+     which cover 100vw×100vh and must stay transparent. */
   [class*="card" i]:not(.ytp-videowall-still-info-content):not(.card_body):not(.hc_card),
   [class*="modal" i]:not([class*="icon" i]),
   [class*="dialog" i]:not([class*="icon" i]),
-  [class*="popover" i],
+  [class*="popover" i]:not(.cdk-overlay-popover),
   [class*="dropdown-menu" i],
-  [role="dialog"] {
+  [role="dialog"]:not(dialog) {
     background-color: var(--rose-white) !important;
     border: 1px solid var(--rose-border) !important;
     box-shadow: 0 8px 24px var(--rose-shadow) !important;
@@ -666,9 +668,9 @@
   }
 
   /* ── MODAIS E POPUPS ── */
-  [role="dialog"],
-  [role="menu"],
-  [role="listbox"] {
+  [role="dialog"]:not(dialog),
+  [role="menu"]:not(dialog),
+  [role="listbox"]:not(dialog) {
     background-color: var(--rose-white) !important;
     border: 1px solid var(--rose-border) !important;
     border-radius: var(--rose-radius) !important;
@@ -923,7 +925,7 @@
   }
 
   /* ── MODAIS / OVERLAYS ── */
-  .cdk-overlay-pane, .cdk-dialog-container,
+  .cdk-dialog-container,
   .ms-Layer-content, .ms-Fabric, .ms-Callout {
     background-color: var(--rose-white) !important;
     color: var(--rose-text) !important;
@@ -962,16 +964,41 @@
      GEMINI - TEMA ROSA (DOM real 2026)
      ============================================ */
 
-  /* Fundo global */
+  /* Fundo global + variable overrides */
   :root, html, body, .theme-host, .lm-component-theme, chat-app-orchestrator {
     background-color: var(--rose-bg) !important;
     color: var(--rose-text) !important;
+    /* Override Gemini's own design tokens */
+    --gem-sys-color--surface: var(--rose-white) !important;
+    --gem-sys-color--surface-container: var(--rose-white) !important;
+    --gem-sys-color--surface-container-low: var(--rose-bg) !important;
+    --gem-sys-color--surface-container-high: var(--rose-white) !important;
+    --gem-sys-color--on-surface: var(--rose-text) !important;
+    --gem-sys-color--on-surface-variant: var(--rose-text-secondary) !important;
+    --gem-sys-color--outline: var(--rose-border) !important;
+    --gem-sys-color--outline-variant: var(--rose-border) !important;
+    --gem-sys-color--primary: var(--rose-bg-strong) !important;
+    --gem-sys-color--on-primary: var(--rose-text-on-accent) !important;
+    --gem-sys-color--primary-container: var(--rose-pill) !important;
+    --gem-sys-color--on-primary-container: var(--rose-text) !important;
+    --bard-color-lightbox-background: var(--rose-white) !important;
+    --md-sys-color-primary: var(--rose-bg-strong) !important;
+    --md-sys-color-on-primary: var(--rose-text-on-accent) !important;
+    --md-sys-color-primary-container: var(--rose-pill) !important;
+    --md-sys-color-surface: var(--rose-white) !important;
+    --md-sys-color-on-surface: var(--rose-text) !important;
+    --md-sys-color-on-surface-variant: var(--rose-text-secondary) !important;
+    --md-sys-color-outline: var(--rose-border) !important;
+    --md-sys-color-outline-variant: var(--rose-border) !important;
+    --md-sys-color-surface-container: var(--rose-white) !important;
+    --md-sys-color-surface-container-low: var(--rose-bg) !important;
+    --md-sys-color-surface-container-high: var(--rose-white) !important;
   }
 
   /* ========== LAYOUT ========== */
   main.chat-app, .chat-container,
   .assistant-messages-primary-container {
-    background-color: var(--rose-bg) !important;
+    background-color: var(--rose-white) !important;
     color: var(--rose-text) !important;
   }
 
@@ -985,7 +1012,7 @@
   /* ── Model/MODE SWITCH ── */
   [data-test-id="bard-mode-menu-button"],
   .model-picker-container, .input-area-switch {
-    background-color: var(--rose-bg) !important;
+    background-color: var(--rose-white) !important;
     color: var(--rose-text) !important;
     border: 1px solid var(--rose-border) !important;
     border-radius: 999px !important;
@@ -1073,15 +1100,15 @@
   input-area-v2, .input-area-container,
   .input-area, .initial-input-area,
   .text-input-field, .chat-container {
-    background-color: var(--rose-bg) !important;
+    background-color: var(--rose-white) !important;
   }
   rich-textarea, .ql-editor,
   .ql-editor[role="textbox"] {
     background-color: var(--rose-white) !important;
     color: var(--rose-text) !important;
-    border: 2px solid var(--rose-border) !important;
+    border: 1px solid var(--rose-border) !important;
     border-radius: var(--rose-radius) !important;
-    box-shadow: 0 4px 12px var(--rose-shadow) !important;
+    box-shadow: 0 1px 4px var(--rose-shadow) !important;
   }
   rich-textarea:focus-within, .ql-editor:focus,
   .ql-editor[role="textbox"]:focus {
@@ -1115,8 +1142,13 @@
   }
   /* Botão "envio e ferramentas" */
   button[aria-label="Envio e ferramentas"] {
-    background-color: var(--rose-pill) !important;
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text-secondary) !important;
     border: 1px solid var(--rose-border) !important;
+  }
+  button[aria-label="Envio e ferramentas"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
   }
 
   /* ========== MENSAGENS ========== */
@@ -1138,8 +1170,8 @@
   /* Ações abaixo do prompt (copiar, ouvir, etc) */
   .instruction-actions-container,
   .response-tts-container button {
-    background-color: var(--rose-pill) !important;
-    color: var(--rose-text) !important;
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text-secondary) !important;
     border: 1px solid var(--rose-border) !important;
     border-radius: 999px !important;
     transition: all var(--rose-transition) !important;
@@ -1147,26 +1179,28 @@
   .instruction-actions-container:hover,
   .response-tts-container button:hover {
     background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
   }
 
   /* ========== BOTÕES DE AÇÃO (copiar, etc) ========== */
   .bard-copy-action-visited-styles,
   [data-test-id="actions-menu-button"],
   [data-test-id="actions-menu-icon"] {
-    background-color: var(--rose-pill) !important;
-    color: var(--rose-text) !important;
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text-secondary) !important;
     border: 1px solid var(--rose-border) !important;
     border-radius: 999px !important;
   }
   .bard-copy-action-visited-styles:hover,
   [data-test-id="actions-menu-button"]:hover {
     background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
   }
 
   /* ========== CODE / MATH / TABLES ========== */
   .code-block, .math-block, .table-block-component,
   pre, code, [class*="code-block"] {
-    background-color: var(--rose-white) !important;
+    background-color: var(--rose-bg) !important;
     border: 1px solid var(--rose-border) !important;
     border-radius: var(--rose-radius) !important;
     color: var(--rose-text) !important;
@@ -1175,7 +1209,7 @@
   /* ========== IMAGENS GERADAS ========== */
   .generated-images-container, .image-gallery,
   .xap-uploader-dropzone {
-    background-color: var(--rose-bg) !important;
+    background-color: var(--rose-white) !important;
     border: 1px solid var(--rose-border) !important;
     border-radius: var(--rose-radius) !important;
   }
@@ -1189,14 +1223,14 @@
   /* ========== LOADING / STREAMING ========== */
   .loading, .loader, .loader-cell, .loader-grid,
   .loading-content-spinner-container {
-    background-color: var(--rose-bg) !important;
+    background-color: var(--rose-white) !important;
   }
   .gem-shimmer-active {
     background: linear-gradient(
       90deg,
-      var(--rose-pill) 0%,
-      var(--rose-pill-hover) 50%,
-      var(--rose-pill) 100%
+      var(--rose-white) 0%,
+      var(--rose-pill) 50%,
+      var(--rose-white) 100%
     ) !important;
   }
   .done-generating {
@@ -1205,7 +1239,7 @@
 
   /* ========== DIALOGS / MODAIS ========== */
   .gem-dialog-container, .gem-dialog-title-and-content-container,
-  .cdk-overlay-pane, .cdk-dialog-container,
+  .cdk-dialog-container,
   mat-dialog-container, .mat-mdc-dialog-surface {
     background-color: var(--rose-white) !important;
     border: 1px solid var(--rose-border) !important;
@@ -1220,13 +1254,14 @@
     color: var(--rose-text-secondary) !important;
   }
   .gem-dialog-actions button {
-    background-color: var(--rose-pill) !important;
-    color: var(--rose-text) !important;
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text-secondary) !important;
     border: 1px solid var(--rose-border) !important;
     border-radius: 999px !important;
   }
   .gem-dialog-actions button:hover {
     background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
   }
 
   /* ========== MATERIAL OVERRIDES ========== */
@@ -1249,10 +1284,15 @@
     background-color: var(--rose-pill-hover) !important;
   }
   .mat-mdc-icon-button {
+    color: var(--rose-text-secondary) !important;
+    background: transparent !important;
+  }
+  .mat-mdc-icon-button:hover {
+    background-color: var(--rose-pill-hover) !important;
     color: var(--rose-text) !important;
   }
   .mat-mdc-snack-bar-container {
-    background-color: var(--rose-white) !important;
+    background-color: var(--rose-bg) !important;
     color: var(--rose-text) !important;
     border: 1px solid var(--rose-border) !important;
     border-radius: var(--rose-radius) !important;
@@ -1277,6 +1317,7 @@
     background-color: var(--rose-white) !important;
     border: 1px solid var(--rose-border) !important;
     border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 32px var(--rose-shadow) !important;
   }
 
   /* ========== SELEÇÃO ========== */
@@ -1288,12 +1329,13 @@
   /* ========== DISCLAIMERS / ANNOUNCEMENTS ========== */
   .hallucination-disclaimer, .capabilities-disclaimer {
     color: var(--rose-text-muted) !important;
-    background-color: var(--rose-pill) !important;
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
     border-radius: var(--rose-radius) !important;
   }
   .announcement-banner-container {
-    background-color: var(--rose-bg-soft) !important;
-    color: var(--rose-text) !important;
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text-secondary) !important;
     border: 1px solid var(--rose-border) !important;
     border-radius: var(--rose-radius) !important;
   }
@@ -1306,7 +1348,7 @@
   /* ========== TEMP CHAT / CONVERSATION ACTIONS ========== */
   [data-test-id="temp-chat-button"] {
     color: var(--rose-text-muted) !important;
-    background: transparent !important;
+    background: var(--rose-white) !important;
     border: 1px solid var(--rose-border) !important;
     border-radius: 999px !important;
   }
@@ -1320,6 +1362,85 @@
   button[aria-label*="Mais opcoes"]:hover {
     background-color: var(--rose-pill-hover) !important;
     color: var(--rose-text) !important;
+  }
+
+  /* ========== DISCLAIMERS (TOS, SIGN-IN NUDGE) ========== */
+  condensed-tos-disclaimer, sign-in-nudge, reload-to-sync {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text-secondary) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* ========== QUICK ACTION BUTTONS ========== */
+  quick-action-button {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text-secondary) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    transition: all var(--rose-transition) !important;
+  }
+  quick-action-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ========== ACTION BUTTONS (abaixo de respostas) ========== */
+  action-buttons,
+  .response-tts-container action-buttons button {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text-secondary) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+    transition: all var(--rose-transition) !important;
+  }
+  action-buttons button:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ========== NOTIFICATIONS / BADGES ========== */
+  chat-notifications {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  xap-count-badge, xap-count-badge-container {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border-radius: 999px !important;
+    font-size: 11px !important;
+    min-width: 18px !important;
+    height: 18px !important;
+  }
+
+  /* ========== FILE DROP INDICATOR ========== */
+  file-drop-indicator {
+    background-color: var(--rose-white) !important;
+    border: 2px dashed var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    color: var(--rose-text-secondary) !important;
+  }
+
+  /* ========== LOCATION FOOTER ========== */
+  location-footer {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text-secondary) !important;
+    border-top: 1px solid var(--rose-border) !important;
+  }
+
+  /* ========== LOADING ANIMATION ========== */
+  chat-loading-animation {
+    background-color: transparent !important;
+  }
+
+  /* ========== UPLOAD MODAL ========== */
+  .skill-folder-upload-modal-panel {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    color: var(--rose-text) !important;
+    box-shadow: 0 8px 32px var(--rose-shadow) !important;
   }
 }
 
@@ -1351,7 +1472,9 @@
   }
 
   /* ========== FUNDO GLOBAL ========== */
-  body, main, .mat-sidenav-container, .mat-drawer-container,
+  body,
+  main:not(.emoji-keyboard__grid),
+  .mat-sidenav-container, .mat-drawer-container,
   .chat-panel, .my-projects-container {
     background-color: var(--rose-bg) !important;
     color: var(--rose-text) !important;
@@ -1398,7 +1521,8 @@
   }
 
   /* ========== HEADER ========== */
-  header, .mat-toolbar {
+  header:not(.emoji-keyboard__search):not(.emoji-keyboard__toolbar),
+  .mat-toolbar:not(.emoji-keyboard__toolbar) {
     background-color: var(--rose-bg) !important;
     border-bottom: 1px solid var(--rose-border) !important;
     color: var(--rose-text) !important;
@@ -1574,15 +1698,9 @@
     background-color: var(--rose-pill-hover) !important;
   }
 
-  /* Botões de criar artefacto */
-  .create-artifact-button-container, basic-create-artifact-button {
-    background-color: var(--rose-pill) !important;
-    border: 1px solid var(--rose-border) !important;
-    border-radius: var(--rose-radius) !important;
+  /* Botões de criar artefacto — color classes preserved (see below) */
+  .create-artifact-button-container {
     transition: all var(--rose-transition) !important;
-  }
-  .create-artifact-button-container:hover, basic-create-artifact-button:hover {
-    background-color: var(--rose-pill-hover) !important;
   }
   .create-label-container, .option-icon {
     color: var(--rose-text) !important;
@@ -1600,7 +1718,7 @@
   }
 
   /* ========== ADD SOURCE DIALOG ========== */
-  [role="dialog"], mat-dialog-container, .mat-dialog-container {
+  [role="dialog"]:not(dialog), mat-dialog-container, .mat-dialog-container {
     background-color: var(--rose-white) !important;
     color: var(--rose-text) !important;
     border: 1px solid var(--rose-border) !important;
@@ -1641,13 +1759,18 @@
   }
 
   /* ========== INPUTS / TEXTAREA GENÉRICOS ========== */
-  input, textarea, .mat-input-element, mat-form-field {
+  input:not(.emoji-keyboard__search input),
+  textarea:not(.query-box-input):not([class*="emoji"]),
+  .mat-input-element,
+  mat-form-field:not(.emoji-keyboard *) {
     background-color: var(--rose-white) !important;
     color: var(--rose-text) !important;
     border: 1px solid var(--rose-border) !important;
     border-radius: 8px !important;
   }
-  input:focus, textarea:focus, .mat-input-element:focus {
+  input:not(.emoji-keyboard__search input):focus,
+  textarea:not(.query-box-input):focus,
+  .mat-input-element:focus {
     outline: none !important;
     border-color: var(--rose-bg-strong) !important;
     box-shadow: 0 0 0 3px var(--rose-pill) !important;
@@ -1693,11 +1816,15 @@
     background-color: var(--rose-pill-hover) !important;
   }
 
-  /* ========== LINKS (apenas <a>, NÃO botões Material) ========== */
-  a:not([class*="button"]):not([class*="btn"]) {
+  /* ========== LINKS (apenas <a> específicos, NÃO Material) ========== */
+  .panel-header a:not([class*="mat"]),
+  .chat-header-buttons a:not([class*="mat"]),
+  .source-panel a:not([class*="mat"]) {
     color: var(--rose-accent) !important;
   }
-  a:not([class*="button"]):not([class*="btn"]):hover {
+  .panel-header a:not([class*="mat"]):hover,
+  .chat-header-buttons a:not([class*="mat"]):hover,
+  .source-panel a:not([class*="mat"]):hover {
     color: var(--rose-accent-hover) !important;
     text-decoration: underline !important;
   }
@@ -1714,8 +1841,9 @@
     border-bottom: 2px solid var(--rose-accent) !important;
   }
 
-  /* ========== ÍCONES ========== */
-  .mat-icon, mat-icon, .google-symbols, .material-symbols-outlined {
+  /* ========== ÍCONES (only in panel-header and studio) ========== */
+  .panel-header mat-icon,
+  .chat-header-buttons mat-icon {
     color: var(--rose-text) !important;
   }
 
@@ -1771,30 +1899,608 @@
     color: var(--rose-text) !important;
   }
 
-  /* ========== OVERLAYS / BACKDROP ========== */
-  .cdk-overlay-pane, .cdk-overlay-container {
-    background-color: transparent !important;
-  }
-  .cdk-overlay-dark-backdrop, .cdk-overlay-backdrop {
-    background-color: rgba(0, 0, 0, 0.3) !important;
-  }
-
   /* ========== SELEÇÃO ========== */
   ::selection {
     background-color: var(--rose-bg-strong) !important;
     color: var(--rose-text-on-accent) !important;
   }
 
-  /* ========== TOOLTIP ========== */
+  /* ========== DIVIDER ========== */
+  .panel-divider {
+    border-color: var(--rose-border) !important;
+  }
+
+  /* ========== WELCOME PAGE HEADER ========== */
+  .welcome-page-navbar, page-header,
+  .welcome-page-navbar mat-toolbar,
+  .welcome-page-navbar .mat-toolbar {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+    color: var(--rose-text) !important;
+  }
+  .logo__text, .logo-link {
+    color: var(--rose-text) !important;
+    text-decoration: none !important;
+  }
+  .get-app-button {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    transition: all var(--rose-transition) !important;
+  }
+  .get-app-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ========== EXTENDABLE BUTTONS (settings, etc) ========== */
+  .extendable-button,
+  .extendable-button-extended,
+  .settings-button,
+  .settings-button-extended {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    transition: all var(--rose-transition) !important;
+  }
+  .extendable-button:hover,
+  .settings-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .extendable-label {
+    color: var(--rose-text) !important;
+  }
+
+  /* ========== TOGGLE GROUPS (section toggle, view toggle) ========== */
+  mat-button-toggle-group,
+  .project-section-toggle,
+  .project-view-toggle-group {
+    background-color: var(--rose-bg) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  mat-button-toggle,
+  .project-section-toggle-option {
+    background-color: transparent !important;
+    color: var(--rose-text-secondary) !important;
+    border-radius: 999px !important;
+  }
+  mat-button-toggle:hover,
+  .project-section-toggle-option:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  mat-button-toggle-checked,
+  .mat-button-toggle-checked {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+  }
+  mat-button-toggle-label-content,
+  .mat-button-toggle-label-content,
+  .toggle-label,
+  .editors-picks-toggle-label {
+    color: inherit !important;
+  }
+
+  /* ========== PROJECT ACTIONS CONTAINER ========== */
+  .project-actions-container,
+  .project-view-toggle-container,
+  .project-filter-create-container {
+    background-color: transparent !important;
+    color: var(--rose-text) !important;
+  }
+  .project-filter-button,
+  .project-filter-button-label {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    transition: all var(--rose-transition) !important;
+  }
+  .project-filter-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ========== CREATE BUTTON ========== */
+  .create-new-button,
+  .create-new-label {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border-radius: 999px !important;
+  }
+  .create-new-button:hover {
+    background-color: var(--rose-accent) !important;
+  }
+  .create-upsell-container,
+  .create-upsell-wrapper {
+    background-color: var(--rose-bg-soft) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* ========== FEATURED PROJECTS ========== */
+  .featured-projects-container {
+    background-color: transparent !important;
+  }
+  .featured-projects-header,
+  .featured-projects-header-title {
+    color: var(--rose-text) !important;
+  }
+
+  /* ========== PROJECT GRID ========== */
+  .project-grid-container,
+  .single-row-layout,
+  .project-grid,
+  .single-row {
+    background-color: transparent !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ========== PROJECT BUTTON CARDS ========== */
+  .project-button-card {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    transition: all var(--rose-transition) !important;
+    cursor: pointer !important;
+  }
+  .project-button-card:hover {
+    background-color: var(--rose-pill-hover) !important;
+    box-shadow: 0 6px 16px var(--rose-shadow) !important;
+  }
+  .cover-image-card {
+    border-radius: var(--rose-radius) !important;
+    overflow: hidden !important;
+  }
+  .primary-action-button {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  .primary-action-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .project-button-box-icon {
+    color: var(--rose-text-muted) !important;
+  }
+
+  /* ========== PUBLISHER INFO ========== */
+  .project-button-publisher-info,
+  .project-button-publisher-name {
+    color: var(--rose-text-secondary) !important;
+  }
+  .project-button-publisher-logo {
+    border-radius: 50% !important;
+  }
+
+  /* ========== SUBTITLE PARTS ========== */
+  .project-button-subtitle,
+  .project-button-subtitle-part {
+    color: var(--rose-text-secondary) !important;
+  }
+  .project-button-subtitle-middle-dot {
+    color: var(--rose-text-muted) !important;
+  }
+  .project-button-subtitle-part-sources {
+    color: var(--rose-text-muted) !important;
+  }
+
+  /* ========== SEE ALL BUTTON ========== */
+  .see-all-button-container {
+    background-color: transparent !important;
+  }
+  .see-all-button {
+    background-color: transparent !important;
+    color: var(--rose-accent) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+    transition: all var(--rose-transition) !important;
+  }
+  .see-all-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ========== PROJECT MORE BUTTON ========== */
+  .project-button-more {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 50% !important;
+  }
+  .project-button-more:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .project-button-more-icon {
+    color: var(--rose-text) !important;
+  }
+
+  /* ========== OVERLAYS / BACKDROP / TOOLTIP ========== */
+  /* Container = full-viewport wrapper. Must stay invisible at all times. */
+  .cdk-overlay-container,
+  .cdk-overlay-container::before,
+  .cdk-overlay-container::after {
+    background: transparent !important;
+    pointer-events: none !important;
+  }
+  .cdk-overlay-container {
+    pointer-events: none !important;
+  }
+
+  /* Pane = the actual popup (menu / tooltip / dialog). Keep transparent so
+     only the inner panel (menu-panel, tooltip-surface, etc.) is visible. */
+  .cdk-overlay-pane,
+  .cdk-overlay-pane::before,
+  .cdk-overlay-pane::after {
+    background: transparent !important;
+    pointer-events: auto !important;
+  }
+
+  /* Backdrop = the semi-transparent dim layer behind modals/menus. */
+  .cdk-overlay-dark-backdrop,
+  .cdk-overlay-backdrop,
+  .cdk-overlay-dark-backdrop::before,
+  .cdk-overlay-backdrop::before {
+    background: rgba(0, 0, 0, 0.32) !important;
+  }
+
+  /* Tooltip surface (the small balloon) */
   .mat-tooltip, .mat-mdc-tooltip-surface {
     background-color: var(--rose-bg-strong) !important;
     color: var(--rose-text-on-accent) !important;
     border-radius: 8px !important;
+    font-size: 12px !important;
+  }
+  .cdk-describedby-message-container {
+    display: none !important;
   }
 
-  /* ========== DIVIDER ========== */
-  .mat-divider, hr {
+  /* ========== EMOJI KEYBOARD — FULL-SCREEN OVERLAY (z-index:2147483647) ========== */
+  .xap-emoji-keyboard .emoji-keyboard,
+  .xap-emoji-keyboard .emoji-keyboard__background {
+    display: none !important;
+  }
+  .xap-emoji-keyboard .emoji-keyboard__container {
+    display: none !important;
+  }
+  .xap-emoji-keyboard--visible .emoji-keyboard__container {
+    display: block !important;
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 32px var(--rose-shadow) !important;
+  }
+  .emoji-keyboard__search {
+    background-color: var(--rose-bg-soft) !important;
+    border-radius: 999px !important;
+  }
+  .emoji-keyboard__search input {
+    color: var(--rose-text) !important;
+  }
+  .emoji-keyboard__categories__button {
+    color: var(--rose-text-secondary) !important;
+  }
+  .emoji-keyboard__categories__button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .emoji-keyboard__categories__button--active {
+    color: var(--rose-bg-strong) !important;
+  }
+  .emoji-keyboard__grid__emoji-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .emoji-keyboard__toolbar {
+    background-color: var(--rose-white) !important;
+  }
+
+  /* ========== INNER NOTEBOOK: AI PANEL, SOURCE CONTEXT, CHIPS ========== */
+  .ai-panel {
+    background-color: var(--rose-white) !important;
+    border-left: 1px solid var(--rose-border) !important;
+    color: var(--rose-text) !important;
+  }
+  .source-context {
+    background-color: var(--rose-bg-soft) !important;
+    color: var(--rose-text-secondary) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .suggested-question-chip {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+    transition: all var(--rose-transition) !important;
+  }
+  .suggested-question-chip:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .toolbar-button {
+    background-color: transparent !important;
+    color: var(--rose-text) !important;
+    border: none !important;
+    border-radius: var(--rose-radius) !important;
+    transition: all var(--rose-transition) !important;
+  }
+  .toolbar-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ========== STUDIO PANEL — TOGGLE / HEADER ========== */
+  .toggle-studio-panel-button {
+    background-color: transparent !important;
+    border: none !important;
+  }
+  .toggle-studio-panel-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .panel-header {
+    border-bottom: 1px solid var(--rose-border) !important;
+    background-color: var(--rose-white) !important;
+  }
+  .panel-header-content {
+    color: var(--rose-text) !important;
+  }
+  .panel-divider {
     border-color: var(--rose-border) !important;
+  }
+  .panel-content-scrollable {
+    background-color: transparent !important;
+  }
+
+  /* ========== STUDIO PANEL — ARTIFACT BUTTONS (color classes) ========== */
+  .create-artifact-button-container {
+    transition: all var(--rose-transition) !important;
+  }
+  .create-artifact-button-container.blue {
+    background-color: #d4e4f9 !important;
+    color: #1a3a5c !important;
+  }
+  .create-artifact-button-container.green {
+    background-color: #d4edda !important;
+    color: #1a3c2a !important;
+  }
+  .create-artifact-button-container.pink {
+    background-color: #f8d4e0 !important;
+    color: #5c1a3a !important;
+  }
+  .create-artifact-button-container.yellow {
+    background-color: #fdf3d4 !important;
+    color: #5c4a1a !important;
+  }
+  .create-artifact-button-container.cyan {
+    background-color: #d4ecf3 !important;
+    color: #1a4a5c !important;
+  }
+  .create-artifact-button-container.orange {
+    background-color: #f8e0d4 !important;
+    color: #5c2a1a !important;
+  }
+  .create-artifact-button-container:hover {
+    filter: brightness(0.95) !important;
+    box-shadow: 0 2px 8px var(--rose-shadow) !important;
+  }
+  .create-artifact-button-container.disabled-tile {
+    opacity: 0.5 !important;
+  }
+  .create-label-container {
+    color: inherit !important;
+  }
+  .option-icon {
+    color: inherit !important;
+  }
+  .edit-button {
+    background-color: transparent !important;
+    border: none !important;
+  }
+  .edit-button:hover {
+    background-color: rgba(0, 0, 0, 0.08) !important;
+  }
+  .beta-label {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+  }
+
+  /* ========== ARTIFACT LIBRARY ========== */
+  .artifact-library-empty-state {
+    color: var(--rose-text-secondary) !important;
+  }
+  .add-note-button {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  .add-note-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ========== COVER IMAGE / CHAT PANEL HEADER ========== */
+  .cover-image {
+    background-color: var(--rose-bg-soft) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .cover-image-empty-icon {
+    color: var(--rose-text-muted) !important;
+  }
+  .cover-title {
+    color: var(--rose-text) !important;
+  }
+  .cover-subtitle {
+    color: var(--rose-text-secondary) !important;
+  }
+  .customize-button {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  .customize-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .chat-header-buttons {
+    color: var(--rose-text) !important;
+  }
+  .persistent-chat-on {
+    color: var(--rose-text) !important;
+  }
+
+  /* ========== QUERY BOX / OMNIBAR ========== */
+  .omnibar-container {
+    background-color: var(--rose-white) !important;
+    border-top: 1px solid var(--rose-border) !important;
+  }
+  .query-box {
+    background-color: var(--rose-white) !important;
+  }
+  .query-box-input {
+    color: var(--rose-text) !important;
+  }
+  .query-box-input::placeholder {
+    color: var(--rose-text-muted) !important;
+  }
+  .selected-num-container {
+    color: var(--rose-text-secondary) !important;
+  }
+  .submit-button {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border: none !important;
+    border-radius: 50% !important;
+  }
+  .submit-button:hover {
+    background-color: var(--rose-accent) !important;
+  }
+  .submit-button:disabled {
+    background-color: var(--rose-text-muted) !important;
+    color: var(--rose-white) !important;
+    cursor: default !important;
+  }
+
+  /* ========== PANEL GUTTER / RESIZE HANDLE ========== */
+  .panel-gutter {
+    background-color: var(--rose-border) !important;
+    width: 1px !important;
+  }
+  .panel-gutter:hover {
+    background-color: var(--rose-bg-strong) !important;
+  }
+
+  /* ========== JUMP TO BOTTOM FAB ========== */
+  .jump-to-bottom-button {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+  }
+  .jump-to-bottom-button:hover {
+    background-color: var(--rose-accent) !important;
+  }
+
+  /* ========== MAT-MDC MENU PANEL ========== */
+  .mat-mdc-menu-panel {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 32px var(--rose-shadow) !important;
+  }
+  .mat-mdc-menu-item {
+    color: var(--rose-text) !important;
+  }
+  .mat-mdc-menu-item:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .mat-mdc-menu-item.mat-mdc-menu-item-highlighted {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .mat-mdc-menu-content {
+    padding: 8px 0 !important;
+  }
+
+  /* ========== MAT-TAB-GROUP ========== */
+  .mat-mdc-tab-group {
+    background-color: var(--rose-bg) !important;
+  }
+  .mat-mdc-tab-header {
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+  .mat-mdc-tab {
+    color: var(--rose-text-secondary) !important;
+  }
+  .mat-mdc-tab.mdc-tab--active {
+    color: var(--rose-bg-strong) !important;
+  }
+  .mat-mdc-tab-body-content {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ========== MAT-BUTTON-TOGGLE-GROUP ========== */
+  .mat-mdc-button-toggle-group {
+    background-color: var(--rose-bg-soft) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  .mat-mdc-button-toggle {
+    background-color: transparent !important;
+    color: var(--rose-text-secondary) !important;
+  }
+  .mat-mdc-button-toggle:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .mat-mdc-button-toggle-checked {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    box-shadow: 0 1px 3px var(--rose-shadow) !important;
+  }
+
+  /* ========== SEARCH ICON BUTTON ========== */
+  .search-icon-button {
+    background-color: transparent !important;
+    color: var(--rose-text) !important;
+    border: none !important;
+  }
+  .search-icon-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ========== MAT-DIALOG ========== */
+  .mat-mdc-dialog-container {
+    background-color: var(--rose-white) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .mat-mdc-dialog-surface {
+    background-color: var(--rose-white) !important;
+  }
+  .mat-mdc-dialog-actions {
+    border-top: 1px solid var(--rose-border) !important;
+  }
+
+  /* ========== MAT-FORM-FIELD ========== */
+  .mat-mdc-form-field {
+    background-color: transparent !important;
+  }
+  .mat-mdc-text-field-wrapper {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .mat-mdc-form-field-focus-overlay {
+    background-color: transparent !important;
+  }
+
+  /* ========== FOOTER ========== */
+  .footer {
+    background-color: var(--rose-bg) !important;
+    border-top: 1px solid var(--rose-border) !important;
+    color: var(--rose-text-secondary) !important;
+  }
+
+  /* ========== GOOGLE BAR (gb_*) ========== */
+  #gb {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+  .gb_C, .gb_D {
+    color: var(--rose-text) !important;
   }
 }
 
@@ -2670,14 +3376,14 @@
   /* ══════════════════════════════════════════════
      INPUTS / TEXTAREA (genéricos — NÃO searchbox)
      ══════════════════════════════════════════════ */
-  input:not([type="submit"]):not([type="hidden"]):not(#sb_form_q):not(#uaseabox):not(.b_searchbox),
+  input:not([type="submit"]):not([type="hidden"]):not([type="radio"]):not([type="checkbox"]):not(#sb_form_q):not(#uaseabox):not(.b_searchbox),
   textarea:not(#sb_form_q):not(.b_searchbox) {
     background-color: var(--rose-white) !important;
     color: var(--rose-text) !important;
     border: 1px solid var(--rose-border) !important;
     border-radius: 8px !important;
   }
-  input:not([type="submit"]):not([type="hidden"]):not(#sb_form_q):not(#uaseabox):not(.b_searchbox):focus,
+  input:not([type="submit"]):not([type="hidden"]):not([type="radio"]):not([type="checkbox"]):not(#sb_form_q):not(#uaseabox):not(.b_searchbox):focus,
   textarea:not(#sb_form_q):not(.b_searchbox):focus {
     outline: none !important;
     border-color: var(--rose-bg-strong) !important;
@@ -3025,6 +3731,59 @@
      ══════════════════════════════════════════════ */
   .b_snipwithnsl a {
     color: var(--rose-accent) !important;
+  }
+
+  /* ══════════════════════════════════════════════
+     IDENTITY DROPDOWN (#id_d) — HOVER / BORDERS
+     ══════════════════════════════════════════════ */
+  #id_d a:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  #id_d .id_company {
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+  #id_d .id_accountList_container {
+    border-top: 1px solid var(--rose-border) !important;
+  }
+  #id_d .id_accountItem {
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+  #id_d .b_toggle.b_imi {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    transition: all var(--rose-transition) !important;
+  }
+  #id_d .b_toggle.b_imi:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ══════════════════════════════════════════════
+     HAMBURGER FLYOUT (#id_hbfo) — HOVER / SEPS
+     ══════════════════════════════════════════════ */
+  #id_hbfo .hb_section:hover,
+  #id_hbfo .hb_top_sec:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .hmb_sep {
+    border-color: var(--rose-border) !important;
+  }
+  .hb_expandible {
+    border-color: var(--rose-border) !important;
+  }
+  #id_hbfo .hb_radio label:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  #id_hbfo [role="menuitemradio"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ══════════════════════════════════════════════
+     FOOTER — CARD_BODY TRANSPARENTE
+     ══════════════════════════════════════════════ */
+  footer .card_body {
+    background-color: transparent !important;
   }
 
   /* ══════════════════════════════════════════════
@@ -3465,7 +4224,7 @@
     background-color: rgba(42, 19, 26, 0.5) !important;
   }
   /* Dialog containers */
-  [role="dialog"],
+  [role="dialog"]:not(dialog),
   .gs_md_wnw {
     background-color: var(--rose-white) !important;
     border: 1px solid var(--rose-border) !important;
@@ -3888,7 +4647,7 @@
   }
 
   /* ── MODAIS / DROPDOWNS / LAYERS ── */
-  [role="dialog"],
+  [role="dialog"]:not(dialog),
   [data-testid="Dropdown"],
   [data-testid="layers"],
   [data-testid="sheetDialog"],
@@ -4212,7 +4971,7 @@
 
   /* ── COMMUNITY HOVERCARD ── */
   faceplate-hovercard,
-  [role="dialog"] {
+  [role="dialog"]:not(dialog) {
     background-color: var(--rose-white) !important;
     border: 1px solid var(--rose-border) !important;
     border-radius: var(--rose-radius) !important;
@@ -5277,7 +6036,8 @@
   [data-testid="msg-container"] span,
   [data-testid="msg-container"] span.selectable-text,
   [data-testid="msg-container"] div.selectable-text,
-  [data-testid="selectable-text"] {
+  span[data-testid="selectable-text"],
+  div[data-testid="selectable-text"] {
     color: var(--rose-text) !important;
     background: transparent !important;
   }
@@ -6443,16 +7203,17 @@
   }
 
   /* ── DIALOGS / MODALS ── */
-  dialog,
-  [role="dialog"] {
+  /* Exclude CDK overlay wrappers (dialog.cdk-overlay-popover covers 100vw×100vh) */
+  dialog:not(.cdk-overlay-popover),
+  [role="dialog"]:not(dialog) {
     background-color: var(--rose-white) !important;
     border: 1px solid var(--rose-border) !important;
     border-radius: var(--rose-radius) !important;
     box-shadow: 0 8px 32px var(--rose-shadow) !important;
     color: var(--rose-text) !important;
   }
-  /* Dialog backdrop */
-  dialog[open]::backdrop {
+  /* Dialog backdrop — exclude CDK overlay popover */
+  dialog[open]:not(.cdk-overlay-popover)::backdrop {
     background-color: rgba(42, 19, 26, 0.5) !important;
     backdrop-filter: blur(2px) !important;
   }
@@ -6526,4 +7287,24 @@
     border-color: var(--rose-border) !important;
     color: var(--rose-text-secondary) !important;
   }
+}
+
+/* ============================================
+   GLOBAL SAFETY-NET — CDK OVERLAY OVERRIDE
+   Angular Material CDK creates <dialog class="cdk-overlay-popover" role="dialog">
+   for menus/tooltips that covers 100vw×100vh with position:fixed.
+   This MUST stay transparent to prevent the entire screen turning white.
+   Applied globally to catch ALL sites.
+   ============================================ */
+dialog.cdk-overlay-popover,
+.cdk-overlay-popover,
+.cdk-overlay-popover[role="dialog"] {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+dialog.cdk-overlay-popover::backdrop,
+.cdk-overlay-popover::backdrop {
+  background: transparent !important;
+  backdrop-filter: none !important;
 }
