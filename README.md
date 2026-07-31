@@ -4,8 +4,6 @@
   <br>
 </h1>
 
-<h4 align="center">Tema rosa elegante para a web, feito com amor para uma amiga.</h4>
-
 <p align="center">
   <a href="https://github.com/LuizSudo/rosemari/blob/master/style.user.css">
     <img src="https://img.shields.io/badge/arquivo-style.user.css-D64B78?style=for-the-badge&logo=css3&logoColor=white" alt="CSS">
