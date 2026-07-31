@@ -1,0 +1,23 @@
+{
+  "name": "rosemari",
+  "version": "1.1.0",
+  "description": "Tema rosa elegante para a web, feito com amor para uma amiga.",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.js",
+    "watch": "node scripts/build.js --watch"
+  },
+  "keywords": [
+    "usercss",
+    "stylus",
+    "theme",
+    "rose",
+    "rosemari"
+  ],
+  "license": "CC-BY-NC-SA-4.0",
+  "author": "Luiz Henrique Amaral Soares",
+  "dependencies": {
+    "chokidar": "^5.0.0",
+    "csso": "^5.0.5"
+  }
+}
