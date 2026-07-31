@@ -1,0 +1,19 @@
+/* ============================================
+   GLOBAL SAFETY-NET — CDK OVERLAY OVERRIDE
+   Angular Material CDK creates <dialog class="cdk-overlay-popover" role="dialog">
+   for menus/tooltips that covers 100vw×100vh with position:fixed.
+   This MUST stay transparent to prevent the entire screen turning white.
+   Applied globally to catch ALL sites.
+   ============================================ */
+dialog.cdk-overlay-popover,
+.cdk-overlay-popover,
+.cdk-overlay-popover[role="dialog"] {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+dialog.cdk-overlay-popover::backdrop,
+.cdk-overlay-popover::backdrop {
+  background: transparent !important;
+  backdrop-filter: none !important;
+}
