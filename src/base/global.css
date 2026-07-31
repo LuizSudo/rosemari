@@ -1,0 +1,123 @@
+@-moz-document regexp("https?://(?!rosehome\\.vercel\\.app).*") {
+
+  html { color-scheme: light; }
+
+  html, body {
+    background-color: var(--rose-bg) !important;
+  }
+
+  /* Áreas estruturais base */
+  body, main, section, article, aside, nav, header, footer, dialog, form, fieldset,
+  [role="navigation"], [role="banner"], [role="complementary"] {
+    background-color: transparent;
+    color: var(--rose-text-secondary);
+    border-color: var(--rose-border);
+  }
+
+  /* Proteção para textos brancos em fundo claro */
+  [style*="color: #fff" i]:not([style*="background"]):not([class*="primary"]):not([class*="accent"]),
+  [style*="color: white" i]:not([style*="background"]):not([class*="primary"]):not([class*="accent"]),
+  [style*="color: rgb(255, 255, 255)" i]:not([style*="background"]):not([class*="primary"]):not([class*="accent"]) {
+    color: var(--rose-text) !important;
+  }
+
+  /* Cards e painéis flutuantes (Menus, Modais)
+     IMPORTANT: Exclude CDK overlay wrappers (.cdk-overlay-popover, bare <dialog>)
+     which cover 100vw×100vh and must stay transparent. */
+  [class*="card" i]:not(.ytp-videowall-still-info-content):not(.card_body):not(.hc_card),
+  [class*="modal" i]:not([class*="icon" i]),
+  [class*="dialog" i]:not([class*="icon" i]),
+  [class*="popover" i]:not(.cdk-overlay-popover),
+  [class*="dropdown-menu" i],
+  [role="dialog"]:not(dialog) {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    box-shadow: 0 8px 24px var(--rose-shadow) !important;
+    border-radius: var(--rose-radius);
+    color: var(--rose-text) !important;
+  }
+
+  [class*="card" i] [class*="secondary" i],
+  [class*="card" i] [class*="muted" i],
+  [class*="card" i] small,
+  [role="dialog"] [class*="secondary" i],
+  [role="dialog"] [class*="muted" i],
+  [role="dialog"] small {
+      color: var(--rose-text-secondary) !important;
+  }
+
+  /* Botões gerais (compatível Firefox ESR 115+, sem :has()) */
+  button:not([class*="icon" i]):not([class*="Icon" i]):not([class*="ytp-"]):not(:empty):not(.feedback_button):not(.nudge):not(#sb_expand_r):not(#sb_collapes_r),
+  [type="submit"]:not([class*="icon" i]):not([class*="Icon" i]):not(.b_searchboxSubmit):not(.cdxSearchSubmitIpt):not(#sb_form_go):not(#uaseabtn),
+  [type="button"]:not([class*="icon" i]):not([class*="Icon" i]):not(#sb_expand_r):not(#sb_collapes_r),
+  input[type="submit"]:not(.b_searchboxSubmit):not(.cdxSearchSubmitIpt):not(#sb_form_go):not(#uaseabtn) {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid transparent !important;
+    border-radius: 999px;
+    transition: background-color var(--rose-transition), transform 100ms ease;
+  }
+
+  button:not([class*="icon" i]):not([class*="Icon" i]):not([class*="ytp-"]):not(.feedback_button):not(.nudge):not(#sb_expand_r):not(#sb_collapes_r):hover,
+  [type="submit"]:not([class*="icon" i]):not([class*="Icon" i]):not(.b_searchboxSubmit):not(.cdxSearchSubmitIpt):not(#sb_form_go):not(#uaseabtn):hover {
+    background-color: var(--rose-pill-hover) !important;
+    transform: scale(1.02);
+  }
+
+  [class*="selected" i]:not(#movie_player *):not(yt-chip-cloud-chip-renderer):not([role="tab"]),
+  button[class*="primary" i],
+  [class*="btn-primary" i] {
+    background-color: var(--rose-pill-selected) !important;
+    color: var(--rose-text-on-accent) !important;
+    font-weight: 600;
+  }
+
+  /* Inputs Globais (Campos de digitação) */
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="submit"]):not(.gLFyf):not(#APjFqb):not(.ytSearchboxComponentInput):not(.yt-searchbox-input):not(#sb_form_q):not(.b_searchboxSubmit):not(.sb_form_q):not(#uaseabox):not(.cbtn input),
+  textarea:not(.gLFyf):not(#APjFqb):not(#sb_form_q):not(.sb_form_q),
+  select {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px;
+    padding: 8px 16px;
+    transition: border-color var(--rose-transition), box-shadow var(--rose-transition);
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: var(--rose-text-muted) !important;
+    opacity: 0.7;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    outline: none !important;
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 3px var(--rose-pill) !important;
+  }
+
+  a { color: var(--rose-accent); text-decoration: none; transition: color var(--rose-transition); }
+  a:hover { color: var(--rose-accent-hover); text-decoration: underline; }
+
+  h1, h2, h3, h4, h5, h6 { color: var(--rose-text) !important; font-weight: bold; }
+  small, [class*="muted" i], [class*="secondary-text" i], [class*="caption" i] { color: var(--rose-text-muted) !important; }
+
+  /* Mídia 100% Preservada (Imagens e Vídeos intocados) */
+  img, video, iframe, canvas, svg,
+  [class*="thumbnail" i], [class*="avatar" i],
+  [class*="logo" i], [class*="brand" i] {
+    background-color: transparent !important;
+    filter: none !important;
+  }
+
+  /* Scrollbar (Barra de rolagem) personalizada */
+  * {
+    scrollbar-width: thin !important;
+    scrollbar-color: var(--rose-bg-soft) var(--rose-bg) !important;
+  }
+
+  ::selection {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-white) !important;
+  }
+
+}

@@ -1,0 +1,40 @@
+@-moz-document regexp("https?://(?!rosehome\\.vercel\\.app).*") {
+
+  :root {
+    /* ============================================
+       PALETA DE CORES
+       ============================================ */
+    /* Fundo pele super suave */
+    --rose-bg: #FFF5F5;
+    /* Branco levemente aquecido */
+    --rose-white: #FFFFFF;
+    /* Rosa intermediário para hovers e menus */
+    --rose-bg-soft: #F8D5DE;
+    /* Rosa escuro vibrante para destaques */
+    --rose-bg-strong: #D64B78;
+
+    --rose-pill: rgba(244, 111, 161, 0.12);
+    --rose-pill-hover: rgba(244, 111, 161, 0.25);
+    --rose-pill-selected: var(--rose-bg-strong);
+
+    /* Bordas sutis e delicadas */
+    --rose-border: rgba(244, 111, 161, 0.20);
+
+    /* Textos para alto contraste e leitura diária */
+    --rose-text: #2A131A;
+    --rose-text-secondary: #5C3241;
+    --rose-text-muted: #6B3D50;
+    --rose-text-on-accent: #FFFFFF;
+
+    --rose-accent: rgb(235, 85, 140);
+    --rose-accent-hover: rgb(255, 120, 165);
+
+    /* Sombras leves e elegantes */
+    --rose-shadow: rgba(42, 19, 26, 0.06);
+    /* Arredondamento moderno */
+    --rose-radius: 12px;
+    /* Transições suaves */
+    --rose-transition: 200ms;
+  }
+
+}
