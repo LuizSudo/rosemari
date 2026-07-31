@@ -10,8 +10,8 @@
   <a href="https://github.com/LuizSudo/rosemari/blob/master/style.user.css">
     <img src="https://img.shields.io/badge/arquivo-style.user.css-D64B78?style=for-the-badge&logo=css3&logoColor=white" alt="CSS">
   </a>
-  <img src="https://img.shields.io/badge/versao-1.0.0-D64B78?style=for-the-badge" alt="Versao">
-  <img src="https://img.shields.io/badge/sites-15-suportados-D64B78?style=for-the-badge" alt="Sites">
+  <img src="https://img.shields.io/badge/versao-1.1.0-D64B78?style=for-the-badge" alt="Versao">
+  <img src="https://img.shields.io/badge/sites-16-suportados-D64B78?style=for-the-badge" alt="Sites">
   <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt">
     <img src="https://img.shields.io/badge/licenca-CC%20BY--NC--SA%204.0-lightgrey?style=for-the-badge" alt="Licenca">
   </a>
@@ -22,6 +22,7 @@
   <a href="#sites-suportados">Sites</a> •
   <a href="#paleta-de-cores">Cores</a> •
   <a href="#o-que-o-tema-faz">Recursos</a> •
+  <a href="#para-desenvolvedores--build">Build</a> •
   <a href="#notas-técnicas">Técnico</a>
 </p>
 
@@ -68,6 +69,7 @@
 | ⚫ | **GitHub** | Repos, issues, PRs (Primer) |
 | 🟢 | **WhatsApp Web** | Conversas, bubbles, sidebar |
 | 🟡 | **Gmail** | Caixa de entrada, Material 3 tokens |
+| 📖 | **Wikipedia** | Artigos, infobox, navegação Vector |
 | 🟢 | **ChatGPT** | Sidebar, composer, Tailwind tokens |
   </tr>
 </table>
@@ -90,6 +92,17 @@
     <td><img src="https://img.shields.io/badge/-EB558C-EB558C?style=flat-square&label=Accent" alt="#EB558C"></td>
   </tr>
 </table>
+
+<br>
+
+## Para desenvolvedores — build
+
+> ```bash
+> npm install
+> node scripts/build.js
+> node scripts/build.js --watch   # Modo watch
+> ```
+> O build lê `src/`, encurta `--rose-*` para `--r*`, e minifica com CSSO.
 
 <br>
 
@@ -116,30 +129,33 @@
 <summary><b>Estrutura do CSS</b> (clique para expandir)</summary>
 
 ```
-style.user.css
+src/
 │
-├── 🌐 Regras globais (aplicam a todos os sites)
-│   ├── Paleta de cores (variáveis CSS)
-│   ├── Fundo, texto, links, botões, inputs
-│   ├── Cards, modais, diálogos
-│   ├── Scrollbar personalizada
-│   └── Mídia preservada (imagens e vídeos intactos)
-│
-├── 🟣 Google .............. google.com
-├── 🔴 YouTube ............. youtube.com
-├── 🩷 Instagram ........... instagram.com
-├── 🟦 Office Online ....... office.com / live.com
-├── 🟣 Google Gemini ....... gemini.google.com
-├── 🟣 NotebookLM ......... notebooklm.google.com
-├── 🩵 Bing ................ bing.com (homepage + SERP)
-├── 🟣 Google Scholar ...... scholar.google.com
-├── 🔵 Twitter / X ......... twitter.com / x.com
-├── 🟠 Reddit .............. reddit.com
-├── 🔵 LinkedIn ............ linkedin.com
-├── ⚫ GitHub .............. github.com
-├── 🟢 WhatsApp Web ........ web.whatsapp.com
-├── 🟡 Gmail ............... mail.google.com
-└── 🟢 ChatGPT ............. chatgpt.com
+├── header.css        # UserStyle metadata
+├── base/
+│   ├── variables.css # Paleta --rose-* (global)
+│   └── global.css    # Resets, cards, botões, scrollbar
+├── sites/
+│   ├── google.css      🟣 google.com
+│   ├── youtube.css     🔴 youtube.com
+│   ├── instagram.css   🩷 instagram.com
+│   ├── office.css      🟦 office.com / live.com
+│   ├── gemini.css      🟣 gemini.google.com
+│   ├── notebooklm.css  🟣 notebooklm.google.com
+│   ├── bing.css        🩵 bing.com
+│   ├── scholar.css     🟣 scholar.google.com
+│   ├── twitter.css     🔵 twitter.com / x.com
+│   ├── reddit.css      🟠 reddit.com
+│   ├── linkedin.css    🔵 linkedin.com
+│   ├── github.css      ⚫ github.com
+│   ├── whatsapp.css    🟢 web.whatsapp.com
+│   ├── wikipedia.css   📖 wikipedia.org
+│   ├── gmail.css       🟡 mail.google.com
+│   └── chatgpt.css     🟢 chatgpt.com
+└── safety.css         # CDK overlay (sem @-moz-document)
+
+scripts/
+└── build.js           # Concatena src/ → style.user.css
 ```
 
 </details>
