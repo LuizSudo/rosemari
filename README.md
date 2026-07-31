@@ -11,7 +11,7 @@
     <img src="https://img.shields.io/badge/arquivo-style.user.css-D64B78?style=for-the-badge&logo=css3&logoColor=white" alt="CSS">
   </a>
   <img src="https://img.shields.io/badge/versao-1.1.0-D64B78?style=for-the-badge" alt="Versao">
-  <img src="https://img.shields.io/badge/sites-16-suportados-D64B78?style=for-the-badge" alt="Sites">
+  <img src="https://img.shields.io/badge/sites-16%20suportados-D64B78?style=for-the-badge" alt="Sites">
   <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt">
     <img src="https://img.shields.io/badge/licenca-CC%20BY--NC--SA%204.0-lightgrey?style=for-the-badge" alt="Licenca">
   </a>
