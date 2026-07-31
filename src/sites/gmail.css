@@ -1,0 +1,493 @@
+@-moz-document domain("mail.google.com"), domain("gmail.com") {
+
+  /* ── FORCE LIGHT MODE: Override Gmail Material 3 tokens ── */
+  :root, html, body {
+    color-scheme: light !important;
+    --gm3-sys-color-primary: var(--rose-bg-strong) !important;
+    --gm3-sys-color-on-primary: #FFFFFF !important;
+    --gm3-sys-color-primary-container: #F8D5DE !important;
+    --gm3-sys-color-on-primary-container: var(--rose-text) !important;
+    --gm3-sys-color-secondary: #5C3241 !important;
+    --gm3-sys-color-on-secondary: #FFFFFF !important;
+    --gm3-sys-color-secondary-container: #F8D5DE !important;
+    --gm3-sys-color-on-secondary-container: var(--rose-text) !important;
+    --gm3-sys-color-tertiary: var(--rose-accent) !important;
+    --gm3-sys-color-on-tertiary: #FFFFFF !important;
+    --gm3-sys-color-tertiary-container: #FDDDE6 !important;
+    --gm3-sys-color-on-tertiary-container: var(--rose-text) !important;
+    --gm3-sys-color-error: #B3261E !important;
+    --gm3-sys-color-on-error: #FFFFFF !important;
+    --gm3-sys-color-background: var(--rose-bg) !important;
+    --gm3-sys-color-on-background: var(--rose-text) !important;
+    --gm3-sys-color-surface: var(--rose-white) !important;
+    --gm3-sys-color-on-surface: var(--rose-text) !important;
+    --gm3-sys-color-surface-variant: #F0E4E8 !important;
+    --gm3-sys-color-on-surface-variant: var(--rose-text-secondary) !important;
+    --gm3-sys-color-surface-container-lowest: #FFFFFF !important;
+    --gm3-sys-color-surface-container-low: #FFF5F5 !important;
+    --gm3-sys-color-surface-container: #FFF0F3 !important;
+    --gm3-sys-color-surface-container-high: #FFE8ED !important;
+    --gm3-sys-color-surface-container-highest: #FFDCE3 !important;
+    --gm3-sys-color-outline: rgba(244, 111, 161, 0.30) !important;
+    --gm3-sys-color-outline-variant: rgba(244, 111, 161, 0.20) !important;
+    --gm3-sys-color-inverse-surface: var(--rose-text) !important;
+    --gm3-sys-color-inverse-on-surface: #FFFFFF !important;
+    --gm3-sys-color-inverse-primary: #F8B4CC !important;
+    --gm3-sys-color-scrim: rgba(42, 19, 26, 0.32) !important;
+    --gm3-sys-color-shadow: rgba(42, 19, 26, 0.15) !important;
+    --gm3-sys-color-surface-tint: var(--rose-bg-strong) !important;
+
+    /* Override og-bar (Google header) tokens */
+    --og-bar-background: var(--rose-bg) !important;
+    --og-bar-color: var(--rose-text) !important;
+    --og-link-color: var(--rose-accent) !important;
+    --og-logo-color: var(--rose-text) !important;
+    --og-svg-color: var(--rose-text-secondary) !important;
+    --og-theme-color: var(--rose-bg-strong) !important;
+  }
+
+  /* ── FORCE TEXT COLOR: Override white text from system dark mode ── */
+  div, span, td, th, li, p, h1, h2, h3, h4, h5, h6, label, caption,
+  [role="row"], [role="gridcell"], [role="button"], [role="tab"],
+  [role="menuitem"], [role="option"], [role="link"], [role="heading"],
+  [role="complementary"], [role="navigation"], [role="toolbar"] {
+    color: var(--rose-text) !important;
+  }
+  /* Links keep accent color */
+  a, a span, a div, [role="link"] {
+    color: var(--rose-accent) !important;
+  }
+  a:hover, a:hover span, a:hover div {
+    color: var(--rose-accent-hover) !important;
+  }
+  /* Secondary / muted text */
+  small, .bq3, .afn, .aV6 {
+    color: var(--rose-text-secondary) !important;
+  }
+
+  /* ── GOOGLE HEADER BAR ── */
+  /* <header id="gb" class="gb_Na ..."> — top Google bar */
+  header[role="banner"],
+  #gb {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+  /* Circle buttons in header (apps, help, profile) */
+  .gb_7c {
+    background-color: transparent !important;
+    border-radius: 50% !important;
+  }
+  .gb_7c:hover {
+    background-color: var(--rose-pill) !important;
+  }
+  /* Profile chip */
+  .gb_C {
+    border-radius: 50% !important;
+  }
+  /* Google logo area — gb_me is the SVG logo (CSS bg image), gb_qe is "Gmail" text */
+  .gb_2c .gb_me,
+  .gb_je .gb_me {
+    background-color: transparent !important;
+    filter: hue-rotate(330deg) saturate(2.5) brightness(1.1) !important;
+  }
+  .gb_qe {
+    color: var(--rose-text) !important;
+    font-family: 'Google Sans', Roboto, Arial, sans-serif !important;
+  }
+  .gb_5 {
+    color: var(--rose-text) !important;
+  }
+
+  /* ── SIDEBAR / NAVIGATION ── */
+  /* <div class="aeN WR baA nH oy8Mbf" role="navigation"> */
+  .aeN,
+  div[role="navigation"] {
+    background-color: var(--rose-bg) !important;
+    border-right: 1px solid var(--rose-border) !important;
+  }
+  .nH .aeN,
+  .nH.aeN {
+    background-color: var(--rose-bg) !important;
+  }
+
+  /* ── COMPOSE BUTTON (sidebar) ── */
+  /* <div gh="cm" role="button" class="T-I T-I-KE L3"> */
+  [gh="cm"] {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border: none !important;
+    border-radius: 16px !important;
+    box-shadow: 0 2px 8px var(--rose-shadow) !important;
+    font-weight: 600 !important;
+    font-family: 'Google Sans', Roboto, Arial, sans-serif !important;
+    font-size: 14px !important;
+  }
+  [gh="cm"]:hover {
+    background-color: var(--rose-bg-soft) !important;
+    color: var(--rose-text) !important;
+    box-shadow: 0 4px 12px var(--rose-shadow) !important;
+  }
+
+  /* ── SIDEBAR LABELS ── */
+  /* <div class="TO aBP nZ aiq" data-tooltip="Inbox"> */
+  .TO {
+    color: var(--rose-text) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .TO:hover {
+    background-color: var(--rose-pill) !important;
+  }
+  /* Selected label (Inbox when active) */
+  .TO.nZ {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+    font-weight: 600 !important;
+  }
+  /* Label text link */
+  .J-Ke {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  /* ── UNREAD BADGE ── */
+  /* <span class="bsU"> — unread count badge */
+  .bsU {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border-radius: 999px !important;
+    font-weight: 600 !important;
+    font-size: 11px !important;
+    padding: 0 6px !important;
+    line-height: 18px !important;
+  }
+
+  /* ── SIDEBAR HEADING ── */
+  /* <h2 class="aWk"> — section labels like "Labels", "Categories" */
+  .aWk {
+    color: var(--rose-text-secondary) !important;
+    font-size: 11px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    font-weight: 500 !important;
+  }
+
+  /* ── INBOX TABS ── */
+  /* <tr class="aAA J-KU-Jg" role="tablist"> */
+  .J-KU-Jg {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+  /* Tab items: <div class="aAy J-KU-KO" role="tab" aria-label="Primary"> */
+  [role="tab"][aria-label="Primary"],
+  [role="tab"][aria-label="Social"],
+  [role="tab"][aria-label="Promotions"],
+  [role="tab"][aria-label="Updates"] {
+    background-color: transparent !important;
+    color: var(--rose-text-secondary) !important;
+    border: none !important;
+    border-bottom: 3px solid transparent !important;
+    border-radius: 0 !important;
+    font-family: 'Google Sans', Roboto, Arial, sans-serif !important;
+    font-size: 14px !important;
+  }
+  [role="tab"][aria-selected="true"] {
+    color: var(--rose-bg-strong) !important;
+    border-bottom-color: var(--rose-bg-strong) !important;
+    background-color: transparent !important;
+    font-weight: 500 !important;
+  }
+  [role="tab"]:hover {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ── ACTION TOOLBAR ── */
+  /* <ul class="bqY" role="toolbar"> — row above email list */
+  ul.bqY[role="toolbar"] {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+  /* Toolbar items are <li> elements, not buttons */
+  ul.bqY li {
+    background-color: transparent !important;
+    border: none !important;
+  }
+  ul.bqY li:hover {
+    background-color: var(--rose-pill-hover) !important;
+    border-radius: 999px !important;
+  }
+
+  /* ── SEARCH ── */
+  /* <form class="gb_Md"> is the search bar container, <input class="gb_Fe"> is the input */
+  .gb_Md {
+    background-color: var(--rose-bg) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 28px !important;
+    max-width: 720px !important;
+    transition: background 0.2s ease, box-shadow 0.2s ease !important;
+  }
+  .gb_Md:hover {
+    box-shadow: 0 1px 6px var(--rose-shadow) !important;
+  }
+  .gb_Md.gb_Se {
+    background-color: var(--rose-white) !important;
+    border-radius: 28px 28px 0 0 !important;
+    box-shadow: 0 2px 8px var(--rose-shadow) !important;
+  }
+  /* Search input */
+  .gb_Fe {
+    color: var(--rose-text) !important;
+    background: transparent !important;
+    border: none !important;
+    font-family: 'Google Sans', Roboto, Arial, sans-serif !important;
+    font-size: 16px !important;
+    caret-color: var(--rose-bg-strong) !important;
+  }
+  .gb_Fe::placeholder {
+    color: var(--rose-text-secondary) !important;
+    opacity: 1 !important;
+  }
+  .gb_Fe::-webkit-input-placeholder {
+    color: var(--rose-text-secondary) !important;
+    opacity: 1 !important;
+  }
+  .gb_Fe::-moz-placeholder {
+    color: var(--rose-text-secondary) !important;
+    opacity: 1 !important;
+  }
+  /* Search icons (magnifying glass, mic, close) */
+  .gb_Md button svg {
+    color: var(--rose-text-secondary) !important;
+    fill: var(--rose-text-secondary) !important;
+  }
+  .gb_Md.gb_Se button svg {
+    color: var(--rose-text-secondary) !important;
+  }
+  /* Fallback: input by name/aria-label */
+  input[name="q"][aria-label="Search mail"],
+  input[name="q"][aria-label*="Pesquisar"] {
+    color: var(--rose-text) !important;
+    background: transparent !important;
+    font-family: 'Google Sans', Roboto, Arial, sans-serif !important;
+  }
+  /* Advanced search button */
+  [data-tooltip="Show search options"] {
+    background-color: transparent !important;
+    color: var(--rose-text) !important;
+  }
+  [data-tooltip="Show search options"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  /* Search autocomplete dropdown */
+  .gssb_e {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 0 0 28px 28px !important;
+    box-shadow: 0 4px 12px var(--rose-shadow) !important;
+  }
+  /* Search close button */
+  .gb_Ue svg,
+  .gb_1e svg {
+    color: var(--rose-text-secondary) !important;
+  }
+
+  /* ── EMAIL LIST (GRID) ── */
+  /* <table role="grid"> */
+  [role="grid"] {
+    background-color: var(--rose-white) !important;
+  }
+  /* Email rows: <tr class="zA zE s00Hgd"> (selected/read)
+                  <tr class="zA yO s00Hgd"> (unread) */
+  tr.zA {
+    background-color: var(--rose-white) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+  tr.zA:hover {
+    background-color: var(--rose-pill) !important;
+  }
+  /* Unread row */
+  .zA.yO {
+    background-color: var(--rose-white) !important;
+  }
+  /* Selected row */
+  .zA.zE {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .zA.zE:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ── EMAIL ROW CONTENT ── */
+  /* Sender: <span class="zF" email="..."> inside .bA4 inside .yX */
+  .zF[email] {
+    color: var(--rose-text) !important;
+    font-weight: 400 !important;
+  }
+  .yW .zF[email] {
+    color: var(--rose-text) !important;
+    font-weight: 600 !important;
+  }
+  /* Subject line: <span class="bqe" data-thread-id="..."> */
+  .bqe {
+    color: var(--rose-text) !important;
+  }
+  /* Date: <span class="bq3"> */
+  .bq3 {
+    color: var(--rose-text-secondary) !important;
+    font-size: 12px !important;
+  }
+  /* Snippet text (inside .afn) */
+  .afn {
+    color: var(--rose-text-secondary) !important;
+    font-size: 13px !important;
+  }
+  /* Sender row in compact view */
+  .yW {
+    color: var(--rose-text) !important;
+  }
+  /* Checkboxes (select all, individual) */
+  .T-Jo {
+    background-color: transparent !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 2px !important;
+  }
+  .T-Jo:hover {
+    border-color: var(--rose-bg-strong) !important;
+  }
+  /* Star button */
+  .T-KT {
+    background-color: transparent !important;
+  }
+  .T-KT-JX {
+    opacity: 0.4 !important;
+  }
+  .T-KT:hover .T-KT-JX {
+    opacity: 0.7 !important;
+  }
+
+  /* ── EMAIL THREAD / CONVERSATION VIEW ── */
+  /* Main content area: <div class="nH ar4 z"> and <div class="nH bkK"> */
+  .nH.ar4,
+  .nH.bkK {
+    background-color: var(--rose-bg) !important;
+  }
+  /* Email body area */
+  .nH.bkK .gs {
+    background-color: var(--rose-white) !important;
+  }
+
+  /* ── MESSAGE QUOTED TEXT ── */
+  .gmail_quote {
+    background-color: var(--rose-white) !important;
+    border-left: 3px solid var(--rose-border) !important;
+    padding-left: 12px !important;
+    color: var(--rose-text-secondary) !important;
+  }
+
+  /* ── COMPOSE POPUP ── */
+  /* Compose dialog classes: d-a8c-cBUbof, d-a8c-Jg, d-a8c-kj0dLd, d-a8c-OgMUtf */
+  .d-a8c-cBUbof,
+  .d-a8c-Jg,
+  .d-a8c-kj0dLd,
+  .d-a8c-OgMUtf,
+  .d-a8c-YiobSc {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 24px var(--rose-shadow) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ── COMPOSE FIELDS ── */
+  input[name="subjectbox"],
+  input[aria-label="To recipients"],
+  input[aria-label="Cc"],
+  input[aria-label="Bcc"],
+  input[aria-label*="Assunto"],
+  input[aria-label*="Destinat"],
+  input[aria-label*="Cc"],
+  input[aria-label*="Cco"] {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+    border-radius: 0 !important;
+    padding: 8px 0 !important;
+  }
+  input[name="subjectbox"]:focus,
+  input[aria-label*="ipients"]:focus {
+    border-bottom-color: var(--rose-bg-strong) !important;
+  }
+
+  /* ── GENERIC T-I BUTTONS ── */
+  /* Gmail uses .T-I for all action buttons */
+  .T-I {
+    background-color: transparent !important;
+    color: var(--rose-text) !important;
+    border: none !important;
+    border-radius: 999px !important;
+  }
+  .T-I:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  /* Specific toolbar button variants */
+  .T-I-awG,
+  .T-I-ax7,
+  .T-I-Js-IF,
+  .T-I-Js-Gs {
+    background-color: transparent !important;
+    border: none !important;
+  }
+  /* Button text labels */
+  .J-J5-Ji {
+    color: var(--rose-text) !important;
+  }
+
+  /* ── SIDE PANEL ── */
+  /* <div class="brC-aT5-aOt-Jw brC-aMv-auO" role="complementary" aria-label="Side panel"> */
+  [role="complementary"][aria-label="Side panel"],
+  .brC-aT5-aOt-Jw {
+    background-color: var(--rose-bg) !important;
+    border-left: 1px solid var(--rose-border) !important;
+  }
+  /* Side panel tab list */
+  .brC-bsf-aT5-aOt[role="tablist"] {
+    background-color: var(--rose-bg) !important;
+  }
+  /* Side panel tabs (Calendar, Tasks, etc.) */
+  .bse-bvF-I.aT5-aOt-I[role="tab"] {
+    background-color: transparent !important;
+    color: var(--rose-text-secondary) !important;
+    border: none !important;
+    border-bottom: 2px solid transparent !important;
+    border-radius: 0 !important;
+  }
+  .bse-bvF-I.aT5-aOt-I[role="tab"][aria-selected="true"] {
+    color: var(--rose-bg-strong) !important;
+    border-bottom-color: var(--rose-bg-strong) !important;
+  }
+  .bse-bvF-I.aT5-aOt-I[role="tab"]:hover {
+    background-color: var(--rose-pill) !important;
+  }
+
+  /* ── LABELS MANAGEMENT ── */
+  /* Create new label dialog */
+  [data-tooltip="Create new label"] {
+    color: var(--rose-text) !important;
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar {
+    width: 8px !important;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent !important;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--rose-text-secondary) !important;
+  }
+}

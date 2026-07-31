@@ -1,0 +1,442 @@
+@-moz-document domain("gemini.google.com") {
+  :root, html, body, .theme-host, .lm-component-theme, chat-app-orchestrator {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+    --gem-sys-color--surface: var(--rose-white) !important;
+    --gem-sys-color--surface-container: var(--rose-white) !important;
+    --gem-sys-color--surface-container-low: var(--rose-bg) !important;
+    --gem-sys-color--surface-container-high: var(--rose-white) !important;
+    --gem-sys-color--on-surface: var(--rose-text) !important;
+    --gem-sys-color--on-surface-variant: var(--rose-text-secondary) !important;
+    --gem-sys-color--outline: var(--rose-border) !important;
+    --gem-sys-color--outline-variant: var(--rose-border) !important;
+    --gem-sys-color--primary: var(--rose-bg-strong) !important;
+    --gem-sys-color--on-primary: var(--rose-text-on-accent) !important;
+    --gem-sys-color--primary-container: var(--rose-pill) !important;
+    --gem-sys-color--on-primary-container: var(--rose-text) !important;
+    --bard-color-lightbox-background: var(--rose-white) !important;
+    --md-sys-color-primary: var(--rose-bg-strong) !important;
+    --md-sys-color-on-primary: var(--rose-text-on-accent) !important;
+    --md-sys-color-primary-container: var(--rose-pill) !important;
+    --md-sys-color-surface: var(--rose-white) !important;
+    --md-sys-color-on-surface: var(--rose-text) !important;
+    --md-sys-color-on-surface-variant: var(--rose-text-secondary) !important;
+    --md-sys-color-outline: var(--rose-border) !important;
+    --md-sys-color-outline-variant: var(--rose-border) !important;
+    --md-sys-color-surface-container: var(--rose-white) !important;
+    --md-sys-color-surface-container-low: var(--rose-bg) !important;
+    --md-sys-color-surface-container-high: var(--rose-white) !important;
+  }
+
+  main.chat-app, .chat-container,
+  .assistant-messages-primary-container {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+  }
+
+  #gb, [role="banner"],
+  [class^="gb_"], [class*=" gb_"] {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  [data-test-id="bard-mode-menu-button"],
+  .model-picker-container, .input-area-switch {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  [data-test-id="bard-mode-menu-button"]:hover,
+  .model-picker-container:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .pill-ui-logo-container, .logo-pill-label-container {
+    background-color: transparent !important;
+    color: var(--rose-text) !important;
+  }
+
+  side-navigation-content,
+  .sidenav-with-history-container,
+  .chat-history-list,
+  mat-nav-list.gds-sidenav-list {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+  .gem-nav-list-item, .gem-nav-list-item:hover {
+    color: var(--rose-text) !important;
+    background-color: transparent !important;
+    border-radius: var(--rose-radius) !important;
+    transition: background-color var(--rose-transition) !important;
+  }
+  .gem-nav-list-item:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .gem-nav-list-item[class*="active"],
+  .gem-nav-list-item[class*="selected"] {
+    background-color: var(--rose-pill-selected) !important;
+    color: var(--rose-text-on-accent) !important;
+  }
+  [data-test-id="bard-sidenav-container"] {
+    background-color: var(--rose-bg) !important;
+    border-right: 1px solid var(--rose-border) !important;
+  }
+  [data-test-id="chats-expandable-section"],
+  [data-test-id="notebooks-expandable-section"] {
+    background-color: transparent !important;
+  }
+  .expandable-section-header {
+    color: var(--rose-text-secondary) !important;
+  }
+  .expandable-section-header:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .mavatar-footer-row {
+    border-top: 1px solid var(--rose-border) !important;
+    background-color: var(--rose-bg) !important;
+  }
+  .mavatar-user-name {
+    color: var(--rose-text) !important;
+  }
+  .side-nav-sparkle-button,
+  [data-test-id="new-chat-button"],
+  [data-test-id="new-notebook-button"],
+  [data-test-id="search-chats-button"],
+  [data-test-id="my-stuff-side-nav-entry-button"],
+  [data-test-id="images-side-nav-entry-button"] {
+    color: var(--rose-text) !important;
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .side-nav-sparkle-button:hover,
+  [data-test-id="new-chat-button"]:hover,
+  [data-test-id="new-notebook-button"]:hover,
+  [data-test-id="search-chats-button"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+  .close-sidenav-button {
+    color: var(--rose-text-muted) !important;
+  }
+  .close-sidenav-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  input-area-v2, .input-area-container,
+  .input-area, .initial-input-area,
+  .text-input-field, .chat-container {
+    background-color: var(--rose-white) !important;
+  }
+  rich-textarea, .ql-editor,
+  .ql-editor[role="textbox"] {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 1px 4px var(--rose-shadow) !important;
+  }
+  rich-textarea:focus-within, .ql-editor:focus,
+  .ql-editor[role="textbox"]:focus {
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 3px var(--rose-pill) !important;
+    outline: none !important;
+  }
+  .ql-blank::before {
+    color: var(--rose-text-muted) !important;
+  }
+  .input-buttons-wrapper-bottom {
+    background-color: transparent !important;
+  }
+  .leading-actions-wrapper, .trailing-actions-wrapper {
+    background-color: transparent !important;
+  }
+
+  .gem-menu-button, .speech_dictation_mic_button,
+  .tts-button, gem-icon-button {
+    color: var(--rose-text) !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 999px !important;
+    transition: all var(--rose-transition) !important;
+  }
+  .gem-menu-button:hover, .speech_dictation_mic_button:hover,
+  .tts-button:hover, gem-icon-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+  button[aria-label="Envio e ferramentas"] {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text-secondary) !important;
+    border: 1px solid var(--rose-border) !important;
+  }
+  button[aria-label="Envio e ferramentas"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  response-element, .assistant-messages-primary-container {
+    background-color: transparent !important;
+  }
+  response-element .content, .response-tts-container {
+    color: var(--rose-text) !important;
+  }
+  .user-prompt-chip, .instruction-bg,
+  [aria-label="Insira um comando para o Gemini"] {
+    background-color: var(--rose-pill) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    color: var(--rose-text) !important;
+  }
+
+  .instruction-actions-container,
+  .response-tts-container button {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text-secondary) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+    transition: all var(--rose-transition) !important;
+  }
+  .instruction-actions-container:hover,
+  .response-tts-container button:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  .bard-copy-action-visited-styles,
+  [data-test-id="actions-menu-button"],
+  [data-test-id="actions-menu-icon"] {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text-secondary) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  .bard-copy-action-visited-styles:hover,
+  [data-test-id="actions-menu-button"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  .code-block, .math-block, .table-block-component,
+  pre, code, [class*="code-block"] {
+    background-color: var(--rose-bg) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    color: var(--rose-text) !important;
+  }
+
+  .generated-images-container, .image-gallery,
+  .xap-uploader-dropzone {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .single-large-image {
+    border-radius: var(--rose-radius) !important;
+  }
+  .carousel-dots {
+    color: var(--rose-text) !important;
+  }
+
+  .loading, .loader, .loader-cell, .loader-grid,
+  .loading-content-spinner-container {
+    background-color: var(--rose-white) !important;
+  }
+  .gem-shimmer-active {
+    background: linear-gradient(
+      90deg,
+      var(--rose-white) 0%,
+      var(--rose-pill) 50%,
+      var(--rose-white) 100%
+    ) !important;
+  }
+  .done-generating {
+    opacity: 1 !important;
+  }
+
+  .gem-dialog-container, .gem-dialog-title-and-content-container,
+  .cdk-dialog-container,
+  mat-dialog-container, .mat-mdc-dialog-surface {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 24px var(--rose-shadow) !important;
+    color: var(--rose-text) !important;
+  }
+  .gem-dialog-title {
+    color: var(--rose-text) !important;
+  }
+  .gem-dialog-content {
+    color: var(--rose-text-secondary) !important;
+  }
+  .gem-dialog-actions button {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text-secondary) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  .gem-dialog-actions button:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  .mat-mdc-dialog-surface, .mat-mdc-card {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .mat-mdc-menu-panel, .mat-mdc-menu-content {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .mat-mdc-menu-item {
+    color: var(--rose-text) !important;
+  }
+  .mat-mdc-menu-item:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .mat-mdc-icon-button {
+    color: var(--rose-text-secondary) !important;
+    background: transparent !important;
+  }
+  .mat-mdc-icon-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+  .mat-mdc-snack-bar-container {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .mat-mdc-tooltip-surface {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border-radius: 8px !important;
+  }
+
+  [class^="gds-body-"], [class^="gds-title-"],
+  [class^="gds-headline-"], [class^="gds-display-"] {
+    color: var(--rose-text) !important;
+  }
+  [class^="gds-label-"] {
+    color: var(--rose-text-secondary) !important;
+  }
+
+  .google-picker, .picker-api-container {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 32px var(--rose-shadow) !important;
+  }
+
+  .hallucination-disclaimer, .capabilities-disclaimer {
+    color: var(--rose-text-muted) !important;
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .announcement-banner-container {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text-secondary) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  .nl-canvas, .nl-blob, .nl-bg-layer, .nl-fg-layer {
+    opacity: 0.3 !important;
+  }
+
+  [data-test-id="temp-chat-button"] {
+    color: var(--rose-text-muted) !important;
+    background: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  [data-test-id="temp-chat-button"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+  button[aria-label*="Mais opcoes"] {
+    color: var(--rose-text-muted) !important;
+  }
+  button[aria-label*="Mais opcoes"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  condensed-tos-disclaimer, sign-in-nudge, reload-to-sync {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text-secondary) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  quick-action-button {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text-secondary) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    transition: all var(--rose-transition) !important;
+  }
+  quick-action-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  action-buttons,
+  .response-tts-container action-buttons button {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text-secondary) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+    transition: all var(--rose-transition) !important;
+  }
+  action-buttons button:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  chat-notifications {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  xap-count-badge, xap-count-badge-container {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border-radius: 999px !important;
+    font-size: 11px !important;
+    min-width: 18px !important;
+    height: 18px !important;
+  }
+
+  file-drop-indicator {
+    background-color: var(--rose-white) !important;
+    border: 2px dashed var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    color: var(--rose-text-secondary) !important;
+  }
+
+  location-footer {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text-secondary) !important;
+    border-top: 1px solid var(--rose-border) !important;
+  }
+
+  chat-loading-animation {
+    background-color: transparent !important;
+  }
+
+  .skill-folder-upload-modal-panel {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    color: var(--rose-text) !important;
+    box-shadow: 0 8px 32px var(--rose-shadow) !important;
+  }
+}

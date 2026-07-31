@@ -1,0 +1,751 @@
+@-moz-document domain("google.com"), domain("google.com.br") {
+  html, body, #main, #cnt, #rcnt, #center_col, #search, #rso,
+  .MjjYud, .g, .yuRUbf, .hlcw0c, .N54PNb, #searchform,
+  #top_nav, #hdtb-msb, .crJ18e, footer, #footcnt, .fbar,
+  [role="contentinfo"], .o3j99, .TFQHme, .UUJdrf,
+  .L3eUgb, .sfbg, .mnr-c, .s8bAkb, .appbar,
+  #hdtb, .hdtb-mitem, .zItAnd, .T47uwc {
+    background-color: var(--rose-bg) !important;
+    background-image: none !important;
+  }
+
+  footer *, #footcnt *, .fbar * { color: var(--rose-text-muted) !important; }
+
+  /* ── Search Box ── */
+  .RNNXgb {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    box-shadow: 0 2px 8px var(--rose-shadow) !important;
+  }
+
+  .A8SBwf {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  textarea.gLFyf, input.gLFyf, .gLFyf, #APjFqb {
+    color: var(--rose-text) !important;
+    background-color: transparent !important;
+    caret-color: var(--rose-accent) !important;
+  }
+
+  .gLFyf:focus, #APjFqb:focus, textarea.gLFyf:focus, input.gLFyf:focus {
+    outline: none !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .RNNXgb:hover, .sbfc .RNNXgb, .emcav .RNNXgb {
+    background-color: var(--rose-white) !important;
+    border-color: var(--rose-bg-soft) !important;
+    box-shadow: 0 2px 12px var(--rose-shadow) !important;
+  }
+
+  .dRYYxd, .SDkEP, .FcQxmf, .WwJHVc, .MGe1Ac {
+    background-color: transparent !important;
+    background: transparent !important;
+  }
+
+  /* ── Search Icons (microfone, lente, teclado, add files) ── */
+  .DdBH5, .fzj3ad, .etxtjc, .UbbAWe {
+    outline: none !important;
+  }
+  .DdBH5 svg, .fzj3ad svg, .etxtjc svg,
+  .UbbAWe svg, .UbbAWe img,
+  .ByCvB, .hWdRGb {
+    fill: var(--rose-text-muted) !important;
+    color: var(--rose-text-muted) !important;
+    opacity: 1 !important;
+  }
+  .DdBH5:hover svg, .fzj3ad:hover svg, .etxtjc:hover svg,
+  .UbbAWe:hover svg, .UbbAWe:hover img {
+    fill: var(--rose-accent) !important;
+    color: var(--rose-accent) !important;
+  }
+
+  /* ── Suggestions Dropdown ── */
+  .aajZCb, .UUbT9, .erkvQe, .sbdd_a, .sbdd_b {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-top: none !important;
+    border-radius: 0 0 24px 24px !important;
+    box-shadow: 0 4px 12px var(--rose-shadow) !important;
+  }
+
+  .sbct:hover, .sbl1 .sbct, .aajZCb li:hover,
+  .sbhl, .sbct.sbhl {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .sbhl .wM6W7d, .sbhl span, .sbhl .Vlt3wb {
+    color: var(--rose-text) !important;
+  }
+
+  .plR5qb .bvUkz {
+    background: var(--rose-pill) !important;
+  }
+  .plR5qb .PD3zdc, .plR5qb .lTxWLe {
+    color: var(--rose-text) !important;
+  }
+
+  /* ── Search Buttons ── */
+  .FPdoLc input[type="submit"], .RNmpXc input[type="submit"],
+  input.gNO89b, input.RNmpXc, .lJ9FBc input,
+  .FPdoLc center input {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+    padding: 10px 24px !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+    transition: background-color var(--rose-transition) !important;
+  }
+
+  .FPdoLc input[type="submit"]:hover, .RNmpXc input[type="submit"]:hover,
+  input.gNO89b:hover, .lJ9FBc input:hover {
+    background-color: var(--rose-pill-hover) !important;
+    transform: scale(1.02);
+  }
+
+  /* ── Search Tools Bar ── */
+  #hdtb-msb, #hdtb, .crJ18e, .jfN4p,
+  div.YmvwI, .MUFPAc, .T47uwc, .zItAnd {
+    background-color: var(--rose-bg) !important;
+    border-color: var(--rose-border) !important;
+  }
+
+  .hdtb-mitem a, .hdtb-mitem div,
+  .MUFPAc a, .T47uwc a, .zItAnd a,
+  div.YmvwI a {
+    color: var(--rose-text) !important;
+    background-color: transparent !important;
+    border-radius: 999px !important;
+    transition: background-color var(--rose-transition) !important;
+  }
+
+  .hdtb-mitem a:hover, .MUFPAc a:hover,
+  .T47uwc a:hover, .zItAnd a:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  .hdtb-mitem.hdtb-msel,
+  .hdtb-mitem.hdtb-msel a,
+  .hdtb-mitem.hdtb-msel div,
+  .MUFPAc [aria-selected="true"],
+  .T47uwc [aria-current],
+  .zItAnd [aria-selected="true"],
+  div.YmvwI [aria-selected="true"] {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border-radius: 999px !important;
+    font-weight: 600 !important;
+  }
+
+  /* ── Resultados ── */
+  h3, .LC20lb { color: var(--rose-accent) !important; }
+  .VwiC3b, .MUxGbd { color: var(--rose-text-secondary) !important; }
+  cite, .iUh30, .LEsP6e { color: var(--rose-text-muted) !important; }
+
+  a h3, a .LC20lb { color: var(--rose-accent) !important; }
+  a:hover h3, a:hover .LC20lb { color: var(--rose-accent-hover) !important; }
+
+  /* ════════════════════════════════════════
+     NOVAS SEÇÕES — CORREÇÃO CIRÚRGICA
+     ════════════════════════════════════════ */
+
+  /* ── 1. TOP NAV BAR (gb_* / links Gmail, Imagens, Apps, Login) ── */
+  .n1xJcf, .CoM3Df, .AorTac {
+    background-color: transparent !important;
+  }
+
+  .gb_y, .gb_Nd, .gb_R, .gb_8, .gb_7 {
+    background-color: transparent !important;
+  }
+
+  .gb_6, .gb_6:visited {
+    color: var(--rose-text-secondary) !important;
+    font-size: 13px !important;
+    line-height: 24px !important;
+    opacity: 0.85 !important;
+  }
+  .gb_6:hover {
+    color: var(--rose-accent) !important;
+    text-decoration: underline !important;
+    opacity: 1 !important;
+  }
+
+  .gb_C {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 50% !important;
+    transition: background-color var(--rose-transition) !important;
+  }
+  .gb_C::before,
+  .gb_C::after {
+    display: none !important;
+    content: none !important;
+    background: transparent !important;
+  }
+  .gb_C:hover {
+    background: var(--rose-pill) !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  .gb_C:hover::before,
+  .gb_C:hover::after {
+    display: none !important;
+    content: none !important;
+    background: transparent !important;
+  }
+  .gb_C:focus-visible {
+    outline: 2px solid var(--rose-accent) !important;
+    outline-offset: 2px !important;
+  }
+
+  .gb_H, .gb_I, .gb_J {
+    fill: var(--rose-text-muted) !important;
+    color: var(--rose-text-muted) !important;
+  }
+  .gb_C:hover .gb_H,
+  .gb_C:focus .gb_H,
+  .gb_C:active .gb_H {
+    fill: var(--rose-accent) !important;
+  }
+  /* Google's gbar CSS hits the SVG path with very high specificity.
+     These chain `.gb_H` element references to win the cascade. */
+  .gb_C:hover .gb_H svg,
+  .gb_C:hover .gb_H use,
+  .gb_C:hover .gb_H path,
+  .gb_C:focus .gb_H svg,
+  .gb_C:focus .gb_H use,
+  .gb_C:focus .gb_H path,
+  .gb_C:active .gb_H svg,
+  .gb_C:active .gb_H use,
+  .gb_C:active .gb_H path {
+    fill: var(--rose-accent) !important;
+    color: var(--rose-accent) !important;
+  }
+
+  .gb_A, .gb_A:visited {
+    background-color: var(--rose-bg-strong) !important;
+    border-radius: 100px !important;
+    color: var(--rose-text-on-accent) !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    line-height: 36px !important;
+    padding: 0 24px !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+    transition: background-color var(--rose-transition), transform 100ms ease !important;
+  }
+  .gb_A:hover {
+    background-color: var(--rose-accent-hover) !important;
+    transform: scale(1.03) !important;
+    text-decoration: none !important;
+  }
+
+  .gb_2 {
+    color: var(--rose-text-on-accent) !important;
+    font-weight: 500 !important;
+  }
+
+  /* ── 2. LOGO / DOODLE ── */
+  .LS8OJ, .LLD4me, .yr19Zb, .k1zIA, .rSk4se {
+    background-color: transparent !important;
+  }
+
+  .lnXdpd {
+    max-height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .VntuPb, .DYz2A {
+    background-color: transparent !important;
+  }
+
+  .HeJfy {
+    color: var(--rose-text) !important;
+    font-size: 32px !important;
+    line-height: 40px !important;
+    font-weight: 500 !important;
+  }
+
+  .rSk4se svg path:not([fill="none"]) {
+    /* Preserve original multi-color logo,
+       just ensure background is transparent */
+    opacity: 0.95;
+  }
+
+  /* ── 3. SECONDARY HEADER (AI / G-icon header) ── */
+  .X1pLC, .RHL8Vb, .VHYc8b, .iZUKEe {
+    background-color: transparent !important;
+  }
+  .VHYc8b a svg {
+    opacity: 0.9;
+  }
+
+  /* ── 4. FOOTER ── */
+  .c93Gbe {
+    background-color: var(--rose-bg) !important;
+    border-top: 1px solid var(--rose-border) !important;
+  }
+
+  .uU7dJb {
+    color: var(--rose-text-muted) !important;
+    font-size: 15px !important;
+    padding: 15px 30px !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+
+  .KxwPGc {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+  }
+
+  .SSwjIe {
+    padding: 0 20px !important;
+  }
+
+  .pHiOh, .pHiOh:visited {
+    color: var(--rose-text-muted) !important;
+    font-size: 14px !important;
+    display: block !important;
+    padding: 15px !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+  }
+  .pHiOh:hover {
+    color: var(--rose-accent) !important;
+    text-decoration: underline !important;
+  }
+
+  .AghGtd {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    order: 0 !important;
+  }
+  .iTjxkf {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    order: 1 !important;
+  }
+
+  .CcNe6e {
+    cursor: pointer !important;
+  }
+  .CcNe6e:hover .ayzqOc {
+    color: var(--rose-accent) !important;
+  }
+
+  .EfFKwc {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 24px var(--rose-shadow) !important;
+    padding: 6px 0 !important;
+  }
+
+  .EpPYLd {
+    display: block !important;
+    position: relative !important;
+    white-space: nowrap !important;
+  }
+  .EpPYLd a, .EpPYLd span {
+    color: var(--rose-text) !important;
+    padding: 8px 24px !important;
+    display: block !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+  }
+  .EpPYLd a:hover, .EpPYLd span:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-accent) !important;
+  }
+
+  .LGiluc {
+    border-top: 1px solid var(--rose-border) !important;
+    height: 0 !important;
+    margin: 6px 0 !important;
+  }
+
+  .tFYjZe {
+    display: flex !important;
+    align-items: center !important;
+    padding: 8px 24px !important;
+    color: var(--rose-text) !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+  }
+  .tFYjZe:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .tFYjZe .iOHNLb svg {
+    fill: var(--rose-text-muted) !important;
+    margin-left: 8px !important;
+  }
+
+  .y0fQ9c {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  /* ── 5. VOICE SEARCH DIALOG ── */
+  .spch-dlg {
+    background: transparent !important;
+    border: none !important;
+  }
+  .spch {
+    background: var(--rose-bg) !important;
+    height: 100% !important;
+    left: 0 !important;
+    opacity: 0;
+    overflow: hidden !important;
+    position: fixed !important;
+    text-align: left !important;
+    top: 0 !important;
+    visibility: hidden;
+    width: 100% !important;
+    z-index: 10000 !important;
+    transition: visibility 0s linear 0.218s, background-color 0.218s;
+  }
+  .rwfRXb.spch {
+    opacity: 1 !important;
+    transition-delay: 0s !important;
+    visibility: visible !important;
+  }
+
+  .n12p9b {
+    background: none !important;
+    border: none !important;
+    color: var(--rose-text-muted) !important;
+    cursor: pointer !important;
+    font-size: 26px !important;
+    right: 0 !important;
+    line-height: 15px !important;
+    opacity: 0.6 !important;
+    margin: -1px -1px 0 0 !important;
+    padding: 0 0 2px 0 !important;
+    height: 48px !important;
+    width: 48px !important;
+    position: absolute !important;
+    top: 0 !important;
+    z-index: 10 !important;
+  }
+  .n12p9b:hover {
+    opacity: 0.8 !important;
+    color: var(--rose-accent) !important;
+  }
+
+  .spch .QoghVd, .spch .rs1SNc, .spch .xyzqpb,
+  .spch .is4vC, .spch .pml90c, .spch .rDeJ9b,
+  .spch .wuXmqc, .spch .z1asCe {
+    background-color: transparent !important;
+  }
+
+  /* ── 6. CAROUSEL / CHIPS (above search input) ── */
+  .doljm, .Fqft4, .XNfAUb, .RyIFgf, .EDblX, .HG5ZQb {
+    background-color: transparent !important;
+  }
+
+  .pQXcHc, .wgbRNb, .OZ5bRd, .T9Wh5, .bCwlI, .VdehBf {
+    background-color: transparent !important;
+    border: none !important;
+    color: var(--rose-text-muted) !important;
+  }
+  .wgbRNb svg {
+    fill: var(--rose-text-muted) !important;
+  }
+  .wgbRNb:hover svg {
+    fill: var(--rose-accent) !important;
+  }
+
+  .sr9hec, .S3PB2d {
+    background-color: transparent !important;
+  }
+
+  /* ── 7. SPACER / ASYNC CONTAINER ── */
+  .qarstb {
+    flex-grow: 1 !important;
+    background-color: transparent !important;
+  }
+  .yp, .yf {
+    background-color: transparent !important;
+  }
+
+  /* ════════════════════════════════════════
+     SERP (Search Engine Results Page)
+     ════════════════════════════════════════ */
+
+  /* ── 8. Knowledge Panel ── */
+  .kp-blk, .kJ9Q3d, .IIV1Qb, .kno-ec, .kno-fv,
+  .kp-header, .xpd-wa, .xpd-wa .xpd-xpr,
+  [data-hveid] > div.kp-blk,
+  .knowledge-panel, .knowlegde-box {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 2px 8px var(--rose-shadow) !important;
+  }
+  .kp-blk *,
+  .IIV1Qb * {
+    color: var(--rose-text) !important;
+  }
+  .kp-blk .kno-ec *,
+  .kp-blk .kno-fv * {
+    color: var(--rose-text-secondary) !important;
+  }
+  .kp-blk a,
+  .IIV1Qb a {
+    color: var(--rose-accent) !important;
+  }
+  .kp-blk a:hover,
+  .IIV1Qb a:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+  .kp-blk h2, .kp-blk h3,
+  .IIV1Qb h2, .IIV1Qb h3 {
+    color: var(--rose-accent) !important;
+  }
+
+  /* ── 9. People Also Ask ── */
+  .wQiwMc, .related-question-pair,
+  .Lt3TIZ, .ILfuVd, .xpd-wa, .xpd-xpr,
+  .xpd-cls, .xpdopen, .xpdclose {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .wQiwMc:hover, .related-question-pair:hover {
+    background-color: var(--rose-pill) !important;
+  }
+  .Lt3TIZ {
+    color: var(--rose-text) !important;
+    font-weight: 500 !important;
+  }
+  .ILfuVd {
+    color: var(--rose-text-secondary) !important;
+    padding: 4px 20px 20px !important;
+    margin: 0 !important;
+  }
+
+  /* ── 10. Pagination ── */
+  .AaVjTc, .SJajHc, #pnnext, #pnprev,
+  table#nav, .nav, .nBDE1b, .GNJvt, .d6cvqb {
+    background-color: transparent !important;
+  }
+  .AaVjTc td, .AaVjTc a,
+  .SJajHc a, .SJajHc,
+  #pnnext a, #pnprev a,
+  .nav a, .GNJvt a, .d6cvqb a {
+    color: var(--rose-accent) !important;
+    background: transparent !important;
+    padding: 8px 12px !important;
+    border-radius: 999px !important;
+    transition: background-color var(--rose-transition) !important;
+  }
+  .AaVjTc td:hover, .AaVjTc a:hover,
+  .SJajHc a:hover,
+  #pnnext a:hover, #pnprev a:hover,
+  .nav a:hover, .GNJvt a:hover, .d6cvqb a:hover {
+    background-color: var(--rose-pill-hover) !important;
+    text-decoration: none !important;
+  }
+  .AaVjTc td.cur, .SJajHc .SJajHc[aria-current="page"],
+  .nav .cur {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border-radius: 999px !important;
+    font-weight: 600 !important;
+    padding: 8px 12px !important;
+  }
+  .AaVjTc td.cur a {
+    color: var(--rose-text-on-accent) !important;
+    background: transparent !important;
+  }
+
+  /* ── 11. Result Stats ── */
+  #result-stats, .S5b1B {
+    color: var(--rose-text-muted) !important;
+    font-size: 14px !important;
+    padding: 4px 0 !important;
+  }
+
+  /* ── 12. Did You Mean / Spelling ── */
+  .GmH4m, .gL9Hy, .spell, .d9FyLd {
+    color: var(--rose-text) !important;
+    font-size: 18px !important;
+    font-weight: 400 !important;
+  }
+  .GmH4m a, .gL9Hy a, .spell a {
+    color: var(--rose-accent) !important;
+    font-weight: 500 !important;
+  }
+  .GmH4m a:hover, .gL9Hy a:hover, .spell a:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+
+  /* ── 13. Featured Snippet ── */
+  .ILfuVd[data-lyricid], .hlcw0c .ILfuVd,
+  .g .xpd-wa .ILfuVd {
+    background-color: var(--rose-white) !important;
+    border-left: 3px solid var(--rose-bg-strong) !important;
+    border-radius: 0 var(--rose-radius) var(--rose-radius) 0 !important;
+    padding: 8px 16px !important;
+    margin: 8px 0 !important;
+  }
+
+  /* ── 14. Shopping Results ── */
+  .pla-unit, .sh-dlr, .KZmu8e, .sh-pr,
+  .w3S2Oc, .pla-hovercard,
+  [data-shopping], .sh-carousel {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .KZmu8e, .sh-dlr a, .sh-pr a {
+    color: var(--rose-accent) !important;
+  }
+  .pla-unit:hover, .sh-pr:hover {
+    border-color: var(--rose-bg-soft) !important;
+    box-shadow: 0 4px 12px var(--rose-shadow) !important;
+  }
+
+  /* ── 15. Image Results ── */
+  .isv-r, .rg_i, .FxLgD, .jo5I3b, .islrc,
+  .BIBOs, .fYytG, .bRMDJf {
+    background-color: transparent !important;
+  }
+  .rg_i {
+    border-radius: 4px !important;
+  }
+  .isv-r:hover {
+    background-color: var(--rose-pill) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* ── 16. News Results ── */
+  .dbsr, .Z26q7c, .lBwEZb, .W8izH, .niKkR, .SBkXy,
+  .SoaBf, .xpd-wa .Z26q7c {
+    background-color: transparent !important;
+  }
+  .niKkR, .dbsr h3 {
+    color: var(--rose-accent) !important;
+  }
+
+  /* ── 17. Video Results ── */
+  .dFdXTe, .uOIdXb, .ct3Kdc {
+    background-color: transparent !important;
+  }
+  .uOIdXb {
+    color: var(--rose-text-secondary) !important;
+  }
+
+  /* ── 18. Ad Labels ── */
+  .diLlY, .uE0VJb, .p8q9j, .VqFMTc, .iRZf2c {
+    color: var(--rose-text-muted) !important;
+    font-size: 12px !important;
+  }
+
+  /* ── 19. Carousel (top stories, etc) ── */
+  .kl-carousel, .kl-item, .kl-tr, .kl-bar {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .kl-item:hover {
+    background-color: var(--rose-pill) !important;
+  }
+
+  /* ── 20. Block-level Results ── */
+  .g-blk, .xpd-wa, .xpd-xpr, .xpd-cls {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* ── 21. Tweet / Social Embeds ── */
+  .tw-res, .tw-res a,
+  [data-twitter-widget] {
+    background-color: transparent !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ── 22. Google OneBox / Weather / Calculator ── */
+  .wob_p, .wob_t, .wob_d,
+  .nKz3D, .q0UyE,
+  .tyPc2e, .M7Mfsd, .xpayk {
+    color: var(--rose-text) !important;
+    background-color: transparent !important;
+  }
+
+  /* ── 23. Flights / Travel / Finance ── */
+  .gws-flights-results__itinerary,
+  .gws-flights-results__card,
+  .gyFHrc, .YMlKec {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* ── 24. Google Images Side Panel ── */
+  .BIBOs, .fYytG, .cS4Vcb-panels,
+  .cS4Vcb-panel-left, .cS4Vcb-panel-right {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+  }
+
+  /* ── 25. General Links & Text refinements ── */
+  a:not(.gb_6):not(.gb_A):not(.pHiOh):not(.EpPYLd a):not(.hdtb-mitem a):not([class*="gb_"]):not([class*="pHiOh"]) {
+    color: var(--rose-accent) !important;
+  }
+  a:not(.gb_6):not(.gb_A):not(.pHiOh):not(.EpPYLd a):not(.hdtb-mitem a):not([class*="gb_"]):not([class*="pHiOh"]):hover {
+    color: var(--rose-accent-hover) !important;
+  }
+  a:visited:not(.gb_6):not(.gb_A):not(.pHiOh):not(.EpPYLd a):not(.hdtb-mitem a) {
+    color: var(--rose-text-muted) !important;
+  }
+
+  /* ── 26. Tooltips / popups ── */
+  .TIIkFe, .QXDWnf, .TvtPZc,
+  [role="tooltip"], [aria-label][tabindex]:hover::after {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    box-shadow: 0 4px 12px var(--rose-shadow) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ── 27. Switch / Toggle ── */
+  .hdtb-td-s, .hdtb-td-h {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  .hdtb-td-s:hover, .hdtb-td-h:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ── 28. #tophf hidden inputs ── */
+  #tophf {
+    display: none !important;
+  }
+
+  /* ── 29. Google Doodle popup ── */
+  .MZNnX, [data-doodle], #prm, .hp-doodle {
+    background-color: transparent !important;
+  }
+
+  /* ── 30. General SERP containers ── */
+  #center_col, #rcnt, #search, #rso,
+  .srg, .g, .MjjYud {
+    background-color: transparent !important;
+  }
+}

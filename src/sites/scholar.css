@@ -1,0 +1,888 @@
+@-moz-document domain("scholar.google.com"), domain("scholar.google.com.br") {
+
+  /* ── FUNDO GLOBAL ── */
+  body, #gs_top, #gs_bdy {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ── HEADER ── */
+  #gs_hdr {
+    background-color: var(--rose-white) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+  /* Logo */
+  #gs_hdr_lgo {
+    opacity: 1 !important;
+  }
+  /* Hamburger button */
+  #gs_hdr_mnu {
+    color: var(--rose-text) !important;
+  }
+  #gs_hdr_mnu:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  /* Login button */
+  #gs_hdr_act_s {
+    color: var(--rose-accent) !important;
+    background-color: var(--rose-pill) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+    padding: 6px 16px !important;
+    font-weight: 500 !important;
+  }
+  #gs_hdr_act_s:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-accent-hover) !important;
+  }
+
+  /* ── CAIXA DE PESQUISA ── */
+  #gs_hdr_tsi,
+  .gs_in_txt {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px 0 0 999px !important;
+    color: var(--rose-text) !important;
+    caret-color: var(--rose-bg-strong) !important;
+    font-size: 16px !important;
+  }
+  #gs_hdr_tsi:focus,
+  .gs_in_txt:focus {
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 2px var(--rose-pill) !important;
+    outline: none !important;
+  }
+  /* Search input wrapper */
+  #gs_hdr_frm {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+    box-shadow: 0 1px 4px var(--rose-shadow) !important;
+    transition: box-shadow 0.2s ease !important;
+  }
+  #gs_hdr_frm:focus-within {
+    box-shadow: 0 2px 8px var(--rose-shadow) !important;
+    border-color: var(--rose-bg-strong) !important;
+  }
+  /* Search clear button */
+  #gs_hdr_tsc {
+    color: var(--rose-text-muted) !important;
+  }
+  #gs_hdr_tsc:hover {
+    color: var(--rose-text) !important;
+  }
+
+  /* ── BOTÃO DE LUPA ── */
+  #gs_hdr_tsb,
+  .gs_btnG {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border: none !important;
+    border-radius: 0 999px 999px 0 !important;
+  }
+  #gs_hdr_tsb:hover,
+  .gs_btnG:hover {
+    background-color: var(--rose-accent) !important;
+  }
+  #gs_hdr_tsb .gs_ico,
+  .gs_btnG .gs_ico {
+    color: var(--rose-text-on-accent) !important;
+    fill: var(--rose-text-on-accent) !important;
+  }
+
+  /* ── BARRA DE AÇÃO (abaixo do header) ── */
+  #gs_ab {
+    background-color: var(--rose-white) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+    color: var(--rose-text) !important;
+  }
+  #gs_ab_ttl {
+    color: var(--rose-text) !important;
+  }
+  #gs_ab_md {
+    color: var(--rose-text-secondary) !important;
+  }
+  /* Tabs (Artigos / Acadêmico) */
+  .gs_nph, .gs_nta {
+    color: var(--rose-text-secondary) !important;
+    cursor: pointer !important;
+  }
+  .gs_nph:hover, .gs_nta:hover {
+    color: var(--rose-text) !important;
+    background-color: var(--rose-pill-hover) !important;
+    border-radius: 999px !important;
+  }
+  /* Action bar buttons */
+  #gs_ab_btns a {
+    color: var(--rose-text-secondary) !important;
+  }
+  #gs_ab_btns a:hover {
+    color: var(--rose-text) !important;
+    background-color: var(--rose-pill-hover) !important;
+    border-radius: 999px !important;
+  }
+  /* Year dropdown */
+  #gs_res_ab_yy-b,
+  .gs_in_se {
+    background-color: transparent !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+    padding: 6px 12px !important;
+  }
+  #gs_res_ab_yy-b:hover,
+  .gs_in_se:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  /* More filters dropdown */
+  #gs_res_ab_ad-b {
+    background-color: transparent !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  #gs_res_ab_ad-b:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ── DROPDOWN MENUS ── */
+  .gs_md_d,
+  .gs_md_ulr {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 4px 16px var(--rose-shadow) !important;
+  }
+  .gs_md_li {
+    color: var(--rose-text) !important;
+  }
+  .gs_md_li:hover,
+  .gs_md_lix:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .gs_res_ab_sel {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-bg-strong) !important;
+    font-weight: 600 !important;
+  }
+
+  /* ── DRAWER MENU (hamburger overlay) ── */
+  #gs_hdr_drw {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    box-shadow: 4px 0 24px var(--rose-shadow) !important;
+  }
+  #gs_hdr_drw .gs_md_li {
+    color: var(--rose-text) !important;
+  }
+  #gs_hdr_drw .gs_md_li:hover,
+  #gs_hdr_drw .gs_md_lix:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  #gs_hdr_drw .gs_sel {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-bg-strong) !important;
+    font-weight: 600 !important;
+  }
+  #gs_hdr_drw_bot {
+    border-top: 1px solid var(--rose-border) !important;
+  }
+
+  /* ── AUTOCOMPLETE DROPDOWN ── */
+  .gs_md_ac {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-top: none !important;
+    border-radius: 0 0 12px 12px !important;
+    box-shadow: 0 4px 12px var(--rose-shadow) !important;
+  }
+
+  /* ── RESULTADOS DA PESQUISA ── */
+  .gs_r.gs_or {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    padding: 16px !important;
+    margin-bottom: 12px !important;
+    box-shadow: 0 1px 4px var(--rose-shadow) !important;
+    transition: box-shadow 0.2s ease !important;
+  }
+  .gs_r.gs_or:hover {
+    box-shadow: 0 2px 8px var(--rose-shadow) !important;
+  }
+  .gs_ri {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* PDF/external link section */
+  .gs_ggs {
+    margin-bottom: 8px !important;
+  }
+  .gs_ggsd {
+    background-color: var(--rose-pill) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 8px !important;
+    padding: 8px 12px !important;
+  }
+  .gs_or_ggsm a {
+    color: var(--rose-accent) !important;
+  }
+  .gs_or_ggsm a:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+  .gs_ctg2 {
+    color: var(--rose-text-secondary) !important;
+    font-weight: 600 !important;
+  }
+
+  /* Título do resultado */
+  h3.gs_rt {
+    color: var(--rose-accent) !important;
+    margin: 0 0 4px 0 !important;
+  }
+  h3.gs_rt a {
+    color: var(--rose-accent) !important;
+    text-decoration: none !important;
+  }
+  h3.gs_rt a:hover {
+    color: var(--rose-accent-hover) !important;
+    text-decoration: underline !important;
+  }
+  /* Content type tags [ARTIGO], [LIVRO], [B] */
+  .gs_ctc {
+    margin-right: 6px !important;
+    color: var(--rose-accent) !important;
+  }
+  .gs_ct1, .gs_ct2 {
+    color: var(--rose-accent) !important;
+    background-color: var(--rose-pill) !important;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+    font-size: 11px !important;
+  }
+
+  /* Linha de autores */
+  .gs_a {
+    color: var(--rose-text-muted) !important;
+    font-size: 13px !important;
+  }
+
+  /* Snippet do resultado */
+  .gs_rs {
+    color: var(--rose-text-secondary) !important;
+    line-height: 1.5 !important;
+    font-size: 14px !important;
+  }
+  .gs_rs b {
+    color: var(--rose-text) !important;
+    font-weight: 600 !important;
+  }
+
+  /* ── LINKS DE AÇÃO (salvar, citar, etc) ── */
+  .gs_fl, .gs_flb {
+    color: var(--rose-text-muted) !important;
+    font-size: 13px !important;
+  }
+  .gs_fl a, .gs_flb a {
+    color: var(--rose-accent) !important;
+  }
+  .gs_fl a:hover, .gs_flb a:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+  /* Action buttons (star, cite, more) */
+  .gs_or_btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    background-color: transparent !important;
+    color: var(--rose-text-secondary) !important;
+    border: none !important;
+    border-radius: 4px !important;
+    padding: 4px 8px !important;
+    cursor: pointer !important;
+    transition: background-color var(--rose-transition) ease !important;
+  }
+  .gs_or_btn:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+  .gs_or_svg {
+    width: 15px !important;
+    height: 16px !important;
+    fill: currentColor !important;
+  }
+  .gs_or_btn_lbl {
+    color: inherit !important;
+  }
+  /* Citado por N / Artigos relacionados / Todas versões */
+  .gs_flb a,
+  .gs_nph {
+    color: var(--rose-accent) !important;
+  }
+
+  /* ── SIDEBAR DE FILTROS ── */
+  #gs_bdy_sb {
+    background-color: transparent !important;
+  }
+  .gs_bdy_sb_sec {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    padding: 12px !important;
+    margin-bottom: 12px !important;
+  }
+  /* Sidebar list items */
+  .gs_ind {
+    padding: 4px 8px !important;
+    border-radius: 6px !important;
+    margin: 2px 0 !important;
+  }
+  .gs_ind:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .gs_ind a {
+    color: var(--rose-accent) !important;
+  }
+  .gs_ind a:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+  /* Year links */
+  #gs_res_sb_yyl li a {
+    color: var(--rose-accent) !important;
+  }
+  #gs_res_sb_yyl li a:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+  /* Selected sidebar item */
+  .gs_bdy_sb_sel {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-bg-strong) !important;
+    font-weight: 600 !important;
+  }
+  .gs_bdy_sb_sel a {
+    color: var(--rose-bg-strong) !important;
+  }
+  /* Custom period link */
+  #gs_res_sb_yyc {
+    color: var(--rose-accent) !important;
+    cursor: pointer !important;
+  }
+  #gs_res_sb_yyc:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+  /* Year inputs */
+  .gs_res_sb_yyr input,
+  #gs_as_ylo,
+  #gs_as_yhi {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 6px !important;
+    color: var(--rose-text) !important;
+    padding: 4px 8px !important;
+  }
+  .gs_res_sb_yyr input:focus,
+  #gs_as_ylo:focus,
+  #gs_as_yhi:focus {
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 2px var(--rose-pill) !important;
+    outline: none !important;
+  }
+  /* Sidebar checkboxes */
+  .gs_in_cb {
+    color: var(--rose-text) !important;
+    cursor: pointer !important;
+  }
+  .gs_cbx {
+    border-color: var(--rose-border) !important;
+    background-color: var(--rose-white) !important;
+  }
+  .gs_chk {
+    background-color: var(--rose-bg-strong) !important;
+    border-color: var(--rose-bg-strong) !important;
+  }
+  /* Create alert button */
+  #gs_bdy_sb_ca {
+    color: var(--rose-accent) !important;
+    background-color: var(--rose-pill) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+    padding: 8px 16px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+  #gs_bdy_sb_ca:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-accent-hover) !important;
+  }
+
+  /* ── MODAIS ── */
+  /* Backdrop */
+  #gs_md_s {
+    background-color: rgba(42, 19, 26, 0.5) !important;
+  }
+  /* Dialog containers */
+  [role="dialog"]:not(dialog),
+  .gs_md_wnw {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 32px var(--rose-shadow) !important;
+    color: var(--rose-text) !important;
+  }
+  .gs_md_hdr {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+    color: var(--rose-text) !important;
+  }
+  .gs_md_hdr_t {
+    color: var(--rose-text) !important;
+  }
+  .gs_md_bdy {
+    color: var(--rose-text) !important;
+  }
+  .gs_md_ftr {
+    border-top: 1px solid var(--rose-border) !important;
+    padding: 12px !important;
+  }
+  /* Modal close button */
+  .gs_md_x,
+  .gs_btnCLS {
+    color: var(--rose-text-muted) !important;
+    border-radius: 50% !important;
+  }
+  .gs_md_x:hover,
+  .gs_btnCLS:hover {
+    color: var(--rose-text) !important;
+    background-color: var(--rose-pill-hover) !important;
+  }
+  /* Citation text */
+  .gs_citr {
+    background-color: var(--rose-bg) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+    color: var(--rose-text) !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+  .gs_cith {
+    color: var(--rose-text-secondary) !important;
+    font-weight: 500 !important;
+    margin-bottom: 8px !important;
+  }
+  /* Modal action buttons */
+  .gs_lbl_btns button {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border: none !important;
+    border-radius: 999px !important;
+    padding: 8px 24px !important;
+    font-weight: 500 !important;
+  }
+  .gs_lbl_btns button:hover {
+    background-color: var(--rose-accent) !important;
+  }
+
+  /* ── PESQUISAS RELACIONADAS ── */
+  .gs_qsuggest_wrap {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    padding: 16px !important;
+    margin-bottom: 12px !important;
+  }
+  .gs_qsuggest h2 {
+    color: var(--rose-text) !important;
+    font-size: 16px !important;
+    margin-bottom: 8px !important;
+  }
+  .gs_qsuggest li {
+    padding: 4px 0 !important;
+  }
+  .gs_qsuggest a {
+    color: var(--rose-accent) !important;
+  }
+  .gs_qsuggest a:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+
+  /* ── LINKS GLOBAIS ── */
+  a:link, a:visited, a:active, a {
+    color: var(--rose-accent) !important;
+  }
+  a:hover, a:focus {
+    color: var(--rose-accent-hover) !important;
+  }
+  /* Google Scholar sets .gs_ctc/.gs_ctu to blue (#1a0dab) */
+  .gs_ctc, .gs_ctu, .gs_ctm {
+    color: var(--rose-accent) !important;
+  }
+  /* Google Scholar sets .gs_a a to green (#006621) */
+  .gs_a a {
+    color: var(--rose-accent) !important;
+  }
+
+  /* ── BOTÕES GENÉRICOS ── */
+  button {
+    color: inherit !important;
+  }
+
+  /* ── BOTÕES DE PAGINAÇÃO ── */
+  #gs_nml {
+    display: flex !important;
+    gap: 4px !important;
+    justify-content: center !important;
+    padding: 16px 0 !important;
+  }
+  .gs_nma {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 32px !important;
+    height: 32px !important;
+    padding: 0 8px !important;
+    border-radius: 6px !important;
+    color: var(--rose-text) !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+  }
+  .gs_nma:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+  b.gs_nma {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    font-weight: 600 !important;
+  }
+  .gs_btnPR,
+  .gs_btnPL {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 8px !important;
+    padding: 8px 16px !important;
+  }
+  .gs_btnPR:hover,
+  .gs_btnPL:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .gs_btnPR[disabled],
+  .gs_btnPL[disabled] {
+    opacity: 0.4 !important;
+    cursor: default !important;
+  }
+
+  /* ── INPUTS DO PESQUISA AVANÇADA ── */
+  .gs_asd_tr input {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 6px !important;
+    color: var(--rose-text) !important;
+    padding: 8px 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .gs_asd_tr input:focus {
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 2px var(--rose-pill) !important;
+    outline: none !important;
+  }
+  /* Radio buttons */
+  .gs_in_ra {
+    color: var(--rose-text) !important;
+    cursor: pointer !important;
+  }
+
+  /* ── ÍCONES GENÉRICOS ── */
+  .gs_ico {
+    color: inherit !important;
+    fill: currentColor !important;
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar {
+    width: 8px !important;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--rose-pill-hover) !important;
+    border-radius: 999px !important;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--rose-bg-strong) !important;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: var(--rose-bg) !important;
+  }
+
+  /* ── RODAPÉ ── */
+  #gs_ftr {
+    background-color: var(--rose-white) !important;
+    border-top: 1px solid var(--rose-border) !important;
+    color: var(--rose-text-secondary) !important;
+  }
+  #gs_ftr a {
+    color: var(--rose-text-secondary) !important;
+  }
+  #gs_ftr a:hover {
+    color: var(--rose-text) !important;
+  }
+
+  /* ── ALERT BANNER ── */
+  #gs_alrt {
+    background-color: var(--rose-white) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+    color: var(--rose-text) !important;
+    padding: 12px 16px !important;
+    text-align: center !important;
+  }
+  .gs_alrt_m {
+    color: var(--rose-text) !important;
+  }
+  .gs_alrt_l {
+    color: var(--rose-accent) !important;
+    cursor: pointer !important;
+    margin-left: 8px !important;
+  }
+  .gs_alrt_l:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+  #gs_alrt.gs_anm {
+    animation: gs_alrt_slide 0.3s ease !important;
+  }
+  @keyframes gs_alrt_slide {
+    from { transform: translateY(-100%); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+
+  /* ── LOADING STATES ── */
+  .gs_md_prg {
+    padding: 24px !important;
+    text-align: center !important;
+    color: var(--rose-text-muted) !important;
+  }
+  .gs_md_ldg {
+    opacity: 0.6 !important;
+    pointer-events: none !important;
+  }
+  .gs_bsp {
+    opacity: 0.5 !important;
+    pointer-events: none !important;
+    cursor: default !important;
+  }
+
+  /* ── FOLLOW AUTHOR ── */
+  .gs_fao {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    padding: 12px 16px !important;
+    margin-bottom: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .gs_fao.gs_fao_dis {
+    opacity: 0.5 !important;
+    pointer-events: none !important;
+  }
+  .gs_fao.gs_fao_followed {
+    border-color: var(--rose-bg-strong) !important;
+  }
+  .gs_fao.gs_fao_loading {
+    opacity: 0.7 !important;
+    pointer-events: none !important;
+  }
+  .gs_fao_del,
+  .gs_fao_res {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 6px !important;
+    padding: 4px 12px !important;
+    cursor: pointer !important;
+    font-size: 12px !important;
+  }
+  .gs_fao_del:hover,
+  .gs_fao_res:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .gs_fao_fo {
+    margin-left: auto !important;
+  }
+
+  /* ── TOGGLE CONTROL (follow button) ── */
+  .gs_tg_ctl {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    cursor: pointer !important;
+    color: var(--rose-text-secondary) !important;
+    font-size: 13px !important;
+  }
+  .gs_tg_ctl[aria-checked="true"] {
+    color: var(--rose-accent) !important;
+  }
+  .gs_tg_ctl.gs_dis {
+    opacity: 0.5 !important;
+    pointer-events: none !important;
+  }
+
+  /* ── STICKY HEADER (on scroll) ── */
+  #gs_sth {
+    background-color: var(--rose-white) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+    box-shadow: 0 2px 8px var(--rose-shadow) !important;
+  }
+  .gs_sth_vis {
+    display: block !important;
+  }
+  .gs_sth_g {
+    height: 4px !important;
+    background: linear-gradient(to bottom, var(--rose-shadow), transparent) !important;
+  }
+  .gs_sth_b {
+    padding: 8px 16px !important;
+  }
+
+  /* ── CHECKBOXES (sidebar filters) ── */
+  .gs_cb_gen {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    cursor: pointer !important;
+    color: var(--rose-text) !important;
+  }
+  .gs_cbx {
+    width: 16px !important;
+    height: 16px !important;
+    border: 2px solid var(--rose-border) !important;
+    border-radius: 3px !important;
+    background-color: var(--rose-white) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    transition: background-color 0.15s, border-color 0.15s !important;
+  }
+  .gs_sel .gs_cbx,
+  .gs_cbx.gs_chk {
+    background-color: var(--rose-bg-strong) !important;
+    border-color: var(--rose-bg-strong) !important;
+  }
+  .gs_par .gs_cbx {
+    background-color: var(--rose-pill) !important;
+    border-color: var(--rose-bg-strong) !important;
+  }
+
+  /* ── BLUE ACTION BUTTONS ── */
+  .gs_btn_blue,
+  .gs_btn_blue2,
+  .gs_btn_blue3 {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border: none !important;
+    border-radius: 999px !important;
+    padding: 8px 24px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: background-color var(--rose-transition) !important;
+  }
+  .gs_btn_blue:hover,
+  .gs_btn_blue2:hover,
+  .gs_btn_blue3:hover {
+    background-color: var(--rose-accent) !important;
+  }
+  .gs_btn_blue:active,
+  .gs_btn_blue2:active,
+  .gs_btn_blue3:active {
+    transform: scale(0.97) !important;
+  }
+
+  /* ── PRESS INTERACTION ── */
+  .gs_press:active {
+    transform: scale(0.96) !important;
+  }
+
+  /* ── NOTIFICATION BADGE ── */
+  .gs_ia_notf {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 18px !important;
+    height: 18px !important;
+    padding: 0 5px !important;
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    border-radius: 999px !important;
+    line-height: 1 !important;
+  }
+  .gs_ia_notf.gs_rdt {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-bg-strong) !important;
+  }
+
+  /* ── LANGUAGE POPUP ── */
+  #gs_lp {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 4px 16px var(--rose-shadow) !important;
+    padding: 16px !important;
+    color: var(--rose-text) !important;
+  }
+  #gs_lp a {
+    color: var(--rose-accent) !important;
+  }
+  #gs_lp a:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+  #gs_lp_cur {
+    color: var(--rose-text-muted) !important;
+    cursor: pointer !important;
+  }
+  #gs_lp_cur:hover {
+    color: var(--rose-text) !important;
+  }
+
+  /* ── RTL SUPPORT ── */
+  #gs_hdr_tsi[dir="rtl"],
+  .gs_in_txt[dir="rtl"] {
+    border-radius: 0 999px 999px 0 !important;
+  }
+  #gs_hdr_tsb[dir="rtl"],
+  .gs_btnG[dir="rtl"] {
+    border-radius: 999px 0 0 999px !important;
+  }
+
+  /* ── RESPONSIVO MOBILE ── */
+  .gs_el_ph #gs_hdr_frm {
+    margin: 0 8px !important;
+  }
+  .gs_el_ph #gs_hdr_tsi,
+  .gs_el_ph .gs_in_txt {
+    border-radius: 999px !important;
+  }
+  .gs_el_ph #gs_hdr_tsb,
+  .gs_el_ph .gs_btnG {
+    border-radius: 999px !important;
+    width: 36px !important;
+    height: 36px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .gs_el_ph .gs_r.gs_or {
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+  }
+  .gs_el_ph #gs_bdy_sb {
+    display: none !important;
+  }
+}
