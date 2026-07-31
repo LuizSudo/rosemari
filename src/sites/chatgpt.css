@@ -1,0 +1,562 @@
+@-moz-document domain("chatgpt.com") {
+
+  /* ── DESIGN TOKENS: Override ChatGPT's --token-* and --main-* variables ── */
+  :root, html, body {
+    color-scheme: light !important;
+    /* Main surfaces */
+    --main-surface-primary: var(--rose-bg) !important;
+    --main-surface-secondary: var(--rose-white) !important;
+    --main-surface-tertiary: var(--rose-pill) !important;
+    /* Text */
+    --text-primary: var(--rose-text) !important;
+    --text-secondary: var(--rose-text-secondary) !important;
+    --text-tertiary: var(--rose-text-muted) !important;
+    /* Borders */
+    --border-primary: var(--rose-border) !important;
+    --border-secondary: var(--rose-border) !important;
+    --border-heavy: var(--rose-border) !important;
+    --border-xheavy: var(--rose-border) !important;
+    /* Links */
+    --link-color: var(--rose-accent) !important;
+    --link-hover-color: var(--rose-accent-hover) !important;
+    /* Accent */
+    --accent-primary: var(--rose-bg-strong) !important;
+    --accent-secondary: var(--rose-bg-soft) !important;
+    /* Pill / surface fills */
+    --pill-color: var(--rose-pill) !important;
+    --pill-color-hover: var(--rose-pill-hover) !important;
+    /* Message backgrounds */
+    --message-bg-user: var(--rose-pill) !important;
+    --message-bg-assistant: var(--rose-white) !important;
+    /* Input */
+    --input-bg: var(--rose-white) !important;
+    /* Sidebar */
+    --sidebar-bg: var(--rose-bg) !important;
+    --sidebar-surface: var(--rose-white) !important;
+    --composer-surface-primary: var(--rose-white) !important;
+    --sidebar-surface-primary: var(--rose-bg) !important;
+    /* Override Tailwind token-* variables */
+    --color-token-text-primary: var(--rose-text) !important;
+    --color-token-text-secondary: var(--rose-text-secondary) !important;
+    --color-token-text-tertiary: var(--rose-text-muted) !important;
+    --color-token-surface-primary: var(--rose-bg) !important;
+    --color-token-surface-secondary: var(--rose-white) !important;
+    --color-token-surface-tertiary: var(--rose-pill) !important;
+    --color-token-surface-hover: var(--rose-pill-hover) !important;
+    --color-token-bg-tertiary: var(--rose-bg-soft) !important;
+    --color-token-sidebar-surface-primary: var(--rose-bg) !important;
+    --color-token-sidebar-surface-secondary: var(--rose-white) !important;
+    --color-token-border-default: var(--rose-border) !important;
+    --color-token-border-heavy: var(--rose-border) !important;
+    --color-token-border-extra-light: var(--rose-border) !important;
+    --color-token-link-primary: var(--rose-accent) !important;
+    --color-token-link-secondary: var(--rose-accent-hover) !important;
+    --color-submit-btn-text: var(--rose-text) !important;
+    --sharp-edge-1: var(--rose-border) !important;
+    --sharp-edge-2: var(--rose-border) !important;
+    --sharp-edge-3: var(--rose-border) !important;
+    --main-surface-destructive: #B3261E !important;
+    /* Global background & text */
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ── BODY & MAIN WRAPPER ── */
+  body {
+    background-color: var(--rose-bg) !important;
+  }
+
+  /* ── SIDEBAR ── */
+  /* Outer shell */
+  #stage-slideover-sidebar {
+    background-color: var(--rose-bg) !important;
+    border-inline-end-color: var(--rose-border) !important;
+    border-inline-end-width: 1px !important;
+  }
+  /* Sidebar background panels */
+  .bg-token-sidebar-surface-primary,
+  [class*="bg-(--sidebar-surface-primary)"] {
+    background-color: var(--rose-bg) !important;
+  }
+  /* Sidebar nav */
+  nav[aria-label="Histórico de chats"],
+  nav[aria-label="Barra lateral"] {
+    background-color: var(--rose-bg) !important;
+  }
+  /* Sidebar header (home + close) */
+  #sidebar-header {
+    background-color: var(--rose-bg) !important;
+  }
+  /* Sidebar sticky header (scroll shadows) */
+  div[class*="sticky"][class*="top-0"][class*="z-30"] {
+    background-color: var(--rose-bg) !important;
+  }
+  /* Sidebar menu items — the __menu-item class */
+  [data-sidebar-item="true"],
+  .group\.__menu-item,
+  [class*="__menu-item"] {
+    color: var(--rose-text) !important;
+    border-radius: var(--rose-radius) !important;
+    transition: background-color var(--rose-transition) ease !important;
+  }
+  [data-sidebar-item="true"]:hover,
+  [class*="__menu-item"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+  [data-sidebar-item="true"]:focus-visible,
+  [class*="__menu-item"]:focus-visible {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  /* Create new chat button */
+  #create-new-chat-button {
+    color: var(--rose-text) !important;
+  }
+  #create-new-chat-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  /* Sidebar items: Library, Projects, Apps */
+  #sidebar-item-recall,
+  #sidebar-item-projects,
+  #apps-button {
+    color: var(--rose-text) !important;
+  }
+  /* "Novo projeto" trailing button */
+  #sidebar-item-projects button[aria-label="Novo projeto"] {
+    color: var(--rose-text-secondary) !important;
+  }
+  #sidebar-item-projects button[aria-label="Novo projeto"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+  /* "Mais" (More) menu button */
+  [aria-haspopup="menu"][aria-label="Mais"] {
+    color: var(--rose-text) !important;
+  }
+  [aria-haspopup="menu"][aria-label="Mais"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  /* Close sidebar button */
+  #close-sidebar-button,
+  [data-testid="close-sidebar-button"] {
+    color: var(--rose-text-muted) !important;
+  }
+  #close-sidebar-button:hover,
+  [data-testid="close-sidebar-button"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+  /* Profile button at sidebar bottom */
+  [data-testid="accounts-profile-button"] {
+    color: var(--rose-text) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  [data-testid="accounts-profile-button"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  /* Profile button — name and plan text */
+  [data-testid="accounts-profile-button"] [class*="min-w-0"] > div {
+    color: var(--rose-text) !important;
+  }
+  [data-testid="accounts-profile-button"] [class*="min-w-0"] > span {
+    color: var(--rose-text-secondary) !important;
+  }
+  /* Profile button — trailing icon */
+  [data-testid="accounts-profile-button"] .text-token-text-tertiary,
+  [data-testid="accounts-profile-button"] [class*="trailing"] {
+    color: var(--rose-text-muted) !important;
+  }
+  /* Sidebar border separator */
+  .border-token-border-extra-light,
+  .border-token-border-heavy {
+    border-color: var(--rose-border) !important;
+  }
+  /* Mini sidebar (collapsed rail) */
+  #stage-sidebar-tiny-bar {
+    background-color: var(--rose-bg) !important;
+  }
+  #stage-sidebar-tiny-bar button {
+    color: var(--rose-text) !important;
+  }
+  #stage-sidebar-tiny-bar button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ── HEADER / TOP BAR ── */
+  #page-header {
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+  /* Model switcher dropdown */
+  #model-switcher-dropdown-button,
+  [data-testid="model-switcher-dropdown-button"] {
+    color: var(--rose-text) !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  #model-switcher-dropdown-button:hover,
+  [data-testid="model-switcher-dropdown-button"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  /* "ChatGPT" wordmark text */
+  .header-wordmark,
+  span.header-wordmark {
+    color: var(--rose-text) !important;
+  }
+  /* Model switcher chevron icon */
+  #model-switcher-dropdown-button svg,
+  [data-testid="model-switcher-dropdown-button"] svg {
+    color: var(--rose-text-secondary) !important;
+  }
+  /* Header right actions container */
+  #thread-header-right-actions {
+    gap: 4px !important;
+  }
+  /* Header action buttons (share, etc) */
+  #conversation-header-actions button,
+  #thread-header-right-actions button {
+    color: var(--rose-text-secondary) !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 999px !important;
+  }
+  #conversation-header-actions button:hover,
+  #thread-header-right-actions button:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+  /* Translucent surface containers in header */
+  .translucent-surface {
+    background-color: transparent !important;
+  }
+
+  /* ── THREAD / MESSAGES ── */
+  #thread {
+    color: var(--rose-text) !important;
+  }
+  /* User messages */
+  [data-message-author-role="user"] {
+    color: var(--rose-text) !important;
+  }
+  /* Assistant messages */
+  [data-message-author-role="assistant"] {
+    color: var(--rose-text) !important;
+  }
+  /* Message containers — prose content */
+  .markdown,
+  .markdown p,
+  .markdown li,
+  .markdown h1, .markdown h2, .markdown h3,
+  .markdown h4, .markdown h5, .markdown h6,
+  .markdown strong, .markdown em {
+    color: var(--rose-text) !important;
+  }
+  /* Markdown links inside messages */
+  .markdown a {
+    color: var(--rose-accent) !important;
+  }
+  .markdown a:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+  /* Markdown headings */
+  .markdown h1, .markdown h2 {
+    border-block-end-color: var(--rose-border) !important;
+  }
+  /* Markdown blockquotes */
+  .markdown blockquote {
+    border-inline-start-color: var(--rose-border) !important;
+    color: var(--rose-text-secondary) !important;
+  }
+  /* Markdown tables */
+  .markdown table {
+    border-color: var(--rose-border) !important;
+  }
+  .markdown th {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+    border-color: var(--rose-border) !important;
+  }
+  .markdown td {
+    border-color: var(--rose-border) !important;
+    color: var(--rose-text) !important;
+  }
+  /* Markdown horizontal rules */
+  .markdown hr {
+    border-color: var(--rose-border) !important;
+  }
+  /* Markdown lists */
+  .markdown ul, .markdown ol {
+    color: var(--rose-text) !important;
+  }
+  .markdown li {
+    color: var(--rose-text) !important;
+  }
+  /* Markdown inline code */
+  .markdown code:not(pre code) {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 4px !important;
+    padding: 1px 4px !important;
+    font-size: 0.9em !important;
+  }
+  /* Code blocks */
+  pre,
+  .markdown pre {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    color: var(--rose-text) !important;
+  }
+  pre code,
+  .markdown pre code {
+    background-color: transparent !important;
+    border: none !important;
+    color: var(--rose-text) !important;
+    font-size: 14px !important;
+  }
+  /* Code block header bar */
+  .markdown pre > div:first-child,
+  .markdown pre > div[class*="flex"] {
+    background-color: var(--rose-bg) !important;
+    border-block-end-color: var(--rose-border) !important;
+    color: var(--rose-text-secondary) !important;
+  }
+  /* Code block language label */
+  .markdown pre > div:first-child span,
+  .markdown pre > div:first-child button {
+    color: var(--rose-text-secondary) !important;
+  }
+  /* Code copy button */
+  .markdown pre button,
+  pre button {
+    color: var(--rose-text-secondary) !important;
+  }
+  .markdown pre button:hover,
+  pre button:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+  /* Syntax highlighting overrides — force readable colors */
+  pre .token,
+  pre [class*="hljs"],
+  pre span[style*="color"] {
+    color: var(--rose-text) !important;
+  }
+  /* Code block copy toolbar background */
+  .markdown pre > div:last-child {
+    background-color: var(--rose-white) !important;
+    border-block-start-color: var(--rose-border) !important;
+  }
+
+  /* ── WELCOME / SPLASH SCREEN ── */
+  h1[class*="text-heading"],
+  h1.text-heading-2 {
+    color: var(--rose-text) !important;
+  }
+
+  /* ── PROMPT CHIPS (suggestion buttons) ── */
+  #use-case-prompt-chips button,
+  [data-testid="use-case-prompt-chips"] button {
+    background-color: var(--rose-white) !important;
+    border-color: var(--rose-border) !important;
+    color: var(--rose-text) !important;
+    border-radius: 999px !important;
+    transition: background-color var(--rose-transition) ease,
+                border-color var(--rose-transition) ease !important;
+  }
+  #use-case-prompt-chips button:hover,
+  [data-testid="use-case-prompt-chips"] button:hover {
+    background-color: var(--rose-bg-soft) !important;
+    border-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text) !important;
+  }
+  /* Prompt chip text */
+  #use-case-prompt-chips button span,
+  [data-testid="use-case-prompt-chips"] button span {
+    color: var(--rose-text) !important;
+  }
+  /* Prompt chip icon */
+  #use-case-prompt-chips button span:first-child,
+  [data-testid="use-case-prompt-chips"] button span:first-child {
+    color: var(--rose-text-secondary) !important;
+  }
+  #use-case-prompt-chips button:hover span:first-child,
+  [data-testid="use-case-prompt-chips"] button:hover span:first-child {
+    color: var(--rose-text) !important;
+  }
+
+  /* ── COMPOSER / INPUT AREA ── */
+  /* Composer surface — the rounded input box */
+  div[data-composer-surface="true"] {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    box-shadow: 0 2px 8px var(--rose-shadow) !important;
+  }
+  div[data-composer-surface="true"]:focus-within {
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 2px var(--rose-pill), 0 2px 8px var(--rose-shadow) !important;
+  }
+  /* Composer background */
+  .composer-parent {
+    background-color: transparent !important;
+  }
+  #thread-bottom-container {
+    background-color: transparent !important;
+  }
+  /* ProseMirror textarea */
+  #prompt-textarea,
+  .ProseMirror[contenteditable="true"][role="textbox"] {
+    color: var(--rose-text) !important;
+    background: transparent !important;
+    caret-color: var(--rose-bg-strong) !important;
+  }
+  /* Placeholder text */
+  .ProseMirror .placeholder,
+  [data-placeholder] {
+    color: var(--rose-text-muted) !important;
+  }
+  /* ProseMirror parent wrapper */
+  .wcDTda_prosemirror-parent {
+    background: transparent !important;
+    color: var(--rose-text) !important;
+  }
+  /* Textarea fallback */
+  textarea[name="prompt-textarea"] {
+    color: var(--rose-text) !important;
+    background: transparent !important;
+  }
+  /* Plus/attach button */
+  #composer-plus-btn,
+  [data-testid="composer-plus-btn"] {
+    color: var(--rose-text-secondary) !important;
+    background: transparent !important;
+    border: none !important;
+  }
+  #composer-plus-btn:hover,
+  [data-testid="composer-plus-btn"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+  /* Dictation button */
+  button[aria-label="Iniciar ditado"] {
+    color: var(--rose-text-secondary) !important;
+    background: transparent !important;
+  }
+  button[aria-label="Iniciar ditado"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+  /* Voice / submit button */
+  button[aria-label="Iniciar Voz"] {
+    background-color: var(--rose-bg-soft) !important;
+    color: var(--rose-text) !important;
+  }
+  button[aria-label="Iniciar Voz"]:hover {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+  }
+  /* Submit button text color */
+  .text-submit-btn-text {
+    color: var(--rose-text) !important;
+  }
+  /* Composer buttons generic */
+  .composer-btn {
+    color: var(--rose-text-secondary) !important;
+    background: transparent !important;
+  }
+  .composer-btn:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ── SCROLLBAR ── */
+  [scrollbar-width="thin"]::-webkit-scrollbar-thumb {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  [scrollbar-width="thin"]::-webkit-scrollbar-track {
+    background-color: var(--rose-bg) !important;
+  }
+
+  /* ── DIALOGS / MODALS ── */
+  /* Exclude CDK overlay wrappers (dialog.cdk-overlay-popover covers 100vw×100vh) */
+  dialog:not(.cdk-overlay-popover),
+  [role="dialog"]:not(dialog) {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 32px var(--rose-shadow) !important;
+    color: var(--rose-text) !important;
+  }
+  /* Dialog backdrop — exclude CDK overlay popover */
+  dialog[open]:not(.cdk-overlay-popover)::backdrop {
+    background-color: rgba(42, 19, 26, 0.5) !important;
+    backdrop-filter: blur(2px) !important;
+  }
+  /* Modal menu items (Radix dropdowns) */
+  [role="menu"] [role="menuitem"],
+  [role="menuitemradio"],
+  [role="menuitemcheckbox"] {
+    color: var(--rose-text) !important;
+  }
+  [role="menu"] [role="menuitem"]:hover,
+  [role="menuitemradio"]:hover,
+  [role="menuitemcheckbox"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+  /* Menu separator */
+  [role="menu"] [role="separator"],
+  [role="menu"] hr {
+    border-color: var(--rose-border) !important;
+  }
+  /* Popover / tooltip content */
+  [role="tooltip"],
+  [data-radix-popper-content-wrapper] > div {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 4px 16px var(--rose-shadow) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ── GENERIC ELEMENTS ── */
+  /* Links */
+  a {
+    color: var(--rose-accent) !important;
+  }
+  a:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+  /* Buttons generic */
+  button {
+    color: inherit !important;
+  }
+  /* SVG icons — inherit text color */
+  svg {
+    color: inherit !important;
+  }
+  /* Scrollbar track */
+  ::-webkit-scrollbar {
+    background-color: var(--rose-bg) !important;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--rose-pill-hover) !important;
+    border-radius: 999px !important;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--rose-bg-strong) !important;
+  }
+  /* Focus ring */
+  :focus-visible {
+    outline-color: var(--rose-bg-strong) !important;
+  }
+  /* Keyboard shortcut badges */
+  kbd,
+  [class*="keyboard"] {
+    background-color: var(--rose-bg) !important;
+    border-color: var(--rose-border) !important;
+    color: var(--rose-text-secondary) !important;
+  }
+}

@@ -1,0 +1,222 @@
+@-moz-document domain("office.com"), domain("live.com"), domain("sharepoint.com"), domain("onenote.com") {
+  :root, html, body {
+    --neutralLighterAlt: var(--rose-bg) !important;
+    --neutralLighter: var(--rose-white) !important;
+    --neutralLight: var(--rose-bg) !important;
+    --neutralQuaternaryAlt: var(--rose-border) !important;
+    --neutralPrimary: var(--rose-text) !important;
+    --neutralSecondary: var(--rose-text-secondary) !important;
+    --neutralTertiary: var(--rose-text-muted) !important;
+    --themePrimary: var(--rose-accent) !important;
+    --themeSecondary: var(--rose-accent-hover) !important;
+    --themeDarkAlt: var(--rose-bg-strong) !important;
+    --themeDark: var(--rose-bg-strong) !important;
+
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  #O365_NavHeader[role="banner"], [data-testid="NavBar"] {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+  #O365_NavHeader button, [data-testid="NavBar"] button {
+    color: var(--rose-text) !important;
+  }
+  .o365cs-nav-bposLogo, [data-testid="header-logo"],
+  .o365button, #O365_MainLink_NavMenu, #O365_MainLink_Settings,
+  #O365_MainLink_Me, #GoPremiumButton, #reactHeaderNotificationButton {
+    color: var(--rose-text) !important;
+  }
+
+  .cui-topBar1, .cui-topBar2, #RibbonRegion, #RibbonContainer,
+  #Ribbon, #RibbonTopBarContainer, .elevated-toolbar, .fluent2Styling {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+  #TabListContainer[role="tablist"] {
+    background-color: var(--rose-bg) !important;
+  }
+  button[role="tab"] {
+    color: var(--rose-text-secondary) !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 8px 8px 0 0 !important;
+  }
+  button[role="tab"]:hover {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+  }
+  button[role="tab"][aria-selected="true"],
+  button[role="tab"][class*="selected"] {
+    background-color: var(--rose-pill-selected) !important;
+    color: var(--rose-text-on-accent) !important;
+    font-weight: 600 !important;
+  }
+  [role="group"] {
+    background-color: transparent !important;
+    color: var(--rose-text) !important;
+  }
+  [role="group"] button, [role="group"] .ms-Button,
+  .fui-Button, .fui-SplitButton, .fui-MenuButton {
+    color: var(--rose-text) !important;
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    border-radius: 6px !important;
+  }
+  [role="group"] button:hover, [role="group"] .ms-Button:hover,
+  .fui-Button:hover, .fui-SplitButton:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  #FileMenu, #FileMenuLauncherContainer button {
+    color: var(--rose-text) !important;
+  }
+  .ms-ContextualMenu-Callout, .ms-Callout-main,
+  .ms-ContextualMenu, .ms-Menu-container {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 24px var(--rose-shadow) !important;
+    color: var(--rose-text) !important;
+  }
+  .ms-ContextualMenu-item, .ms-ContextualMenu-item:hover {
+    color: var(--rose-text) !important;
+    background-color: transparent !important;
+  }
+  .ms-ContextualMenu-item:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  #TellMe-SearchBox, #TellMeControl input {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+    color: var(--rose-text) !important;
+    box-shadow: 0 1px 3px var(--rose-shadow) !important;
+  }
+  #TellMe-SearchBox:focus {
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 3px var(--rose-pill) !important;
+    outline: none !important;
+  }
+
+  #FontName-input, #FontSize-input, input[role="combobox"] {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 6px !important;
+    color: var(--rose-text) !important;
+  }
+  #FontName-input:focus, #FontSize-input:focus {
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 3px var(--rose-pill) !important;
+    outline: none !important;
+  }
+
+  .cui-topBar1, #Header, [data-testid="Header"],
+  [data-testid="NavBar"] {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+
+  #NavPane, #NearPane, #Left, .navPane__navPane___NaB_k {
+    background-color: var(--rose-bg) !important;
+    border-right: 1px solid var(--rose-border) !important;
+    color: var(--rose-text) !important;
+  }
+  #NavPaneSectionList[role="tree"], #PageList[role="tree"],
+  #notebookPane {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+  .navItem, .sectionListItem, .pageListItem, .pageNode,
+  .mainItem__navItem___NaB_k, .mainItem__itemWrap___NaB_k {
+    color: var(--rose-text) !important;
+    border-radius: 8px !important;
+    transition: background-color var(--rose-transition) !important;
+  }
+  .navItem:hover, .sectionListItem:hover, .pageListItem:hover,
+  .mainItem__item___NaB_k:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+  .mainItem__navItembackgroundSelected___NaB_k,
+  .navItem[class*="selected"], .sectionListItem[class*="selected"],
+  .pageListItem[class*="selected"] {
+    background-color: var(--rose-pill-selected) !important;
+    color: var(--rose-text-on-accent) !important;
+  }
+  .mainHeader__header___NaB_k, .mainHeader__headerContainer___NaB_k,
+  .mainHeader__backgroundExpandable___NaB_k {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+  #AddPage, #AddSection, .navPane__snackBar___NaB_k button {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 8px !important;
+  }
+  #AddPage:hover, #AddSection:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  #WacFrame, #owl-container, .ContextualTabs, .ribbon,
+  #s4-workspace, #s4-bodyContainer, [role="menubar"] {
+    background-color: var(--rose-bg) !important;
+  }
+  #Right, #CenterRegion, #canvasWrap, #EditorContainer,
+  .WACViewPanel, #WACViewPanel, .WACInteractiveView {
+    background-color: #FFFFFF !important;
+    color: var(--rose-text) !important;
+    box-shadow: 0 4px 12px var(--rose-shadow) !important;
+    border-radius: 0 !important;
+  }
+  .PageContent, .OutlineElement, #PageContentContainer,
+  [data-testid="editor-pane"] {
+    background-color: #FFFFFF !important;
+  }
+
+  #StatusBar, #StatusBarRegion {
+    background-color: var(--rose-bg) !important;
+    border-top: 1px solid var(--rose-border) !important;
+    color: var(--rose-text-secondary) !important;
+  }
+
+  #Floatie, .GrippersContainer {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 4px 12px var(--rose-shadow) !important;
+  }
+
+  .cdk-dialog-container,
+  .ms-Layer-content, .ms-Fabric, .ms-Callout {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 24px var(--rose-shadow) !important;
+  }
+
+  #ModeSwitcher {
+    color: var(--rose-text) !important;
+    background: transparent !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  #ModeSwitcher:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  #ShareMenu {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border-radius: 999px !important;
+  }
+  #ShareMenu:hover {
+    background-color: var(--rose-accent) !important;
+  }
+}

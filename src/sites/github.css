@@ -1,0 +1,440 @@
+@-moz-document domain("github.com") {
+  :root, html, body {
+    /* Primer Design Tokens — override for full theme */
+    --color-fg-default: var(--rose-text) !important;
+    --color-fg-muted: var(--rose-text-secondary) !important;
+    --color-fg-subtle: var(--rose-text-muted) !important;
+    --color-fg-on-emphasis: var(--rose-text-on-accent) !important;
+    --color-fg-accent: var(--rose-accent) !important;
+    --color-fg-done: var(--rose-accent) !important;
+    --color-fg-danger: #c0392b !important;
+    --color-fg-success: #27ae60 !important;
+
+    --color-bg-default: var(--rose-white) !important;
+    --color-bg-subtle: var(--rose-bg) !important;
+    --color-bg-inset: var(--rose-bg) !important;
+    --color-bg-accent-emphasis: var(--rose-bg-strong) !important;
+    --color-bg-attention-subtle: var(--rose-pill) !important;
+    --color-bg-danger-subtle: #fdecea !important;
+    --color-bg-success-subtle: #eafaf1 !important;
+    --color-bg-overlay: var(--rose-white) !important;
+
+    --color-border-default: var(--rose-border) !important;
+    --color-border-muted: var(--rose-border) !important;
+    --color-border-subtle: var(--rose-border) !important;
+
+    --color-btn-primary-bg: var(--rose-bg-strong) !important;
+    --color-btn-primary-text: var(--rose-text-on-accent) !important;
+    --color-btn-primary-hover-bg: var(--rose-bg-soft) !important;
+    --color-btn-primary-border: var(--rose-bg-strong) !important;
+
+    --color-btn-bg: var(--rose-white) !important;
+    --color-btn-border: var(--rose-border) !important;
+    --color-btn-text: var(--rose-text) !important;
+    --color-btn-hover-bg: var(--rose-pill-hover) !important;
+    --color-btn-hover-border: var(--rose-border) !important;
+
+    --color-accent-fg: var(--rose-accent) !important;
+    --color-accent-emphasis: var(--rose-bg-strong) !important;
+    --color-success-fg: #27ae60 !important;
+    --color-danger-fg: #c0392b !important;
+    --color-attention-fg: #e67e22 !important;
+
+    --color-shadow-small: 0 1px 3px var(--rose-shadow) !important;
+    --color-shadow-medium: 0 3px 6px var(--rose-shadow) !important;
+    --color-shadow-large: 0 8px 24px var(--rose-shadow) !important;
+
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ── HEADER ── */
+  .header-wrapper.js-header-wrapper,
+  header[role="banner"],
+  .GlobalNav {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+
+  /* ── TOP NAV ── */
+  [data-testid="top-nav-left"],
+  [data-testid="top-nav-right"],
+  [data-testid="top-bar-actions"] {
+    color: var(--rose-text) !important;
+  }
+
+  /* ── SEARCH ── */
+  qbsearch-input,
+  .search-input-container {
+    background-color: transparent !important;
+  }
+  input#query-builder-test,
+  .FormControl-input.QueryBuilder-Input {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 6px !important;
+    box-shadow: 0 1px 3px var(--rose-shadow) !important;
+  }
+  input#query-builder-test:focus,
+  .FormControl-input:focus {
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 3px var(--rose-pill) !important;
+    outline: none !important;
+  }
+  .QueryBuilder-StyledInput,
+  .QueryBuilder-StyledInputContainer,
+  .QueryBuilder-InputWrapper {
+    background-color: var(--rose-white) !important;
+  }
+
+  /* ── LEFT SIDEBAR (Dashboard Repos) ── */
+  aside.feed-left-sidebar,
+  .feed-left-sidebar,
+  .dashboard-sidebar {
+    background-color: var(--rose-bg) !important;
+    border-right: 1px solid var(--rose-border) !important;
+  }
+  .js-left-column-scroll-container {
+    background-color: var(--rose-bg) !important;
+  }
+
+  /* ── REPO LIST ── */
+  ul.js-dashboard-repos-list,
+  ul[data-filterable-for],
+  ul[data-filterable-type="substring"] {
+    background-color: var(--rose-bg) !important;
+  }
+  li.public,
+  li.private,
+  li.source {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    margin-bottom: 4px !important;
+    padding: 8px 12px !important;
+  }
+  li.public:hover,
+  li.private:hover {
+    background-color: var(--rose-pill) !important;
+  }
+
+  /* ── REPO SEARCH INPUT ── */
+  input#dashboard-repos-filter-left,
+  .js-filterable-field {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 6px !important;
+  }
+  input#dashboard-repos-filter-left:focus {
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 3px var(--rose-pill) !important;
+    outline: none !important;
+  }
+
+  /* ── MAIN CONTENT / FEED ── */
+  div.application-main {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+  div#dashboard.dashboard {
+    background-color: var(--rose-bg) !important;
+  }
+
+  /* ── FEED ITEMS ── */
+  article[id^="feed-item-"],
+  .js-feed-item-component {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    margin-bottom: 12px !important;
+  }
+  .feed-item-content {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* ── FEED HEADER ── */
+  .feed-item-heading-icon {
+    color: var(--rose-accent) !important;
+    fill: var(--rose-accent) !important;
+  }
+  .octicon-feed-created { color: #27ae60 !important; fill: #27ae60 !important; }
+  .octicon-feed-pushed { color: #27ae60 !important; fill: #27ae60 !important; }
+  .octicon-feed-merged { color: #8e44ad !important; fill: #8e44ad !important; }
+  .octicon-feed-release { color: #e67e22 !important; fill: #e67e22 !important; }
+
+  /* ── FEED FILTER ── */
+  details#feed-filter-menu.js-feed-filter-menu summary {
+    background-color: transparent !important;
+    color: var(--rose-text) !important;
+  }
+  details-menu.SelectMenu-modal,
+  .SelectMenu-list {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .SelectMenu-item {
+    color: var(--rose-text) !important;
+  }
+  .SelectMenu-item:hover {
+    background-color: var(--rose-pill) !important;
+  }
+  .SelectMenu-item input[type="checkbox"] {
+    accent-color: var(--rose-bg-strong) !important;
+  }
+
+  /* ── LINKS ── */
+  a.Link--primary {
+    color: var(--rose-text) !important;
+  }
+  a.Link--primary:hover {
+    color: var(--rose-accent) !important;
+  }
+  a.Link--secondary {
+    color: var(--rose-text-secondary) !important;
+  }
+  a.Link--secondary:hover {
+    color: var(--rose-accent) !important;
+  }
+  a.Link.color-fg-accent,
+  a.color-fg-accent {
+    color: var(--rose-accent) !important;
+  }
+  a.markdown-title {
+    color: var(--rose-accent) !important;
+  }
+  a.markdown-title:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+
+  /* ── BUTTONS (Primer Design System) ── */
+  .btn,
+  .Button,
+  .prc-Button-ButtonBase-9n-Xk {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 6px !important;
+  }
+  .btn:hover,
+  .Button:hover,
+  .prc-Button-ButtonBase-9n-Xk:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* Primary buttons */
+  .btn-primary,
+  .Button--primary,
+  .Button--primary.prc-Button-ButtonBase-9n-Xk {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border-color: var(--rose-bg-strong) !important;
+  }
+  .btn-primary:hover,
+  .Button--primary:hover {
+    background-color: var(--rose-bg-soft) !important;
+  }
+
+  /* Secondary buttons */
+  .btn-secondary,
+  .Button--secondary {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border-color: var(--rose-border) !important;
+  }
+
+  /* Ghost/Invisible buttons */
+  .btn-invisible,
+  .Button--invisible,
+  .Button--invisible.prc-Button-ButtonBase-9n-Xk {
+    background-color: transparent !important;
+    color: var(--rose-text) !important;
+    border: none !important;
+  }
+  .btn-invisible:hover,
+  .Button--invisible:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* Icon buttons */
+  .Button--iconOnly,
+  .prc-Button-IconButton-fyge7,
+  button[data-component="IconButton"] {
+    background-color: transparent !important;
+    border: none !important;
+    color: var(--rose-text-secondary) !important;
+  }
+  .Button--iconOnly:hover,
+  .prc-Button-IconButton-fyge7:hover,
+  button[data-component="IconButton"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ── FORM INPUTS ── */
+  input.form-control,
+  input.FormControl-input,
+  input.input-contrast,
+  textarea.form-control,
+  textarea.FormControl-input {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 6px !important;
+  }
+  input.form-control:focus,
+  input.FormControl-input:focus,
+  textarea.form-control:focus {
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 3px var(--rose-pill) !important;
+    outline: none !important;
+  }
+
+  /* ── REPOSITORY CODE ── */
+  .highlight,
+  pre,
+  code {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 6px !important;
+  }
+
+  /* ── STATE BADGES ── */
+  .State.State--merged {
+    background-color: #8e44ad !important;
+    color: var(--rose-text-on-accent) !important;
+  }
+  .State.State--open {
+    background-color: #27ae60 !important;
+    color: var(--rose-text-on-accent) !important;
+  }
+  .State.State--closed {
+    background-color: #c0392b !important;
+    color: var(--rose-text-on-accent) !important;
+  }
+
+  /* ── ISSUE LABELS ── */
+  .IssueLabel,
+  .label {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+
+  /* ── OVERLAYS / MODALS ── */
+  .Overlay.Overlay-whenNarrow,
+  dialog.Overlay[role="dialog"] {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: var(--color-shadow-large) !important;
+    color: var(--rose-text) !important;
+  }
+  .Overlay-header {
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+  .Overlay-title {
+    color: var(--rose-text) !important;
+  }
+  .Overlay-footer {
+    border-top: 1px solid var(--rose-border) !important;
+  }
+  .Overlay-closeButton {
+    color: var(--rose-text-secondary) !important;
+  }
+  .Overlay-closeButton:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ── ACTION MENUS / DROPDOWNS ── */
+  action-list > ul[role="menu"],
+  .ActionListWrap[role="menu"] {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .ActionListContent[role="menuitem"] {
+    color: var(--rose-text) !important;
+  }
+  .ActionListContent[role="menuitem"]:hover {
+    background-color: var(--rose-pill) !important;
+  }
+
+  /* ── TOOLTIPS ── */
+  tool-tip[role="tooltip"] {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 4px 12px var(--rose-shadow) !important;
+  }
+
+  /* ── FLASH MESSAGES ── */
+  .flash {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 6px !important;
+  }
+  .flash-error {
+    background-color: #fdecea !important;
+    border-color: #c0392b !important;
+  }
+  .flash-warn {
+    background-color: #fef9e7 !important;
+    border-color: #e67e22 !important;
+  }
+
+  /* ── SIDEBAR / RIGHT PANEL ── */
+  aside.feed-right-sidebar {
+    background-color: var(--rose-bg) !important;
+  }
+  .dashboard-changelog {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* ── SVG ICONS ── */
+  svg.octicon,
+  svg[data-component="Octicon"] {
+    color: var(--rose-text-secondary) !important;
+  }
+  .color-fg-done svg.octicon,
+  .color-fg-success svg.octicon {
+    color: #27ae60 !important;
+  }
+  .color-fg-danger svg.octicon {
+    color: #c0392b !important;
+  }
+
+  /* ── PRIMER UTILITY CLASSES ── */
+  .color-bg-default { background-color: var(--rose-white) !important; }
+  .color-bg-subtle { background-color: var(--rose-bg) !important; }
+  .color-fg-default { color: var(--rose-text) !important; }
+  .color-fg-muted { color: var(--rose-text-secondary) !important; }
+  .color-fg-subtle { color: var(--rose-text-muted) !important; }
+  .color-border-default { border-color: var(--rose-border) !important; }
+  .color-border-muted { border-color: var(--rose-border) !important; }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar {
+    width: 8px !important;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent !important;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--rose-text-secondary) !important;
+  }
+}

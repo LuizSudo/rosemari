@@ -1,0 +1,419 @@
+@-moz-document domain("web.whatsapp.com") {
+
+  /* ── PALETA ROSA — OVERRIDE COMPLETO DAS VARIÁVEIS DO WHATSAPP ── */
+  :root, .light, html, body {
+    /* Variáveis internas do WhatsApp (override total) */
+    --outgoing-background: #F8B4CC !important;
+    --outgoing-background-deeper: #F1A0BD !important;
+    --outgoing-background-reactive: #F1A0BD !important;
+    --incoming-background: #FDDDE6 !important;
+    --incoming-background-deeper: #F8C8D6 !important;
+    --panel-background: var(--rose-bg) !important;
+    --panel-background-deeper: var(--rose-bg) !important;
+    --panel-header-background: var(--rose-white) !important;
+    --compose-box-background: var(--rose-white) !important;
+    --dropdown-background: var(--rose-white) !important;
+    --dropdown-background-active: var(--rose-pill-hover) !important;
+    --search-input-container-background: var(--rose-white) !important;
+    --icon-button-background: var(--rose-pill) !important;
+    --icon-button-background-hover: var(--rose-pill-hover) !important;
+    --system-message-background: var(--rose-pill) !important;
+    --media-inner-background: var(--rose-white) !important;
+    --bubble-meta: var(--rose-text-muted) !important;
+    --bubble-meta-icon: var(--rose-text-muted) !important;
+    --message-primary: var(--rose-text) !important;
+    --message-primary-deeper: var(--rose-text-secondary) !important;
+    --message-bubble-background: var(--rose-white) !important;
+    --message-bubble-background-hover: var(--rose-pill-hover) !important;
+    --chat-entry-bg: var(--rose-pill) !important;
+    --chat-entry-btn-primary: var(--rose-bg-strong) !important;
+    --typing: var(--rose-accent) !important;
+    --unread-badge-background: var(--rose-bg-strong) !important;
+    --unread-badge-background-unread: var(--rose-bg-strong) !important;
+    --notification-e2e-background: var(--rose-pill) !important;
+    --panel-input-background: var(--rose-white) !important;
+    --rich-text-panel-background: var(--rose-white) !important;
+    --toolbar-background: var(--rose-white) !important;
+    --toolbar-button-background: var(--rose-pill) !important;
+    --toolbar-button-background-hover: var(--rose-pill-hover) !important;
+    --wallpaper-spotlight: rgba(244, 111, 161, 0.08) !important;
+    --reaction-btn-bg: var(--rose-pill) !important;
+    --reaction-btn-bg-active: var(--rose-pill-hover) !important;
+  }
+
+  /* ── FUNDO GLOBAL — transparente para wallpaper aparecer ── */
+  html, body, #app {
+    background: transparent !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ── LAYOUT PRINCIPAL ── */
+  .app-wrapper-web, [data-testid="wa-web-main-screen"] {
+    background: transparent !important;
+  }
+
+  /* ── SIDEBAR (Barra lateral esquerda) ── */
+  #side {
+    background-color: var(--rose-bg) !important;
+  }
+  [data-testid="chatlist-header"] {
+    background: var(--rose-white) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+  [data-testid="chat-list"] {
+    background: var(--rose-bg) !important;
+  }
+
+  /* Itens da lista de conversas */
+  [data-testid^="list-item"] {
+    background: transparent !important;
+  }
+  [data-testid^="list-item"]:hover {
+    background: var(--rose-pill-hover) !important;
+  }
+  [data-testid="cell-frame-container"] {
+    background: transparent !important;
+  }
+  [data-testid="cell-frame-title"],
+  [data-testid="cell-frame-title"] span {
+    color: var(--rose-text) !important;
+  }
+  [data-testid="cell-frame-primary-detail"],
+  [data-testid="cell-frame-secondary"],
+  [data-testid="last-msg-status"],
+  [data-testid="last-msg-status"] span {
+    color: var(--rose-text-secondary) !important;
+  }
+
+  /* Chat ativo na sidebar */
+  [data-testid^="list-item"][role="button"][data-active="true"] {
+    background: var(--rose-pill-hover) !important;
+  }
+
+  /* ── BARRA DE PESQUISA DA SIDEBAR ── */
+  [data-testid="chat-list-search-container"] {
+    background: var(--rose-white) !important;
+    border: none !important;
+    border-radius: 999px !important;
+    box-shadow: 0 1px 3px var(--rose-shadow) !important;
+    padding: 0 12px !important;
+    height: 36px !important;
+  }
+  [data-testid="chat-list-search-container"]:focus-within {
+    box-shadow: 0 0 0 3px var(--rose-pill), 0 1px 3px var(--rose-shadow) !important;
+  }
+  [data-testid="chat-list-search-container"] input {
+    background: transparent !important;
+    color: var(--rose-text) !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    font-size: 14px !important;
+  }
+  [data-testid="chat-list-search-container"] input::placeholder {
+    color: var(--rose-text-muted) !important;
+  }
+  [data-testid="chat-list-search-container"] svg {
+    color: var(--rose-text-muted) !important;
+    fill: var(--rose-text-muted) !important;
+  }
+  [data-testid="chat-list-search-container"]:focus-within svg {
+    color: var(--rose-bg-strong) !important;
+    fill: var(--rose-bg-strong) !important;
+  }
+
+  /* ── FILTROS DA SIDEBAR ── */
+  [data-testid="filter-button"] {
+    color: var(--rose-text-secondary) !important;
+  }
+  [data-testid="filter-button"]:hover {
+    background: var(--rose-pill-hover) !important;
+  }
+
+  /* ── BOTÃO NOVO CHAT ── */
+  [data-testid="compose-btn"] {
+    background: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border-radius: 999px !important;
+  }
+  [data-testid="compose-btn"]:hover {
+    background: var(--rose-accent) !important;
+  }
+
+  /* ── NAVBAR (tabs + footer) ── */
+  [data-testid="navbar-primary-section"] button {
+    color: var(--rose-text-secondary) !important;
+  }
+  [data-testid="navbar-primary-section"] button[aria-pressed="true"],
+  [data-testid="navbar-primary-section"] button[aria-selected="true"] {
+    color: var(--rose-bg-strong) !important;
+  }
+  [data-testid="navbar-primary-section"] button:hover {
+    background: var(--rose-pill-hover) !important;
+  }
+  [data-testid="navbar-footer-section"] button {
+    color: var(--rose-text-secondary) !important;
+  }
+  [data-testid="navbar-footer-section"] button:hover {
+    background: var(--rose-pill-hover) !important;
+  }
+
+  /* ── PAINEL DE CONVERSA ── */
+  [data-testid="conversation-panel-wrapper"] {
+    background: transparent !important;
+  }
+  [data-testid="conversation-panel-messages"] {
+    background: transparent !important;
+  }
+
+  /* Header do chat */
+  [data-testid="conversation-header"] {
+    background: var(--panel-header-background) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+  [data-testid="conversation-info-header-chat-title"] {
+    color: var(--rose-text) !important;
+  }
+  [data-testid="conversation-info-header"] span {
+    color: var(--rose-text-secondary) !important;
+  }
+
+  /* Botões do header (call, search, menu) */
+  [data-testid="conversation-header"] button {
+    color: var(--rose-text-secondary) !important;
+  }
+  [data-testid="conversation-header"] button:hover {
+    background: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ════════════════════════════════════════════════
+     BALÕES DE MENSAGEM — OVERRIDE DIRETO DAS CLASSES
+     ════════════════════════════════════════════════ */
+
+  /* Container externo — sem fundo */
+  [data-testid="msg-container"] {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+
+  /* ═══ OUTGOING BUBBLE: class x1g5lz36 ═══ */
+  [data-testid="msg-container"] .x1g5lz36 {
+    background-color: var(--outgoing-background) !important;
+    border-radius: 8px !important;
+  }
+
+  /* ═══ INCOMING BUBBLE: class x1ew7x2d ═══ */
+  [data-testid="msg-container"] .x1ew7x2d {
+    background-color: var(--incoming-background) !important;
+    border-radius: 8px !important;
+  }
+
+  /* ═══ FALLBACK: target the inner wrapper div directly ═══ */
+  /* Outgoing inner wrapper (contains x1g5lz36) */
+  [data-testid="msg-container"] > div.x1liijdw.x1g5lz36,
+  [data-testid="msg-container"] > div.x12xzxwr.x1g5lz36 {
+    background-color: var(--outgoing-background) !important;
+  }
+  /* Incoming inner wrapper (contains x1ew7x2d) */
+  [data-testid="msg-container"] > div.xu342n7.x1ew7x2d,
+  [data-testid="msg-container"] > div.x12xzxwr.x1ew7x2d {
+    background-color: var(--incoming-background) !important;
+  }
+
+  /* SVG tails — fill rosa para combinar com o balão */
+  [data-testid="tail-in"] svg path {
+    fill: var(--incoming-background) !important;
+  }
+  [data-testid="tail-out"] svg path {
+    fill: var(--outgoing-background) !important;
+  }
+  /* Tail container — transparent */
+  [data-testid="tail-in"],
+  [data-testid="tail-out"] {
+    background: transparent !important;
+  }
+
+  /* Texto dos balões */
+  [data-testid="msg-container"] span,
+  [data-testid="msg-container"] span.selectable-text,
+  [data-testid="msg-container"] div.selectable-text,
+  span[data-testid="selectable-text"],
+  div[data-testid="selectable-text"] {
+    color: var(--rose-text) !important;
+    background: transparent !important;
+  }
+
+  /* ── Metadados (hora, checkmarks) ── */
+  [data-testid="msg-meta"] {
+    color: var(--rose-text-muted) !important;
+  }
+  [data-testid="msg-meta"] svg {
+    color: var(--rose-text-muted) !important;
+    fill: var(--rose-text-muted) !important;
+  }
+  /* Read checkmarks — accent color */
+  [data-testid="msg-meta"] svg[aria-label=" Read "] {
+    color: var(--rose-accent) !important;
+    fill: var(--rose-accent) !important;
+  }
+
+  /* ── QUOTED MESSAGE (inside bubble) ── */
+  [data-testid="quoted-message"] {
+    background: rgba(0, 0, 0, 0.05) !important;
+    border-radius: 8px !important;
+  }
+  [data-testid="quoted-message"] [data-testid="author"] {
+    color: var(--rose-bg-strong) !important;
+  }
+
+  /* ── REAÇÃO NAS MENSAGENS ── */
+  [data-testid="reaction-bubble"] {
+    background-color: var(--rose-pill) !important;
+    border: 1px solid var(--rose-border) !important;
+  }
+  [data-testid="reaction-bubble"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  [data-testid="reaction-bubble-item"] {
+    background-color: transparent !important;
+  }
+
+  /* ── MENSAGEM DE SISTEMA ── */
+  [data-testid="msg-system"] {
+    background-color: var(--system-message-background) !important;
+    color: var(--rose-text-secondary) !important;
+    border-radius: 8px !important;
+  }
+
+  /* ── MENSAGEM COM ARQUIVO/DOCUMENTO ── */
+  [data-testid="file-container"] {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+  }
+
+  /* ── PAINEL DE BOAS-VINDAS ── */
+  [data-testid="intro-panel"] {
+    background: var(--rose-white) !important;
+  }
+  [data-testid="intro-md"] h2,
+  [data-testid="intro-md"] p {
+    color: var(--rose-text) !important;
+  }
+
+  /* ── FOOTER / INPUT ── */
+  footer {
+    background: var(--compose-box-background) !important;
+    border-top: 1px solid var(--rose-border) !important;
+  }
+  [data-testid="compose-box"] {
+    background: var(--compose-box-background) !important;
+  }
+  [data-testid="conversation-compose-box-input"] {
+    background: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+  }
+  [data-testid="conversation-compose-box-input"] p,
+  [data-testid="conversation-compose-box-input"] [role="textbox"],
+  [data-testid="conversation-compose-box-input"] [contenteditable="true"] {
+    color: var(--rose-text) !important;
+  }
+  [data-testid="conversation-compose-box-input"] .placeholder {
+    color: var(--rose-text-muted) !important;
+  }
+
+  /* Botões do input (emoji, anexo, enviar, áudio) */
+  button[aria-label="Emojis, GIFs, Stickers"],
+  button[aria-label*="emoji" i],
+  button[aria-label="Attach"],
+  button[aria-label*="attach" i],
+  button[aria-label*="send" i],
+  button[aria-label="Iniciar ditado"],
+  button[aria-label="Iniciar Voz"],
+  button[aria-label*="voice" i],
+  button[aria-label*="mic" i] {
+    background: transparent !important;
+    color: var(--rose-text-secondary) !important;
+    border: none !important;
+  }
+  button[aria-label="Emojis, GIFs, Stickers"]:hover,
+  button[aria-label*="emoji" i]:hover,
+  button[aria-label="Attach"]:hover,
+  button[aria-label*="attach" i]:hover,
+  button[aria-label*="send" i]:hover,
+  button[aria-label="Iniciar ditado"]:hover,
+  button[aria-label="Iniciar Voz"]:hover,
+  button[aria-label*="voice" i]:hover,
+  button[aria-label*="mic" i]:hover {
+    background: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ── BOTÕES DE MENSAGEM (responder, encaminhar, etc) ── */
+  button[aria-label*="reply" i],
+  button[aria-label*="forward" i],
+  button[aria-label*="delete" i],
+  button[aria-label*="star" i],
+  button[aria-label*="info" i],
+  button[aria-label*="reaction" i] {
+    background: transparent !important;
+    color: var(--rose-text-secondary) !important;
+    border: none !important;
+  }
+  button[aria-label*="reply" i]:hover,
+  button[aria-label*="forward" i]:hover,
+  button[aria-label*="delete" i]:hover,
+  button[aria-label*="star" i]:hover,
+  button[aria-label*="info" i]:hover,
+  button[aria-label*="reaction" i]:hover {
+    background: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ── MODAIS E DROPDOWNS ── */
+  [data-testid="dropdown-menu"],
+  [data-testid="popup-controls"] {
+    background: var(--dropdown-background) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 24px var(--rose-shadow) !important;
+  }
+  [data-testid="popup-controls"] div[role="button"] {
+    color: var(--rose-text) !important;
+  }
+  [data-testid="popup-controls"] div[role="button"]:hover {
+    background: var(--rose-pill-hover) !important;
+  }
+
+  /* ── LINKS ── */
+  a {
+    color: var(--rose-accent) !important;
+  }
+  a:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+
+  /* ── ÍCONES — scoped, NOT global (WhatsApp uses SVGs as masks) ── */
+  [data-testid="conversation-header"] svg,
+  [data-testid="chatlist-header"] svg,
+  [data-testid="navbar-primary-section"] svg,
+  [data-testid="navbar-footer-section"] svg,
+  footer svg {
+    color: var(--rose-text-secondary) !important;
+    fill: var(--rose-text-secondary) !important;
+  }
+  [data-testid="conversation-header"] button:hover svg,
+  [data-testid="chatlist-header"] button:hover svg,
+  [data-testid="navbar-primary-section"] button:hover svg,
+  [data-testid="navbar-footer-section"] button:hover svg {
+    color: var(--rose-text) !important;
+    fill: var(--rose-text) !important;
+  }
+
+  /* ── SCROLLBAR ── */
+  * {
+    scrollbar-width: thin !important;
+    scrollbar-color: var(--rose-bg-soft) transparent !important;
+  }
+}
