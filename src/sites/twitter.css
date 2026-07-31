@@ -1,0 +1,271 @@
+@-moz-document domain("twitter.com"), domain("x.com") {
+  :root, html, body {
+    /* X/Twitter CSS Variable Overrides */
+    --color-bg-primary: var(--rose-white) !important;
+    --color-bg-secondary: var(--rose-bg) !important;
+    --color-bg-tertiary: var(--rose-bg) !important;
+    --color-bg-overlay-primary: var(--rose-white) !important;
+    --color-bg-overlay-secondary: var(--rose-bg) !important;
+    --color-bg-hover: var(--rose-pill-hover) !important;
+    --color-bg-elevated: var(--rose-white) !important;
+    --color-bg-modal: var(--rose-white) !important;
+
+    --color-text-primary: var(--rose-text) !important;
+    --color-text-secondary: var(--rose-text-secondary) !important;
+    --color-text-tertiary: var(--rose-text-muted) !important;
+    --color-text-link: var(--rose-accent) !important;
+
+    --color-border-default: var(--rose-border) !important;
+    --color-border-secondary: var(--rose-border) !important;
+
+    --color-brand-primary: var(--rose-bg-strong) !important;
+    --color-brand-secondary: var(--rose-pill) !important;
+
+    --color-fill-primary: var(--rose-text) !important;
+    --color-fill-secondary: var(--rose-text-secondary) !important;
+    --color-fill-tertiary: var(--rose-text-muted) !important;
+    --color-fill-brand: var(--rose-bg-strong) !important;
+
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ── HEADER / TOP NAV ── */
+  header, [role="banner"],
+  [data-testid="TopNavBar"],
+  [data-testid="TopBar"] {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+
+  /* ── SIDEBAR ── */
+  [data-testid="sidebarColumn"],
+  [data-testid="primaryColumn"],
+  nav[aria-label="Primary"] {
+    background-color: var(--rose-bg) !important;
+  }
+  [data-testid="AppTabBar_Home_Link"],
+  [data-testid="AppTabBar_Explore_Link"],
+  [data-testid="AppTabBar_Notifications_Link"],
+  [data-testid="AppTabBar_DirectMessage_Link"],
+  [data-testid="AppTabBar_Grok_Link"],
+  [data-testid="AppTabBar_Bookmarks_Link"],
+  [data-testid="AppTabBar_Lists_Link"],
+  [data-testid="AppTabBar_Profile_Link"] {
+    color: var(--rose-text-secondary) !important;
+    border-radius: 999px !important;
+  }
+  [data-testid="AppTabBar_Home_Link"]:hover,
+  [data-testid="AppTabBar_Explore_Link"]:hover,
+  [data-testid="AppTabBar_Notifications_Link"]:hover,
+  [data-testid="AppTabBar_DirectMessage_Link"]:hover,
+  [data-testid="AppTabBar_Grok_Link"]:hover,
+  [data-testid="AppTabBar_Bookmarks_Link"]:hover,
+  [data-testid="AppTabBar_Lists_Link"]:hover,
+  [data-testid="AppTabBar_Profile_Link"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ── SEARCH ── */
+  [data-testid="SearchBox_Search_Input"],
+  input[aria-label="Search query"],
+  input[aria-label="Pesquisar"],
+  input[role="combobox"] {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  [data-testid="SearchBox_Search_Input"]:focus,
+  input[role="combobox"]:focus {
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 3px var(--rose-pill) !important;
+    outline: none !important;
+  }
+
+  /* ── TWEETS / ARTICLES ── */
+  [data-testid="tweet"],
+  article,
+  [role="article"],
+  [data-testid="cellInnerDiv"] {
+    background-color: var(--rose-white) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+  [data-testid="tweet"]:hover {
+    background-color: var(--rose-pill) !important;
+  }
+
+  /* ── TWEET ACTIONS (like, retweet, reply, share, bookmark) ── */
+  [data-testid="like"],
+  [data-testid="unlike"],
+  [data-testid="retweet"],
+  [data-testid="unretweet"],
+  [data-testid="reply"],
+  [data-testid="share"],
+  [data-testid="bookmark"],
+  [data-testid="removeBookmark"],
+  [data-testid="tweetButtonInline"] {
+    color: var(--rose-text-secondary) !important;
+    border-radius: 999px !important;
+    transition: background-color 0.2s !important;
+  }
+  [data-testid="like"]:hover,
+  [data-testid="unlike"]:hover,
+  [data-testid="retweet"]:hover,
+  [data-testid="unretweet"]:hover,
+  [data-testid="reply"]:hover,
+  [data-testid="share"]:hover,
+  [data-testid="bookmark"]:hover,
+  [data-testid="removeBookmark"]:hover {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-accent) !important;
+  }
+  [data-testid="like"] svg,
+  [data-testid="unlike"] svg {
+    color: inherit !important;
+  }
+  [data-testid="unlike"],
+  [data-testid="like"][data-testid="unlike"] {
+    color: var(--rose-accent) !important;
+  }
+
+  /* ── COMPOSE ── */
+  [data-testid="tweetTextarea_0"],
+  [data-testid="tweetTextarea_0_LabelContainer"],
+  [role="textbox"] {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  [data-testid="tweetTextarea_0"]:focus,
+  [role="textbox"]:focus {
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 3px var(--rose-pill) !important;
+    outline: none !important;
+  }
+
+  /* ── TWEET BUTTON ── */
+  [data-testid="tweetButtonInline"],
+  [data-testid="tweetButton"],
+  [data-testid="SideNav_NewTweet_Button"],
+  [data-testid="FloatingComposeButtons_Tweet_Button"] {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border-radius: 999px !important;
+    border: none !important;
+    font-weight: 600 !important;
+  }
+  [data-testid="tweetButtonInline"]:hover,
+  [data-testid="tweetButton"]:hover,
+  [data-testid="SideNav_NewTweet_Button"]:hover,
+  [data-testid="FloatingComposeButtons_Tweet_Button"]:hover {
+    background-color: var(--rose-bg-soft) !important;
+  }
+
+  /* ── LINKS ── */
+  a, [data-testid="tweet"] a {
+    color: var(--rose-accent) !important;
+  }
+  a:hover {
+    color: var(--rose-accent-hover) !important;
+    text-decoration: underline !important;
+  }
+
+  /* ── TRENDING / EXPLORE ── */
+  [data-testid="trend"],
+  [aria-label="Timeline: Trending"],
+  [data-testid="trend-category"],
+  [data-testid="trend"] > div > div > span {
+    color: var(--rose-text) !important;
+  }
+  [data-testid="trend"]:hover {
+    background-color: var(--rose-pill) !important;
+  }
+  [data-testid="trend"] > div > div > span:first-child {
+    color: var(--rose-text-secondary) !important;
+  }
+
+  /* ── NOTIFICATIONS ── */
+  [data-testid="notification"],
+  [data-testid="cellInnerDiv"] > div {
+    color: var(--rose-text) !important;
+  }
+
+  /* ── SETTINGS ── */
+  [data-testid="settingsTab"],
+  [data-testid="settingsTab"]:hover {
+    color: var(--rose-text) !important;
+  }
+  [data-testid="settingsTab"][aria-selected="true"] {
+    color: var(--rose-bg-strong) !important;
+    border-bottom: 2px solid var(--rose-bg-strong) !important;
+  }
+
+  /* ── MODAIS / DROPDOWNS / LAYERS ── */
+  [role="dialog"]:not(dialog),
+  [data-testid="Dropdown"],
+  [data-testid="layers"],
+  [data-testid="sheetDialog"],
+  [data-testid="BottomBar"] {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 24px var(--rose-shadow) !important;
+    color: var(--rose-text) !important;
+  }
+  [role="dialog"] [role="button"],
+  [data-testid="Dropdown"] [role="menuitem"],
+  [data-testid="BottomBar"] [role="button"] {
+    color: var(--rose-text) !important;
+  }
+  [role="dialog"] [role="button"]:hover,
+  [data-testid="Dropdown"] [role="menuitem"]:hover,
+  [data-testid="BottomBar"] [role="button"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ── TIMELINE TABS ── */
+  [role="tablist"] {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+  [role="tab"] {
+    color: var(--rose-text-secondary) !important;
+  }
+  [role="tab"]:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  [role="tab"][aria-selected="true"] {
+    color: var(--rose-bg-strong) !important;
+    border-bottom: 3px solid var(--rose-bg-strong) !important;
+    font-weight: 700 !important;
+  }
+
+  /* ── QUOTE TWEETS / CARDS ── */
+  [data-testid="socialContext"],
+  [data-testid="socialCard"] {
+    background-color: var(--rose-bg) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* ── HASHTAGS / MENTIONS ── */
+  [data-testid="hashtag"],
+  [data-testid="mention"] {
+    color: var(--rose-accent) !important;
+  }
+
+  /* ── SVG ICONS ── */
+  svg:not([aria-hidden="false"]) {
+    color: var(--rose-text) !important;
+    fill: var(--rose-text) !important;
+  }
+
+  /* ── SEPARATORS ── */
+  [role="separator"],
+  hr {
+    border-color: var(--rose-border) !important;
+  }
+}

@@ -1,0 +1,309 @@
+@-moz-document domain("linkedin.com") {
+  :root, html, body {
+    /* LinkedIn Design Token Overrides */
+    --artdeco-time-color-1: var(--rose-bg) !important;
+    --artdeco-time-color-2: var(--rose-white) !important;
+    --artdeco-card-color-background-default: var(--rose-white) !important;
+    --artdeco-card-color-background-elevated: var(--rose-white) !important;
+    --artdeco-card-color-border: var(--rose-border) !important;
+    --artdeco-card-color-border-subtle: var(--rose-border) !important;
+    --artdeco-tooltip-color-background: var(--rose-white) !important;
+
+    --color-action-primary: var(--rose-bg-strong) !important;
+    --color-action-primary-hover: var(--rose-bg-soft) !important;
+    --color-action-pressed: var(--rose-bg-strong) !important;
+    --color-action-secondary: var(--rose-pill) !important;
+    --color-action-secondary-hover: var(--rose-pill-hover) !important;
+
+    --color-background-primary: var(--rose-white) !important;
+    --color-background-secondary: var(--rose-bg) !important;
+    --color-background-tertiary: var(--rose-bg) !important;
+    --color-background-hover: var(--rose-pill-hover) !important;
+    --color-background-raised: var(--rose-white) !important;
+
+    --color-text-primary: var(--rose-text) !important;
+    --color-text-secondary: var(--rose-text-secondary) !important;
+    --color-text-tertiary: var(--rose-text-muted) !important;
+    --color-text-link: var(--rose-accent) !important;
+    --color-text-brand: var(--rose-bg-strong) !important;
+
+    --color-border-base: var(--rose-border) !important;
+    --color-border-strong: var(--rose-border) !important;
+    --color-border-subtle: var(--rose-border) !important;
+
+    --saf-0: var(--rose-bg) !important;
+    --saf-1: var(--rose-white) !important;
+
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ── HEADER / NAVIGATION ── */
+  header,
+  .global-nav,
+  .nav__button,
+  .navigation-bar,
+  [data-test-id="primary-nav-bar"],
+  .application-outlet-header {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+  .global-nav__me {
+    border-radius: 999px !important;
+  }
+  .global-nav__me:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ── SEARCH ── */
+  .search-global-typeahead__input,
+  input[aria-label*="Pesquisar"],
+  input[aria-label*="Search"],
+  input[role="combobox"] {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  .search-global-typeahead__input:focus,
+  input[role="combobox"]:focus {
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 3px var(--rose-pill) !important;
+    outline: none !important;
+  }
+
+  /* ── FEED POSTS ── */
+  .feed-shared-update-v2,
+  .feed-shared-article,
+  .feed-shared-text,
+  [data-id*="urn:li:activity"],
+  .feed-shared-social-details,
+  .scaffold-layout__main {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    margin-bottom: 8px !important;
+  }
+  .feed-shared-update-v2:hover {
+    box-shadow: 0 2px 8px var(--rose-shadow) !important;
+  }
+
+  /* ── POST CONTENT ── */
+  .feed-shared-update-v2__description-wrapper,
+  .feed-shared-text,
+  .feed-shared-actor__description,
+  .feed-shared-actor__name,
+  .feed-shared-actor__title {
+    color: var(--rose-text) !important;
+  }
+  .feed-shared-update-v2__meta {
+    color: var(--rose-text-secondary) !important;
+  }
+
+  /* ── POST ACTIONS (like, comment, repost, share) ── */
+  .feed-shared-social-action-bar,
+  .feed-shared-social-action-bar button,
+  .feed-shared-button {
+    background: transparent !important;
+    color: var(--rose-text-secondary) !important;
+    border: none !important;
+    border-radius: 999px !important;
+  }
+  .feed-shared-social-action-bar button:hover,
+  .feed-shared-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+  .reactions-react-button button,
+  .social-details-social-counts__reactions-count {
+    color: var(--rose-text-secondary) !important;
+  }
+  .reactions-react-button button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .social-details-social-counts__comments-count {
+    color: var(--rose-text-secondary) !important;
+  }
+  .social-details-social-counts__comments-count:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+
+  /* ── PROFILE SIDEBAR ── */
+  .pv-profile-details,
+  .pv-text-details__left-panel,
+  .pv-top-card,
+  .pv-profile-section,
+  [data-view-name="profile"],
+  .scaffold-layout__aside {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* ── LEFT SIDEBAR (mini profile) ── */
+  .scaffold-layout__nav,
+  .global-nav__me {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+
+  /* ── LINKS ── */
+  a,
+  .link-without-visited-state,
+  .app-aware-link {
+    color: var(--rose-accent) !important;
+  }
+  a:hover,
+  .link-without-visited-state:hover {
+    color: var(--rose-accent-hover) !important;
+  }
+
+  /* ── BUTTONS ── */
+  .artdeco-button {
+    color: var(--rose-text) !important;
+    background-color: var(--rose-pill) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 999px !important;
+    transition: background-color 0.2s !important;
+  }
+  .artdeco-button:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .artdeco-button--primary {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+    border-color: var(--rose-bg-strong) !important;
+  }
+  .artdeco-button--primary:hover {
+    background-color: var(--rose-bg-soft) !important;
+  }
+  .artdeco-button--muted {
+    background-color: transparent !important;
+    border: 1px solid var(--rose-border) !important;
+  }
+  .artdeco-button--muted:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  .artdeco-dropdown__trigger {
+    background: transparent !important;
+    border-color: var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  .artdeco-dropdown__trigger:hover {
+    background-color: var(--rose-pill-hover) !important;
+  }
+  /* Icon buttons — transparent */
+  .artdeco-button--circle,
+  .artdeco-button__icon,
+  button[aria-label*="reaction" i],
+  button[aria-label*="comment" i],
+  button[aria-label*="repost" i],
+  button[aria-label*="send" i] {
+    background-color: transparent !important;
+    border: none !important;
+    color: var(--rose-text-secondary) !important;
+  }
+  .artdeco-button--circle:hover,
+  .artdeco-button__icon:hover {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ── INPUTS / TEXTAREA ── */
+  input,
+  textarea,
+  .artdeco-text-input,
+  .share-creation-state__text-editor,
+  .ql-editor,
+  [role="textbox"] {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  input:focus,
+  textarea:focus,
+  .artdeco-text-input:focus-within {
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 3px var(--rose-pill) !important;
+    outline: none !important;
+  }
+
+  /* ── MODAIS / OVERLAYS ── */
+  .artdeco-modal,
+  .artdeco-modal__content,
+  .artdeco-modal__overlay,
+  .modal {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 24px var(--rose-shadow) !important;
+    color: var(--rose-text) !important;
+  }
+  .artdeco-modal__header {
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+  .artdeco-modal__footer {
+    border-top: 1px solid var(--rose-border) !important;
+  }
+  .artdeco-dropdown__content {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 4px 12px var(--rose-shadow) !important;
+  }
+
+  /* ── NOTIFICATIONS ── */
+  .notification-badge {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+  }
+
+  /* ── MESSAGING ── */
+  .msg-overlay-list-bubble,
+  .msg-overlay {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+  }
+  .msg-s-event-listitem__message--other {
+    background-color: var(--rose-pill) !important;
+    color: var(--rose-text) !important;
+  }
+  .msg-s-event-listitem__message--self {
+    background-color: var(--rose-bg-soft) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ── COMMENTS ── */
+  .comments-comment-list__comment,
+  .social-comments,
+  .comments-comment-box {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+  }
+
+  /* ── ÍCONES ── */
+  li-icon,
+  .linkedin-icon,
+  svg {
+    color: var(--rose-text-secondary) !important;
+    fill: var(--rose-text-secondary) !important;
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar {
+    width: 8px !important;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent !important;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--rose-border) !important;
+    border-radius: 999px !important;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--rose-text-secondary) !important;
+  }
+}

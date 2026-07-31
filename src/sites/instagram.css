@@ -1,0 +1,139 @@
+@-moz-document domain("instagram.com") {
+  :root, html, body {
+    background-color: var(--rose-bg) !important;
+    color: var(--rose-text) !important;
+  }
+
+  nav[role="navigation"],
+  nav[aria-label="Principal"],
+  nav[aria-label="Navegação"] {
+    background-color: var(--rose-bg) !important;
+    border-right: 1px solid var(--rose-border) !important;
+  }
+
+  header,
+  [role="banner"],
+  div[role="banner"] {
+    background-color: var(--rose-bg) !important;
+    border-bottom: 1px solid var(--rose-border) !important;
+  }
+
+  main[role="main"] {
+    background-color: var(--rose-bg) !important;
+  }
+
+  [data-pagelet="story_tray"] {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    margin-bottom: 12px !important;
+  }
+
+  article {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 4px 12px var(--rose-shadow) !important;
+    margin-bottom: 12px !important;
+  }
+
+  article header,
+  article > div:first-child {
+    background-color: transparent !important;
+  }
+
+  img, video {
+    background-color: transparent !important;
+  }
+
+  svg {
+    background-color: transparent !important;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+  a:hover {
+    color: inherit !important;
+  }
+
+  article div[role="button"] {
+    background-color: transparent !important;
+    border: none !important;
+  }
+  article svg[aria-label="Curtir"],
+  article svg[aria-label="Comentar"],
+  article svg[aria-label="Compartilhar"],
+  article svg[aria-label="Salvar"],
+  article svg[aria-label="Repostar"],
+  article svg[aria-label*="op\u00e7\u00f5es"] {
+    color: var(--rose-text) !important;
+  }
+
+  article span,
+  article header span,
+  article > div span {
+    color: var(--rose-text) !important;
+  }
+
+  [class*="time" i],
+  [class*="timestamp" i] {
+    color: var(--rose-text-secondary) !important;
+  }
+
+  textarea {
+    background-color: var(--rose-white) !important;
+    color: var(--rose-text) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: 8px !important;
+  }
+  textarea:focus {
+    outline: none !important;
+    border-color: var(--rose-bg-strong) !important;
+    box-shadow: 0 0 0 3px var(--rose-pill) !important;
+  }
+
+  nav[role="navigation"] svg,
+  nav[aria-label="Principal"] svg,
+  nav[aria-label="Navegação"] svg {
+    color: var(--rose-text) !important;
+  }
+
+  [role="dialog"]:not(dialog),
+  [role="menu"]:not(dialog),
+  [role="listbox"]:not(dialog) {
+    background-color: var(--rose-white) !important;
+    border: 1px solid var(--rose-border) !important;
+    border-radius: var(--rose-radius) !important;
+    box-shadow: 0 8px 24px var(--rose-shadow) !important;
+  }
+
+  footer[role="contentinfo"] {
+    color: var(--rose-text-muted) !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--rose-text) !important;
+  }
+
+  [class*="notification" i],
+  [class*="badge" i] {
+    background-color: var(--rose-bg-strong) !important;
+    color: var(--rose-text-on-accent) !important;
+  }
+
+  [role="tab"],
+  [role="tablist"] {
+    background-color: var(--rose-bg) !important;
+  }
+  [role="tab"][aria-selected="true"] {
+    background-color: var(--rose-pill-hover) !important;
+    color: var(--rose-text) !important;
+  }
+
+  hr,
+  [role="separator"] {
+    border-color: var(--rose-border) !important;
+  }
+}
